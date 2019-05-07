@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#0F7707</color>
+    <color name="nil">#00FF4081</color>
+    <color name="solved_task">#3AF507</color>
+    <color name="unsolved_task">#F50737</color>
+    <color name="tip">#DFDFDF</color>
+</resources>

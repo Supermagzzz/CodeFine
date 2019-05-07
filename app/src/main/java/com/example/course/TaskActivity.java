@@ -1,0 +1,109 @@
+package com.example.course;
+
+import android.app.FragmentManager;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.Preference;
+import android.preference.PreferenceManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.webkit.WebView;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+
+public class TaskActivity extends AppCompatActivity {
+
+    int[] ids;
+    int[] rate;
+    int pointer = 0;
+    SharedPreferences sPref;
+    int rating;
+    Button last, next, tip;
+    CheckBox solve;
+    TextView textPointer, textSolve;
+    WebView myBrowser;
+    Intent intent;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_task);
+        myBrowser = findViewById(R.id.my_browser);
+        intent = getIntent();
+        ids = intent.getIntArrayExtra("ids");
+        rate = intent.getIntArrayExtra("rate");
+        sPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        rating = sPref.getInt("Beginning_rating", 0);
+        last = findViewById(R.id.last);
+        next = findViewById(R.id.next);
+        solve = findViewById(R.id.solve);
+        tip = findViewById(R.id.tip);
+        sPref.edit().putInt("A", 100).apply();
+        textPointer = findViewById(R.id.pointer);
+        textSolve = findViewById(R.id.textSolve);
+        last.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pointer = (pointer - 1 + ids.length) % ids.length;
+                updateWebView();
+            }
+        });
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pointer = (pointer + 1 + ids.length) % ids.length;
+                updateWebView();
+            }
+        });
+
+        textSolve.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                solve.callOnClick();
+            }
+        });
+
+        solve.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(sPref.getBoolean("Beginning_task" + ids[pointer], false))
+                {
+                    sPref.edit().putBoolean("Beginning_task" + ids[pointer], false).apply();
+                    rating -= rate[pointer];
+                }
+                else
+                {
+                    sPref.edit().putBoolean("Beginning_task" + ids[pointer], true).apply();
+                    rating += rate[pointer];
+                }
+                updateSolve();
+                sPref.edit().putInt("Beginning_rating", rating).apply();
+            }
+        });
+
+        updateWebView();
+    }
+
+    private void updateSolve()
+    {
+        solve.setChecked(sPref.getBoolean("Beginning_task" + ids[pointer], false));
+    }
+
+    private void updateWebView()
+    {
+        myBrowser.loadUrl("file:///android_asset/Beginning/" + intent.getStringExtra("path") + ids[pointer] + ".html");
+        textPointer.setText((pointer + 1) + "/" + ids.length);
+        updateSolve();
+    }
+}

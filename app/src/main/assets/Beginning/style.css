@@ -1,0 +1,131 @@
+@font-face
+{
+    font-family: "Vin Slab Pro";
+    src: url("../vsl.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face
+{
+    font-family: "Fira Sans";
+    src: url("../fira.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+.phone
+{
+	margin: 0; 
+	padding: 0; 
+	width: 500px; 
+	background-size: 600px; 
+	margin: 0 auto; 
+	position: absolute; 
+	margin-left: 374px; 
+	z-index: 1; 
+	border: 1px solid black;
+}
+.name
+{
+	font-family: 'Vin Slab Pro'; 
+	text-align: center; 
+	padding-top: 5px; 
+	font-size: 35px;
+	font-weight: bold; 
+	background: #e4e4e7
+}
+.h
+{
+	padding-top: 7px; 
+	font-weight: bold; 
+	font-size: 22px;
+}
+.block
+{
+	padding-left: 10px; 
+	padding-right: 10px; 
+	font-size: 17px; 
+	margin-top: -10px; 
+	color: #000000; 
+	font-family: 'Fira Sans', sans-serif;
+}
+hr
+{
+	margin-top: 2px;
+}
+code
+{
+	font-size: 15px;
+}
+.code_block
+{
+	padding: 5px;
+}
+.red
+{
+	color: #ff5555;
+}
+.green
+{
+	color: green;
+}
+.blue
+{
+	color: blue;
+}
+.purple
+{
+	color: #a300d8;
+	font-weight: bold;
+}
+.last_code_hr
+{
+	margin-top: 15px;
+}
+.task_name
+{
+    font-family: 'Fira Sans', sans-serif;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 35px;
+    font-weight: bold;
+}
+.statements
+{
+    padding: 5px;
+    font-size: 22px;
+    font-family: 'Fira Sans', sans-serif;
+}
+.input
+{
+    font-size: 18px;
+    margin: 5px;
+    padding: 5px;
+    width: 90%;
+    background: #e4e4e7;
+}
+
+.output
+{
+    font-size: 18px;
+    margin: 5px;
+    padding: 5px;
+    width: 90%;
+    background: #e4e4e7;
+}
+
+.tests
+{
+    margin-left: 5px;
+    font-size: 20px;
+}
+.link
+{
+    white-space: nowrap;
+    width: 95%;
+    background: #71bff6;
+    position: absolute;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 30px;
+    line-height: 30px;
+}

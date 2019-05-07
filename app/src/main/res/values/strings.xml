@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">CodeFine</string>
+    <string name="Beginning">Beginning</string>
+    <string name="Algorithms">Algorithms</string>
+    <string name="Advanced">Advanced</string>
+    <string name="our_site">OUR SITE</string>
+    <string name="chat">CHAT</string>
+    <string name="editor">EDITOR</string>
+    <string name="hello">Hello </string>
+    <string name="introduction">Introduction</string>
+    <string name="installing">Installing software</string>
+    <string name="first_program">First program</string>
+    <string name="solved_task">Task solved</string>
+    <string name="tip">Need a tip? Click.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_article">activity_article</string>
+    <string name="title_activity_articles">Articles</string>
+    <string name="title_activity_task">TaskActivity</string>
+</resources>
