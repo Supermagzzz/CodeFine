@@ -2,6 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="test.js"></script>
 </head>
 <body>
 	<div style="margin:-7px">
@@ -68,7 +69,7 @@
 						<br>
 						<span class="blue">int</span> main<span class="red">()</span><br>
 						<span class="red">{</span><br>
-							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"Ivan"</span> <span class="red"><<</span><span class="green"> endl</span><span class="red">;</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"Maxim"</span> <span class="red"><<</span><span class="green"> endl</span><span class="red">;</span><br>
 							&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">return</span> <span class="purple">0</span><span class="red">;</span><br>
 						<span class="red">}</span><br>
 						<hr class="last_code_hr">
@@ -87,7 +88,7 @@
 						<br>
 						<span class="blue">int</span> main<span class="red">()</span><br>
 						<span class="red">{</span><br>
-							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"I" </span><span class="red"><<</span> <span class="blue">"v" </span><span class="red"><<</span> <span class="blue">"a" </span><span class="red"><<</span> <span class="blue">"n" </span> <span class="red"><<</span><span class="green"> endl</span><span class="red">;</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"M" </span><span class="red"><<</span> <span class="blue">"a" </span><span class="red"><<</span> <span class="blue">"x" </span><span class="red"><<</span> <span class="blue">"i" </span> <span class="red"><<</span><span class="blue">"m" </span> <span class="red"><<</span><span class="green"> endl</span><span class="red">;</span><br>
 							&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">return</span> <span class="purple">0</span><span class="red">;</span><br>
 						<span class="red">}</span><br>
 						<hr class="last_code_hr">
@@ -121,10 +122,11 @@
 						<br>
 						<span class="blue">int</span> main<span class="red">()</span><br>
 						<span class="red">{</span><br>
-							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"I"</span><span class="red">;</span><br>
-							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"v"</span><span class="red">;</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"M"</span><span class="red">;</span><br>
 							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"a"</span><span class="red">;</span><br>
-							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"n"</span><span class="red">;</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"x"</span><span class="red">;</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"i"</span><span class="red">;</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"m"</span><span class="red">;</span><br>
 							&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">return</span> <span class="purple">0</span><span class="red">;</span><br>
 						<span class="red">}</span><br>
 						<hr class="last_code_hr">
@@ -186,8 +188,7 @@
 						<hr class="last_code_hr">
 					</code>
 				</div> 
-				<b>using namespace std;</b> - это пространство имен. Позже мы расскажем, что это такое, но сейчас можно понимать эту команду так.<br>
-				Все функции которые вы дополнительно подключаете имеют приставку <b>std::</b> . Это команда убирает эту приставку. Но вы можете писать так:
+				<b>using namespace std;</b> - это пространство имен. Позже мы расскажем, что это такое, но сейчас можно понимать эту команду следующим образом. Все функции которые вы дополнительно подключаете имеют приставку <b>std::</b> . Это команда убирает эту приставку. Но вы можете писать так:
 				<div class="code_block">
 					<code>
 						<hr>
@@ -207,6 +208,39 @@
 				Закрепите пройденный материал, решив все эти задачи.<br>
 			</p>
 		</div>
+	</div>
+	<br>
+	<div class="test">
+		<div class="testTitle">Тест</div>
+		<hr>
+		<form onsubmit="checkForm(3); return false" name="testForm">
+			<div class="question" id="question0">
+				<div class="test_stm">1. Где нужно писать код программы?</div><br>
+				<div class="que0"><input type="radio" name="0" value="0"> До строки <b>int main()</b><br></div>
+				<div class="que0"><input type="radio" name="0" value="1"> Между строкой <b>int main()</b> и последней фигурной скобкой<br></div>
+				<div class="que0"><input type="radio" name="0" value="0"> После последней фигурной скобкой<br></div>
+			</div>
+			<br>
+			<div class="question" id="question1">
+				<div class="test_stm">2. Зачем нужен <b>cout</b>?</div><br>
+				<div class="que1"><input type="radio" name="1" value="0"> Завершить работу программы<br></div>
+				<div class="que1"><input type="radio" name="1" value="0"> Сложить два числа<br></div>
+				<div class="que1"><input type="radio" name="1" value="1"> Вывести данные на консоль<br></div>
+			</div>
+			<br>
+			<div class="question" id="question2">
+				<div class="test_stm">3. Что делает <b>endl</b></div><br>
+				<div class="que2"><input type="radio" name="2" value="1"> Это символ переноса строки<br></div>
+				<div class="que2"><input type="radio" name="2" value="0"> Это символ запятой<br></div>
+				<div class="que2"><input type="radio" name="2" value="0"> Означает конец передачи информации в <b>cout</b><br></div>
+			</div>
+			<br>
+			<div style="width: 100%; text-align: center">
+				<div class="testError hide" id="testError">Ответьте на все вопросы<br></div>
+				<div class="testResult hide" id="testResult"></div>
+				<input type="submit" value="Проверить" class="submit">
+			</div>
+		</form>
 	</div>
 </body>
 </html>

@@ -65,7 +65,7 @@ public class beginning_course extends AppCompatActivity {
                 break;
             case R.id.tasks3:
                 intent = new Intent(beginning_course.this, TaskActivity.class);
-                intent.putExtra("site", "Tasks/3/");
+                intent.putExtra("path", "Tasks/3/");
                 intent.putExtra("ids", ids[3]);
                 intent.putExtra("rate", rate[3]);
                 startActivity(intent);

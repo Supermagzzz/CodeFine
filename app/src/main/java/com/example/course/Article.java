@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.TextView;
 
@@ -19,6 +20,8 @@ public class Article extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_article);
         WebView myBrowser = findViewById(R.id.my_browser);
+        WebSettings webSettings = myBrowser.getSettings();
+        webSettings.setJavaScriptEnabled(true);
         Intent intent = getIntent();
         myBrowser.loadUrl("file:///android_asset/Beginning/" + intent.getStringExtra("site"));
     }
