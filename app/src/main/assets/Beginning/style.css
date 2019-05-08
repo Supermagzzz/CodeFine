@@ -134,6 +134,7 @@ code
 }
 .question
 {
+    padding-bottom: 7px;
     -webkit-overflow-scrolling: touch;
     white-space: nowrap;
     overflow: auto;

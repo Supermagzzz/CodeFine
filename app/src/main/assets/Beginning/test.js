@@ -1,3 +1,8 @@
+function c(id, num)
+{
+    document.getElementsByName(id)[num].click();
+}
+
 function checkForm(cnt)
 {
     var isTrueAns = [];
