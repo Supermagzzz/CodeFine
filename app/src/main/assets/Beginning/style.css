@@ -121,6 +121,23 @@ code
     margin-left: 5px;
     font-size: 20px;
 }
+re
+{
+	color: #ff5555;
+}
+gr
+{
+    color: green;
+}
+pu
+{
+	color: #a300d8;
+	font-weight: bold;
+}
+bl
+{
+    color: blue;
+}
 .taskLink
 {
     width: 100%;
@@ -155,6 +172,7 @@ code
 
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    -webkit-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
 }

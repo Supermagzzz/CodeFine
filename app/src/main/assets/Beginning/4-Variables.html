@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="test.js"></script>
+</head>
+<body>
+    <div style="margin: -7px">
+        <div class="name">Переменные</div>
+        <hr>
+        <div class="block">
+            <p>
+                В прошлом уроке мы научились выводить данные на консоль. Но как можно ввести данные в программу?<br>
+                В этом уроке мы попробуем написать свой простой консольный калькулятор, который умеет складывать, вычитать и умножать два числа.<br>
+            </p>
+            <p>
+                Если вы считаете данные с экрана их нужно будет где-то хранить. Для этого у копьютера есть оперативная память.<br>
+                Что бы хранить данные в памяти, нужно создавать для них переменные. Переменные создаются следующим образом.
+                <div class="code_block">
+                    <code>
+                        <hr>
+                        <gr>#include &lt;iostream&gt;</gr><br>
+                        <br>
+                        <bl> using namespace </bl><gr>std;</gr><br>
+                        <br>
+                        <bl>int</bl> main<span class="red">()</span><br>
+                        <re>{</re><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<bl>тип переменной</bl> название = <pu> число</pu>;<br>
+                        <span class="red">}</span><br><br>
+                        <hr class="last_code_hr">
+                    </code>
+                </div>
+                У каждой переменной есть свой тип. Про то, какие типы существуют мы поговорим чуть позже, а сейчас будем работать с числовым типом.<br>
+                Чтобы хранить в памяти число нужно использовать тип <b>int</b> - целочисленный тип данных. Название переменной вы можете придумать сами, оно нужно чтобы обращаться к ней.
+                То есть, если у вас есть переменная с именем <b>a</b>, то каждый раз, когда вы будете писать в вашей программе слово <b>a</b>, он будет подставлять
+                вместо него значение вашей переменной. Чтобы было понятнее, посмотрим пример.
+                <div class="code_block">
+                    <code>
+                        <hr>
+                        <span class="green">#include &lt;iostream&gt;</span><br>
+                        <br>
+                        <span class="blue"> using namespace </span><span class="green">std;</span><br>
+                        <br>
+                        <bl>int</bl> main<re>()</re><br>
+                        <re>{</re><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<bl>int</bl> a = <pr> 5</pr>;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> a;<br>
+                        <re>}</re><br><br>
+                        <hr class="last_code_hr">
+                    </code>
+                </div>
+                Этот код выведете на экран число 5. Учтите, что a - это не текст, а переменная и ее нельзя писать в кавычках. Можно создавать несколько переменных.
+                <div class="code_block">
+                    <code>
+                        <hr>
+                        <gr>#include &lt;iostream&gt;</gr><br>
+                        <br>
+                        <bl> using namespace </bl><gr>std;</gr><br>
+                        <br>
+                        <bl>int</bl> main<re>()</re><br>
+                        <re>{</re><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<bl>int</bl> a = <pr> 5</pr>;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<bl>int</bl> b = <pr> 7</pr>;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> a <re><<</re> <gr>" "</gr> <re><<</re> b;<br>
+                        <re>}</re><br><br>
+                        <hr class="last_code_hr">
+                    </code>
+                </div>
+                Этот код выведет на экран сначала первую переменную, потом пробел и потом вторую переменную. В итоге на экране будет<br>
+                <b>5 7</b><br>
+                Как получить значение переменной с экрана? Для этого воспользуемся <b>cin</b> - (Console in) вводом с консоли. Это будет выглядеть
+                также как и <b>cout</b>, но только стрелочки будут в другую сторону.<br>
+                <div class="code_block">
+                    <code>
+                        <hr>
+                        <gr>#include &lt;iostream&gt;</gr><br>
+                        <br>
+                        <bl> using namespace </bl><gr>std;</gr><br>
+                        <br>
+                        <bl>int</bl> main<re>()</re><br>
+                        <re>{</re><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<bl>int</bl> a = <pr> 0</pr>;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cin</gr> <re>>></re> a;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> a;<br>
+                        <re>}</re><br><br>
+                        <hr class="last_code_hr">
+                    </code>
+                </div>
+                Если вы запустите эту программу, то она сначала ничего не выведет и будет ждать вашего ввода.
+                Введите какое-нибудь число и нажмите Enter. Программа прочитает его и запишет в переменную, а потом выведет ее на экран.
+                Зачем записывать в переменную 0, если прямо сейчас консоль запишет в нее другое значение? Да, можно ничего не записывать в переменную.
+                <div class="code_block">
+                    <code>
+                        <hr>
+                        <gr>#include &lt;iostream&gt;</gr><br>
+                        <br>
+                        <bl> using namespace </bl><gr>std;</gr><br>
+                        <br>
+                        <bl>int</bl> main<re>()</re><br>
+                        <re>{</re><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<bl>int</bl> a;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cin</gr> <re>>></re> a;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> a;<br>
+                        <re>}</re><br><br>
+                        <hr class="last_code_hr">
+                    </code>
+                </div>
+                Этот код тоже работает. А еще можно объявлять несколько переменных одного типа в одной строке через запятую. Учтите, что тип переменной
+                при этом пишется только один раз в начале строки. При вводе нескольких чисел в консоль их нужно разделять пробелом. Запустите следующую программу
+                и введите два числа через пробел. Программа напечатает эти два числа и число 25.
+                <div class="code_block">
+                    <code>
+                        <hr>
+                        <gr>#include &lt;iostream&gt;</gr><br>
+                        <br>
+                        <bl> using namespace </bl><gr>std;</gr><br>
+                        <br>
+                        <bl>int</bl> main<re>()</re><br>
+                        <re>{</re><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<bl>int</bl> a, b, c = <pr>25</pr>;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cin</gr> <re>>></re> a <re>>></re> b;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> a <re><<</re> <gr>" "</gr> <re><<</re> b <re><<</re> <gr>" "</gr> <re><<</re> c;<br>
+                        <re>}</re><br><br>
+                        <hr class="last_code_hr">
+                    </code>
+                </div>
+                К числовым переменным можно применять математические операции. В переменную можно записывать не только число, но и математическое выражение.
+                <div class="code_block">
+                    <code>
+                        <hr>
+                        <gr>#include &lt;iostream&gt;</gr><br>
+                        <br>
+                        <bl> using namespace </bl><gr>std;</gr><br>
+                        <br>
+                        <bl>int</bl> main<re>()</re><br>
+                        <re>{</re><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<bl>int</bl> a = <pr>5</pr> + <pr>5</pr> * <pr>7</pr>;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<bl>int</bl> b = a + a, c;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cin</gr> <re>>></re> c;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;b = b + c;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> a <re><<</re> <gr>" "</gr> <re><<</re> b <re><<</re> <gr>" "</gr> <re><<</re> c;<br>
+                        <re>}</re><br><br>
+                        <hr class="last_code_hr">
+                    </code>
+                </div>
+                Тут стоить учесть еще одно правило. Тип переменной мы указываем, только при ее создание (т.е при первом объявлении). Если вы в дальнейшем
+                перезаписываете переменную, то тип указывать нельзя. <br>
+                Давайте разберемя, что делает программа.<br>
+                <b> int a = 5 + 5 * 7; </b><br>
+                Объявили переменную <b>a</b> равную 40.<br>
+                <b> int b = a + a;</b><br>
+                Объявили переменную <b>b</b> равную 80 (40 + 40).<br>
+                <b> int c;<br> cin >> c;</b><br>
+                Считали переменную <b>c</b> с консоли. (Предположим, что мы ввели число 20).<br>
+                <b>b = b + c;</b><br>
+                Прибавили к переменной b число 20, теперь оно равно 100 (b = 80 + 20).<br>
+                Вывели все три числа на экран. В консоли будет находится <b>40 100 20</b>.<br>
+            </p>
+            <p>
+                Мы достаточно быстро разобрали основы работы с переменными, но это очень важная тема. Остановитесь здесь, и убедитесь, что
+                вы понимаете, как работает программа выше и можете написать ее сами. Если возникают трудности, советуем перечитать статью.<br>
+            </p>
+            <p>
+                Математические операции можно применять и при выводе данных на экран. Давайте напишем программу, которая читает два числа и выводит их сумму двумя способами.<br>
+                <br>
+                <b>Способ 1</b>
+                <div class="code_block">
+                    <code>
+                        <hr>
+                        <gr>#include &lt;iostream&gt;</gr><br>
+                        <br>
+                        <bl> using namespace </bl><gr>std;</gr><br>
+                        <br>
+                        <bl>int</bl> main<re>()</re><br>
+                        <re>{</re><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<bl>int</bl> a;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<bl>int</bl> b;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cin</gr> <re>>></re> a <re>>></re> b;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<bl>int</bl> sum = a + b;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> sum;<br>
+                        <re>}</re><br><br>
+                        <hr class="last_code_hr">
+                    </code>
+                </div>
+                <b>Способ 2</b><br>
+                <div class="code_block">
+                    <code>
+                        <hr>
+                        <gr>#include &lt;iostream&gt;</gr><br>
+                        <br>
+                        <bl> using namespace </bl><gr>std;</gr><br>
+                        <br>
+                        <bl>int</bl> main<re>()</re><br>
+                        <re>{</re><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<bl>int</bl> a, b;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cin</gr> <re>>></re> a <re>>></re> b;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> a + b;<br>
+                        <re>}</re><br><br>
+                        <hr class="last_code_hr">
+                    </code>
+                </div>
+                Оба способа работают одинаково, можете убедиться в этом. Давайте теперь рассмотрим основные арифмитические операции с целыми числами.<br>
+                <b>с = a + b;</b> Операция сложения двух чисел. <br>
+                <b>с = a - b;</b> Операция вычитания двух чисел. <br>
+                <b>с = a * b;</b> Операция умножения двух чисел. <br>
+                С делением все не так просто. Так как результат деления может быть не целым, то мы не сможем записать его в целый тип данных.
+                В следующем уроке мы рассмотрим решение этой проблемы и узнаем про другие типы данных. Но у типа <b>int</b> есть следующие операции.<br>
+                <b>с = a / b;</b> Целая часть от деления a на b (Пример 10 / 3 = 3, 15 / 3 = 5). <br>
+                <b>с = a % b;</b> Остаток от деления a на b (Пример 10 % 3 = 1, 15 % 3 = 0). <br>
+                Если вы хотите прибавить к переменной число или применить к ней любую другую операцию, то не обязательно писать так:<br>
+                <b>a = a + b;</b><br>
+                Вместо этого можно воспользоваться операцией прибавления:<br>
+                <b>a += b;</b> (Если <b>a</b> было равно 5, а <b>b</b> было равно 3, то <b>a</b> станет равно 8).<br>
+                Также можно делать с любой операцией. Примеры:<br>
+                <b>a -= 2;</b> <br>
+                <b>a *= b;</b> <br>
+                <b>a /= b - c + 35 * 60;</b> <br>
+                Если вы хотите прибавть или отнять единицу от числа, то можно воспользоваться следующей формой.<br>
+                <b>a++;</b> (Прибавляет 1 к <b>a</b>)<br>
+                <b>a--;</b> (Отнимает 1 от <b>a</b>)<br>
+            </p>
+            <p>
+                Обладая всеми этими знаниями нам не составит труда написать свой калькулятор. Давайте заодно научимся решать наши упражнения,
+                где нужно считывать данные.<br>
+                Вот вам задача:<br>
+                <hr>
+                На вход подаются два целых числа. Выведите их сумму, разность и произведение, каждое число должно быть с новой строки.<br><br>
+                <b>Входные данные</b><br>
+                5 3<br>
+                <b>Выходные данные</b><br>
+                8<br>
+                2<br>
+                15<br>
+                <hr>
+                Сначала идет условие задачи, потом пример тестов, чтобы показать вам, как должна работать ваша программа. Исходя из входных данных
+                вы должны считать два числа. Исходя их выходных вывести три числа, каждое в новой строке. Давайте напишем такую программу.<br>
+                <div class="code_block">
+                    <code>
+                        <hr>
+                        <gr>#include &lt;iostream&gt;</gr><br>
+                        <br>
+                        <bl> using namespace </bl><gr>std;</gr><br>
+                        <br>
+                        <bl>int</bl> main<re>()</re><br>
+                        <re>{</re><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<bl>int</bl> a, b;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cin</gr> <re>>></re> a <re>>></re> b;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> a + b <re><<</re> <gr>endl</gr>;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> a - b <re><<</re> <gr>endl</gr>;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> a * b <re><<</re> <gr>endl</gr>;<br>
+                        <re>}</re><br><br>
+                        <hr class="last_code_hr">
+                    </code>
+                </div>
+                Вот так нужно оформлять подобные задачи. Напоследок, давайте добавим поясняющий текст к нашей программе, чтобы пользователю было удобнее.
+                (так вы можете делать в своих личных программах, но при решении упражнений придерживайтесь четкого формата данных. Не выводите ничего лишнего. То что выведет ваша программа на ввод из Входных данных должно полностью совпадать с тем, что находится в Выходных данных)<br>
+                <div class="code_block">
+                    <code>
+                        <hr>
+                        <gr>#include &lt;iostream&gt;</gr><br>
+                        <br>
+                        <bl> using namespace </bl><gr>std;</gr><br>
+                        <br>
+                        <bl>int</bl> main<re>()</re><br>
+                        <re>{</re><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<bl>int</bl> a, b;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> <gr>"Введите два числа"</gr> <re><<</re> <gr>endl</gr>;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cin</gr> <re>>></re> a <re>>></re> b;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> <gr>"Сумма равна "</gr> <re><<</re> a + b <re><<</re> <gr>endl</gr>;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> <gr>"Разность равна "</gr> <re><<</re> a - b <re><<</re> <gr>endl</gr>;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> <gr>"Произведение равно "</gr> <re><<</re> a * b <re><<</re> <gr>endl</gr>;<br>
+                        <re>}</re><br><br>
+                        <hr class="last_code_hr">
+                    </code>
+                </div>
+
+            </p>
+        </div>
+    </div>
+</body>
+</html>
