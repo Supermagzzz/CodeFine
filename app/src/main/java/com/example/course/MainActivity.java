@@ -37,6 +37,19 @@ public class MainActivity extends AppCompatActivity {
         sPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         BegRateText = findViewById(R.id.BegRateText);
         updateRatings();
+
+        if(sPref.getString("lang", "default").equals("default"))
+        {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            intent.putExtra("first", 1);
+            startActivity(intent);
+            finish();
+        }
+        else if (!sPref.getString("lang", "default").equals(getResources().getConfiguration().locale.getLanguage()))
+        {
+            Lib.setLang(sPref.getString("lang", "default"), this);
+            finish();
+        }
     }
 
     @Override
@@ -117,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                 prbBeginning.setImageResource(R.drawable.prb100);
                 break;
         }
-        BegRateText.setText("Rating: " + rateBeginning + "/" + maxBegRate);
+        BegRateText.setText(getResources().getString(R.string.rating) + ": " + rateBeginning + "/" + maxBegRate);
     }
 
     public void onClick(View view)
@@ -136,6 +149,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.advanced_course_btn:
                 intent = new Intent(MainActivity.this, advanced_course.class);
                 startActivity(intent);
+                break;
+            case R.id.settings:
+                startActivity(new Intent(this, SettingsActivity.class));
                 break;
             default:
                 break;

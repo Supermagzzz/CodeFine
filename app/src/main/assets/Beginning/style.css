@@ -121,6 +121,16 @@ code
     margin-left: 5px;
     font-size: 20px;
 }
+.taskLink
+{
+    width: 100%;
+    text-align: center;
+    background: #0b0063;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 24px;
+    color: white;
+}
 .link
 {
     white-space: nowrap;

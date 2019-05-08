@@ -22,8 +22,22 @@ import java.util.ArrayList;
 
 public class TaskActivity extends AppCompatActivity {
 
-    int[] ids;
-    int[] rate;
+    int[][] ids = {
+            {},
+            {},
+            {1},
+            {2, 3, 4}
+    };
+
+    int[][] rate = {
+            {},
+            {},
+            {1},
+            {1, 1, 2}
+    };
+
+    int myId;
+
     int pointer = 0;
     SharedPreferences sPref;
     int rating;
@@ -41,8 +55,7 @@ public class TaskActivity extends AppCompatActivity {
         setContentView(R.layout.activity_task);
         myBrowser = findViewById(R.id.my_browser);
         intent = getIntent();
-        ids = intent.getIntArrayExtra("ids");
-        rate = intent.getIntArrayExtra("rate");
+        myId = intent.getIntExtra("id", 0);
         sPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         rating = sPref.getInt("Beginning_rating", 0);
         last = findViewById(R.id.last);
@@ -55,14 +68,14 @@ public class TaskActivity extends AppCompatActivity {
         last.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pointer = (pointer - 1 + ids.length) % ids.length;
+                pointer = (pointer - 1 + ids[myId].length) % ids[myId].length;
                 updateWebView();
             }
         });
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pointer = (pointer + 1 + ids.length) % ids.length;
+                pointer = (pointer + 1 + ids[myId].length) % ids[myId].length;
                 updateWebView();
             }
         });
@@ -77,15 +90,15 @@ public class TaskActivity extends AppCompatActivity {
         solve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(sPref.getBoolean("Beginning_task" + ids[pointer], false))
+                if(sPref.getBoolean("Beginning_task" + ids[myId][pointer], false))
                 {
-                    sPref.edit().putBoolean("Beginning_task" + ids[pointer], false).apply();
-                    rating -= rate[pointer];
+                    sPref.edit().putBoolean("Beginning_task" + ids[myId][pointer], false).apply();
+                    rating -= rate[myId][pointer];
                 }
                 else
                 {
-                    sPref.edit().putBoolean("Beginning_task" + ids[pointer], true).apply();
-                    rating += rate[pointer];
+                    sPref.edit().putBoolean("Beginning_task" + ids[myId][pointer], true).apply();
+                    rating += rate[myId][pointer];
                 }
                 updateSolve();
                 sPref.edit().putInt("Beginning_rating", rating).apply();
@@ -97,13 +110,22 @@ public class TaskActivity extends AppCompatActivity {
 
     private void updateSolve()
     {
-        solve.setChecked(sPref.getBoolean("Beginning_task" + ids[pointer], false));
+        solve.setChecked(sPref.getBoolean("Beginning_task" + ids[myId][pointer], false));
     }
 
     private void updateWebView()
     {
-        myBrowser.loadUrl("file:///android_asset/Beginning/" + intent.getStringExtra("path") + ids[pointer] + ".html");
-        textPointer.setText((pointer + 1) + "/" + ids.length);
+        myBrowser.loadUrl("file:///android_asset/Beginning/Tasks/" + intent.getIntExtra("id", 0) + "/" + ids[myId][pointer] + ".html");
+        textPointer.setText((pointer + 1) + "/" + ids[myId].length);
         updateSolve();
+    }
+
+    public void onClick(View view) {
+        switch (view.getId())
+        {
+            case R.id.settings:
+                startActivity(new Intent(this, SettingsActivity.class));
+                break;
+        }
     }
 }

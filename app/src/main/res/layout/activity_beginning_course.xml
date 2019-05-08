@@ -55,11 +55,12 @@
                     android:paddingRight="20dp">
 
                     <ImageView
-                        android:id="@+id/imageView19"
+                        android:id="@+id/settings"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="3"
                         android:adjustViewBounds="true"
+                        android:onClick="onClick"
                         android:scaleType="fitStart"
                         app:srcCompat="@drawable/settings" />
 
@@ -117,7 +118,8 @@
 
                     <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:paddingTop="4dp">
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -127,7 +129,6 @@
                             android:cropToPadding="false"
                             android:onClick="onClick"
                             android:paddingLeft="30dp"
-                            android:paddingTop="5dp"
                             app:srcCompat="@drawable/blue_name_art" />
 
                         <LinearLayout
@@ -173,7 +174,8 @@
 
                     <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:paddingTop="4dp">
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -183,7 +185,6 @@
                             android:cropToPadding="false"
                             android:onClick="onClick"
                             android:paddingLeft="30dp"
-                            android:paddingTop="5dp"
                             app:srcCompat="@drawable/blue_name_art" />
 
                         <LinearLayout
@@ -230,7 +231,8 @@
 
                     <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:paddingTop="4dp">
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -240,7 +242,6 @@
                             android:cropToPadding="false"
                             android:onClick="onClick"
                             android:paddingLeft="30dp"
-                            android:paddingTop="5dp"
                             app:srcCompat="@drawable/blue_name_art" />
 
                         <LinearLayout

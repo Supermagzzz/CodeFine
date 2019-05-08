@@ -1,3 +1,13 @@
+function copyLink(_link)
+{
+    Android.copyLink(_link);
+}
+
+function goToTask()
+{
+    Android.goToTask();
+}
+
 function c(id, num)
 {
     document.getElementsByName(id)[num].click();

@@ -13,20 +13,6 @@ import android.widget.TextView;
 
 public class beginning_course extends AppCompatActivity {
 
-    int[][] ids = {
-            {},
-            {},
-            {1},
-            {2, 3, 4}
-    };
-
-    int[][] rate = {
-            {},
-            {},
-            {1},
-            {1, 1, 2}
-    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,31 +30,33 @@ public class beginning_course extends AppCompatActivity {
             case R.id.article1:
                 intent = new Intent(beginning_course.this, Article.class);
                 intent.putExtra("site", "1-Introduction.html");
+                intent.putExtra("id", 1);
                 startActivity(intent);
                 break;
             case R.id.article2:
                 intent = new Intent(beginning_course.this, Article.class);
                 intent.putExtra("site", "2-Installing_software.html");
+                intent.putExtra("id", 2);
                 startActivity(intent);
                 break;
             case R.id.article3:
                 intent = new Intent(beginning_course.this, Article.class);
                 intent.putExtra("site", "3-Simple_programm.html");
+                intent.putExtra("id", 3);
                 startActivity(intent);
                 break;
             case R.id.tasks2:
                 intent = new Intent(beginning_course.this, TaskActivity.class);
-                intent.putExtra("path", "Tasks/2/");
-                intent.putExtra("ids", ids[2]);
-                intent.putExtra("rate", rate[2]);
+                intent.putExtra("id", 2);
                 startActivity(intent);
                 break;
             case R.id.tasks3:
                 intent = new Intent(beginning_course.this, TaskActivity.class);
-                intent.putExtra("path", "Tasks/3/");
-                intent.putExtra("ids", ids[3]);
-                intent.putExtra("rate", rate[3]);
+                intent.putExtra("id", 3);
                 startActivity(intent);
+                break;
+            case R.id.settings:
+                startActivity(new Intent(this, SettingsActivity.class));
                 break;
         }
     }

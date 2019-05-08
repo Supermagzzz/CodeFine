@@ -11,6 +11,9 @@
     <string name="first_program">Первая программа</string>
     <string name="solved_task">Задача решена</string>
     <string name="tip">Узнать решение</string>
+    <string name="link_copy">Ссылка скопирована</string>
+    <string name="choose_lang">Выберите ваш язык</string>
+    <string name="lang">ru</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -18,4 +21,5 @@
     <string name="title_activity_articles">Articles</string>
     <string name="title_activity_task">TaskActivity</string>
     <string name="app_name">CodeFine</string>
+    <string name="rating">Рейтинг</string>
 </resources>

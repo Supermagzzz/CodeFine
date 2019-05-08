@@ -2,6 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="test.js"></script>
 </head>
 <body>
 	<div style="margin:-7px">
@@ -32,9 +33,7 @@
 			</p>
 			<p>
 			Ссылка на скачивание Codeblocks:
-			<div class="link">
-			https://sourceforge.net/projects/codeblocks/files/Binaries/17.12/Windows/codeblocks-17.12mingw-setup.exe/download
-			</div>
+			<div class="link" onclick="copyLink('https://sourceforge.net/projects/codeblocks/files/Binaries/17.12/Windows/codeblocks-17.12mingw-setup.exe/download')">https://sourceforge.net/projects/codeblocks/files/Binaries/17.12/Windows/codeblocks-17.12mingw-setup.exe/download</div>
 			<br>
 			</p>
 			<p>
@@ -97,12 +96,12 @@
 			</p>
 			<p>
 			Чтобы зарегистрироваться на Codeforces, нужно перейти по этой ссылке
-			<div class="link"> https://codeforces.com/register </div><br><br>
+			<div class="link" onclick="copyLink('https://codeforces.com/register')"> https://codeforces.com/register </div><br><br>
 			Придумайте свой никнейм (Хэндл), введите e-mail и пароль, после чего нажмите на кнопку Зарегистрироваться. Осталось только подтвердить свой e-mail, перейдя по ссылке в письме, которое вам придет и аккаунт создан.
 			</p>
 			<p>
 			В конце каждого урока будет ссылка на список задач. Также вы можете открыть задачи нажав на кнопку рядом с названием темы в меню курса. Там есть оффлайн условия, возможность посмотреть разбор и отметить задачу как решенную. Вот ссылка с задачами для этого урока. Не спешите переходить по ней, сначала дочитайте статью.
-			<div class="link">https://codeforces.com/group/GHaUaQnhtd/contest/243297</div><br><br>
+			<div class="taskLink" onclick="goToTask()">Перейти к задачам</div>
 			</p>
 			<p>
 			Перейдя по ней вы увидите одну задачу. Если бы задач было несколько, то вы бы смогли переключаться между ними с помощью стрелочек.<br>
@@ -129,6 +128,7 @@
 			<p>
 			<b> Если вы увидели "Полное решение", значит вы закончили подготовку к курсу. Не забудьте отметить эту задачу, как решенную в приложении. Удачи в освоении программирования!</b>
 			</p>
+			<div class="taskLink" onclick="goToTask()">Перейти к задачам</div>
 		</div>
 	</div>
 </body>
