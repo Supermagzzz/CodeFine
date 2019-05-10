@@ -1,6 +1,9 @@
 package com.example.course;
 
 import android.app.FragmentManager;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.Preference;
@@ -12,11 +15,14 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.JavascriptInterface;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -26,14 +32,16 @@ public class TaskActivity extends AppCompatActivity {
             {},
             {},
             {1},
-            {2, 3, 4}
+            {2, 3, 4},
+            {5, 6, 7, 8, 9}
     };
 
     int[][] rate = {
             {},
             {},
             {1},
-            {1, 1, 2}
+            {1, 1, 2},
+            {1, 3, 1, 10, 7}
     };
 
     int myId;
@@ -46,6 +54,8 @@ public class TaskActivity extends AppCompatActivity {
     TextView textPointer, textSolve;
     WebView myBrowser;
     Intent intent;
+    WebSettings webSettings;
+    ClipboardManager clipboardManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +75,13 @@ public class TaskActivity extends AppCompatActivity {
         sPref.edit().putInt("A", 100).apply();
         textPointer = findViewById(R.id.pointer);
         textSolve = findViewById(R.id.textSolve);
+
+        webSettings = myBrowser.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setDomStorageEnabled(true);
+        clipboardManager = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
+        myBrowser.addJavascriptInterface(new TaskActivity.WebAppInterface(this), "Android");
+
         last.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,6 +125,35 @@ public class TaskActivity extends AppCompatActivity {
         updateWebView();
     }
 
+
+    public class WebAppInterface
+    {
+        Context myContext;
+
+        WebAppInterface(Context c)
+        {
+            myContext = c;
+        }
+
+        @JavascriptInterface
+        public void copyLink(String link)
+        {
+            ClipData data = ClipData.newPlainText("text", link);
+            clipboardManager.setPrimaryClip(data);
+            Toast.makeText(getApplicationContext(), getResources().getString(R.string.link_copy), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void onClick(View view)
+    {
+        switch (view.getId())
+        {
+            case R.id.settings:
+                startActivity(new Intent(this, SettingsActivity.class));
+                break;
+        }
+    }
+
     private void updateSolve()
     {
         solve.setChecked(sPref.getBoolean("Beginning_task" + ids[myId][pointer], false));
@@ -118,14 +164,5 @@ public class TaskActivity extends AppCompatActivity {
         myBrowser.loadUrl("file:///android_asset/Beginning/Tasks/" + intent.getIntExtra("id", 0) + "/" + ids[myId][pointer] + ".html");
         textPointer.setText((pointer + 1) + "/" + ids[myId].length);
         updateSolve();
-    }
-
-    public void onClick(View view) {
-        switch (view.getId())
-        {
-            case R.id.settings:
-                startActivity(new Intent(this, SettingsActivity.class));
-                break;
-        }
     }
 }

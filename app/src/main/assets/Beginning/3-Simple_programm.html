@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div style="margin:-7px">
-		<div class="name">Простая программа</div>
+		<div class="name">Первая программа</div>
 		<hr>
 		<div class="block">
 			<div class="h">Код из Codeblocks: </div>
@@ -218,23 +218,23 @@
 		<form onsubmit="checkForm(3); return false" name="testForm">
 			<div class="question" id="question0">
 				<div class="test_stm">1. Где нужно писать код программы?</div><br>
-				<input type="radio" name="0" value="0"><span class="que0" onclick="c(0, 0)"> До строки <b>int main()</b><br></span>
-				<input type="radio" name="0" value="1"><span class="que0" onclick="c(0, 1)"> Между строкой <b>int main()</b> и последней фигурной скобкой<br></span>
-				<input type="radio" name="0" value="0"><span class="que0" onclick="c(0, 2)"> После последней фигурной скобкой<br></span>
+				<span class="que0" onclick="c(0, 0)"><input type="radio" name="0" value="0"> До строки <b>int main()</b><br></span>
+				<span class="que0" onclick="c(0, 1)"><input type="radio" name="0" value="1"> Между строкой <b>int main()</b> и последней фигурной скобкой<br></span>
+				<span class="que0" onclick="c(0, 2)"><input type="radio" name="0" value="0"> После последней фигурной скобкой<br></span>
 			</div>
 			<br>
 			<div class="question" id="question1">
 				<div class="test_stm">2. Зачем нужен <b>cout</b>?</div><br>
-				<input type="radio" name="1" value="0"><span class="que1" onclick="c(1, 0)"> Завершить работу программы<br></span>
-				<input type="radio" name="1" value="0"><span class="que1" onclick="c(1, 1)"> Сложить два числа<br></span>
-				<input type="radio" name="1" value="1"><span class="que1" onclick="c(1, 2)"> Вывести данные на консоль<br></span>
+				<span class="que1" onclick="c(1, 0)"><input type="radio" name="1" value="0"> Завершить работу программы<br></span>
+				<span class="que1" onclick="c(1, 1)"><input type="radio" name="1" value="0"> Сложить два числа<br></span>
+				<span class="que1" onclick="c(1, 2)"><input type="radio" name="1" value="1"> Вывести данные на консоль<br></span>
 			</div>
 			<br>
 			<div class="question" id="question2">
 				<div class="test_stm">3. Что делает "<b>endl</b>"?</div><br>
-				<input type="radio" name="2" value="1"><span class="que2" onclick="c(2, 0)"> Это символ переноса строки<br></span>
-				<input type="radio" name="2" value="0"><span class="que2" onclick="c(2, 1)"> Это символ запятой<br></span>
-				<input type="radio" name="2" value="0"><span class="que2" onclick="c(2, 2)"> Означает конец передачи информации в "<b>cout</b>"<br></span>
+				<span class="que2" onclick="c(2, 0)"><input type="radio" name="2" value="1"> Это символ переноса строки<br></span>
+				<span class="que2" onclick="c(2, 1)"><input type="radio" name="2" value="0"> Это символ запятой<br></span>
+				<span class="que2" onclick="c(2, 2)"><input type="radio" name="2" value="0"> Означает конец передачи информации в "<b>cout</b>"<br></span>
 			</div>
 			<br>
 			<div style="width: 100%; text-align: center">

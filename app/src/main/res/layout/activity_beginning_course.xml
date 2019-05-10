@@ -119,7 +119,7 @@
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:paddingTop="4dp">
+                        android:layout_marginTop="3dp">
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -175,7 +175,7 @@
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:paddingTop="4dp">
+                        android:layout_marginTop="3dp">
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -232,7 +232,7 @@
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:paddingTop="4dp">
+                        android:layout_marginTop="3dp">
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -289,7 +289,7 @@
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:paddingTop="4dp">
+                        android:layout_marginTop="3dp">
 
                         <ImageView
                             android:layout_width="match_parent"

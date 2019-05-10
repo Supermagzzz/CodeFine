@@ -252,8 +252,10 @@
                         <hr class="last_code_hr">
                     </code>
                 </div>
-                Вот так нужно оформлять подобные задачи. Напоследок, давайте добавим поясняющий текст к нашей программе, чтобы пользователю было удобнее.
-                (так вы можете делать в своих личных программах, но при решении упражнений придерживайтесь четкого формата данных. Не выводите ничего лишнего. То что выведет ваша программа на ввод из Входных данных должно полностью совпадать с тем, что находится в Выходных данных)<br>
+                Вот так нужно оформлять подобные задачи. Напоследок, давайте добавим поясняющий текст к нашей программе, чтобы пользователю было удобнее использовать ваш калькулятор.
+                (так вы можете делать в своих личных программах, но при решении упражнений придерживайтесь четкого формата данных.
+                Не выводите ничего лишнего. То что выведет ваша программа на ввод из Входных данных должно полностью совпадать с тем,
+                что находится в Выходных данных)<br>
                 <div class="code_block">
                     <code>
                         <hr>
@@ -273,8 +275,82 @@
                         <hr class="last_code_hr">
                     </code>
                 </div>
-
+                Чтобы закрепить пройденный материал, решите задачи на использование целочисленных переменных.
+                <div class="taskLink" onclick="goToTask()">Перейти к задачам</div>
             </p>
+            <br>
+            <div class="test">
+                <div class="testTitle">Тест</div>
+                <hr>
+                <form onsubmit="checkForm(3); return false" name="testForm">
+                    <div class="test_stm">1. Какой из вариантов объявления переменных неправильный?</div><br>
+                    <div class="question" id="question0">
+                        <span class="que0" onclick="c(0, 0)"><input type="radio" name="0" value="0"> int a = 0, b = 0;<br></span>
+                        <span class="que0" onclick="c(0, 1)"><input type="radio" name="0" value="0"> int a, b = 0;<br></span>
+                        <span class="que0" onclick="c(0, 2)"><input type="radio" name="0" value="1"> int a, int b;<br></span>
+                        <span class="que0" onclick="c(0, 3)"><input type="radio" name="0" value="0"> int a; int b;<br></span>
+                    </div>
+                    <br>
+                    <div class="test_stm">2. Что выведет программа ниже?</div><br>
+                    <div class="question" id="question1">
+                        <div class="code_block">
+                            <code>
+                                <hr>
+                                <gr>#include &lt;iostream&gt;</gr><br>
+                                <br>
+                                <bl> using namespace </bl><gr>std;</gr><br>
+                                <br>
+                                <bl>int</bl> main<re>()</re><br>
+                                <re>{</re><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<bl>int</bl> a, b;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;a = <pu>5</pu> + <pu>7</pu>;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;b = <pu>3</pu> * <pu>2</pu>;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;a -= b;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;b *= a;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;a = b;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> a <re><<</re> <gr>" "</gr> <re><<</re> b <re><<</re> <gr>endl</gr>;<br>
+                                <re>}</re><br><br>
+                                <hr class="last_code_hr">
+                            </code>
+                        </div>
+                        <span class="que1" onclick="c(1, 0)"><input type="radio" name="1" value="0"> 12 36<br></span>
+                        <span class="que1" onclick="c(1, 1)"><input type="radio" name="1" value="0"> 18 30<br></span>
+                        <span class="que1" onclick="c(1, 2)"><input type="radio" name="1" value="1"> 36 36<br></span>
+                        <span class="que1" onclick="c(1, 3)"><input type="radio" name="1" value="0"> 13 17<br></span>
+                        <span class="que1" onclick="c(1, 4)"><input type="radio" name="1" value="0"> Ошибка компиляции<br></span>
+                    </div>
+                    <br>
+                    <div class="test_stm">3. Что выведет программа ниже на ввод 7 3?</div><br>
+                    <div class="question" id="question2">
+                        <div class="code_block">
+                            <code>
+                                <hr>
+                                <gr>#include &lt;iostream&gt;</gr><br>
+                                <br>
+                                <bl> using namespace </bl><gr>std;</gr><br>
+                                <br>
+                                <bl>int</bl> main<re>()</re><br>
+                                <re>{</re><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<bl>int</bl> a, b;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<gr>cin</gr> <re>>></re> a <re>>></re> b;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> a / b + b;<br>
+                                <re>}</re><br><br>
+                                <hr class="last_code_hr">
+                            </code>
+                        </div>
+                        <span class="que2" onclick="c(2, 0)"><input type="radio" name="2" value="1"> 5 <br></span>
+                        <span class="que2" onclick="c(2, 1)"><input type="radio" name="2" value="0"> 6 <br></span>
+                        <span class="que2" onclick="c(2, 2)"><input type="radio" name="2" value="0"> 5.(6) <br></span>
+                        <span class="que2" onclick="c(2, 3)"><input type="radio" name="2" value="0"> Не скомпилируется <br></span>
+                    </div>
+                    <br>
+                    <div style="width: 100%; text-align: center">
+                        <div class="testError hide" id="testError">Ответьте на все вопросы<br></div>
+                        <div class="testResult hide" id="testResult"></div>
+                        <input type="submit" value="Проверить" class="submit">
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </body>

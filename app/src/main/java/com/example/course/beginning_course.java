@@ -61,6 +61,11 @@ public class beginning_course extends AppCompatActivity {
                 intent.putExtra("id", 3);
                 startActivity(intent);
                 break;
+            case R.id.tasks4:
+                intent = new Intent(beginning_course.this, TaskActivity.class);
+                intent.putExtra("id", 4);
+                startActivity(intent);
+                break;
             case R.id.settings:
                 startActivity(new Intent(this, SettingsActivity.class));
                 break;

@@ -73,14 +73,6 @@ function checkForm(cnt)
     document.getElementById("testResult").innerHTML += "<br>";
     for(var i = 0; i < cnt; i++)
     {
-        if(isTrueAns[i])
-        {
-            document.getElementById("question" + i).style.color = 'green';
-        }
-        else
-        {
-            document.getElementById("question" + i).style.color = 'red';
-        }
         var q = document.getElementsByClassName("que" + i);
         for(var j = 0; j < q.length; j++)
         {
@@ -88,6 +80,14 @@ function checkForm(cnt)
             {
                 q[j].style.fontSize = '18px';
                 q[j].style.fontWeight = 800;
+            }
+            if(isTrueAns[i])
+            {
+                q[j].style.color = 'green';
+            }
+            else
+            {
+                q[j].style.color = 'red';
             }
         }
     }
