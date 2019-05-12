@@ -92,6 +92,27 @@ code
     font-size: 22px;
     font-weight: bold;
 }
+t
+{
+    padding-left: 20px;
+}
+td
+{
+    border: 1px solid black;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px;
+}
+.table
+{
+   overflow: auto;
+   white-space: nowrap;
+}
+table
+{
+   border-spacing: 0px;
+}
 .statements
 {
     padding: 5px;
@@ -229,4 +250,14 @@ bl
 .statements_io
 {
     font-size: 18px;
+}
+.dop_name
+{
+    font-size: 22px;
+}
+.dop_info
+{
+    font-size: 16px;
+    display: none;
+    background: #f3f3f3;
 }

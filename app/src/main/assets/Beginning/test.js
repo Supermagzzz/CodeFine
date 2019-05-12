@@ -3,6 +3,20 @@ function copyLink(_link)
     Android.copyLink(_link);
 }
 
+function openDopInfo(id)
+{
+    if(document.getElementById(id).style.display == 'block')
+    {
+        document.getElementById(id).style.display = 'none';
+        document.getElementById("dopName" + id).innerHTML = 'Нажмите, чтобы открыть';
+    }
+    else
+    {
+        document.getElementById(id).style.display = 'block';
+        document.getElementById("dopName" + id).innerHTML = 'Нажмите, чтобы закрыть';
+    }
+}
+
 function goToTask()
 {
     Android.goToTask();
