@@ -265,12 +265,14 @@
                         <br>
                         <bl>int</bl> main<re>()</re><br>
                         <re>{</re><br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<bl>int</bl> a, b;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> <gr>"Введите два числа"</gr> <re><<</re> <gr>endl</gr>;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cin</gr> <re>>></re> a <re>>></re> b;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> <gr>"Сумма равна "</gr> <re><<</re> a + b <re><<</re> <gr>endl</gr>;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> <gr>"Разность равна "</gr> <re><<</re> a - b <re><<</re> <gr>endl</gr>;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<gr>cout</gr> <re><<</re> <gr>"Произведение равно "</gr> <re><<</re> a * b <re><<</re> <gr>endl</gr>;<br>
+                        <t><gr>cout.precision(<pu>3</pu>)</gr>;</t><br>
+                        <t><gr>cout <re><<</re> fixed</gr>;</t><br>
+                        <t><bl>int</bl> a, b;<br></t>
+                        <t><gr>cout</gr> <re><<</re> <gr>"Enter two fractional numbers"</gr> <re><<</re> <gr>endl</gr>;<br></t>
+                        <t><gr>cin</gr> <re>>></re> a <re>>></re> b;<br></t>
+                        <t><gr>cout</gr> <re><<</re> <gr>"The sum is "</gr> <re><<</re> a + b <re><<</re> <gr>endl</gr>;<br></t>
+                        <t><gr>cout</gr> <re><<</re> <gr>"The difference is "</gr> <re><<</re> a - b <re><<</re> <gr>endl</gr>;<br></t>
+                        <t><gr>cout</gr> <re><<</re> <gr>"The product is "</gr> <re><<</re> a * b <re><<</re> <gr>endl</gr>;<br></t>
                         <re>}</re><br><br>
                         <hr class="last_code_hr">
                     </code>

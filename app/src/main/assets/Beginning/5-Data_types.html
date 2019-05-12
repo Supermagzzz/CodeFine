@@ -14,7 +14,7 @@
             - целочисленный тип данных. Но существуют и другие. Что делать, если вам нужно хранить строку или дробное число? Сейчас разберемся.
         </p>
         <p>
-            Чтобы хранить дробные значения используется тип данных <b>float</b>.
+            Чтобы хранить дробные значения существует тип данных <b>float</b>.
             <div class="code_block">
                 <code>
                     <hr>
@@ -23,9 +23,50 @@
                 </code>
             </div>
             Дробная часть числа записывается через точку. Все операции такие же, как и у <b>int</b>, только поддерживают дробную часть.<br>
-            Операция деления производится нормальным образом <b>(3.0 / 2.0 = 1.5)</b>. Операция остатка от деления невозможна.<br>
+            Операция деления производится без округления <b>(3.0 / 2.0 = 1.5)</b>. Операция остатка от деления невозможна.<br>
+            Если вы не пишите число через точку, то оно считается за целое. Например<br>
+            <b>3 / 2 = 1</b><br>
+            <b>3.0 / 2.0 = 1.5</b><br>
+            Но если хоть одно число дробное, то результат тоже будет дробным. Например.<br>
+            <b>3.0 / 2 = 1.5</b>
+        </p>
+        <p>
+            Чтобы указать комплиятору сколько цифр после точки вы хотите выводить используются следующие команды.
+            <div class="code_block">
+                <code>
+                    <hr>
+                    <t><gr>cout.precision(<pu>3</pu>)</gr>;</t><br>
+                    <t><gr>cout <re><<</re> fixed</gr>;</t><br>
+                    <hr>
+                </code>
+            </div>
+            Команда <b>cout.precision(x)</b> указывает, что нужно выводить x цифр после запятой. Если вы укажете 0, то будут выводится целые числа.
+            Команда <b>cout << fixed</b> запрещает вывод чисел в научной форме (Например, 1,3e-10).<br>
+            Например, вот полный код программы, которая читает два дробных числа и выводит их сумму, разность, произведение и частное.
+            <div class="code_block">
+                <code>
+                    <hr>
+                    <gr>#include &lt;iostream&gt;</gr><br>
+                    <br>
+                    <bl> using namespace </bl><gr>std;</gr><br>
+                    <br>
+                    <bl>int</bl> main<re>()</re><br>
+                    <re>{</re><br>
+                    <t><gr>cout.precision(<pu>3</pu>)</gr>;</t><br>
+                    <t><gr>cout <re><<</re> fixed</gr>;</t><br>
+                    <t><bl>double</bl> a, b;<br></t>
+                    <t><gr>cout</gr> <re><<</re> <gr>"Enter two fractional numbers"</gr> <re><<</re> <gr>endl</gr>;<br></t>
+                    <t><gr>cin</gr> <re>>></re> a <re>>></re> b;<br></t>
+                    <t><gr>cout</gr> <re><<</re> <gr>"The sum is "</gr> <re><<</re> a + b <re><<</re> <gr>endl</gr>;<br></t>
+                    <t><gr>cout</gr> <re><<</re> <gr>"The difference is "</gr> <re><<</re> a - b <re><<</re> <gr>endl</gr>;<br></t>
+                    <t><gr>cout</gr> <re><<</re> <gr>"The product is "</gr> <re><<</re> a * b <re><<</re> <gr>endl</gr>;<br></t>
+                    <t><gr>cout</gr> <re><<</re> <gr>"The quotient is "</gr> <re><<</re> a / b <re><<</re> <gr>endl</gr>;<br></t>
+                    <re>}</re><br><br>
+                    <hr class="last_code_hr">
+                </code>
+            </div>
             <br>
-            <div class="dop_name"> Дополнительная информация<br></div>
+            <div class="dop_name"> --Дополнительное чтение--<br></div>
             <div class="dop_open" id="dopNamed1" onclick="openDopInfo('d1')"> Нажмите, чтобы открыть</div><br>
             <div class="dop_info" id="d1">
             <hr>
@@ -45,7 +86,11 @@
             точно.<br>
             </div>
             <hr>
-            Старайтесь использовать целочисленные типы данных там, где это возможно. <b>int</b> может хранить лишь числа от -2147483648 до 2147483648. Как же быть, если нужно использовать большие числа? Первое решение использовать другие типы данных.
+            Главное из "дополнительного чтения" сверху. Старайтесь использовать целочисленные типы данных там, где это возможно, так как дробные могут давать погрешность.
+            Тип <b>int</b> занимает 4 байта и может хранить только числа от -2147483648 до 2147483648.
+        </p>
+        <p>
+            Как же быть, если нужно использовать большие или более точные числа? Первое решение использовать другие типы данных.
             <div class="h">Численные типы данных</div>
             <hr>
             <div class="table">
@@ -62,8 +107,157 @@
                 </table>
             </div>
             <br>
-            На практике обычно используют <b>int</b>, а в случае недостатка размера чисел используют <b>long long</b> жертвуя памятью. Из дробных чисел обычно используют <b>double</b>.
+            На практике обычно используют <b>int</b>, а в случае недостатка размера чисел используют <b>long long</b> жертвуя памятью.
+            Для дробных чисел обычно используют <b>double</b>.<br>
+            Обычно long long (18 знаков) хватает, чтобы хранить любые числа, возможные в вашей программе. Но если вдруг вам нужны огромные числа,
+            то можно использовать алгоритмы длинной арифметики. Мы расскажем о них в продвинутом курсе.<br>
+            Нельзя создавать переменные с разными типами данных в одной команде. Правильно делать так.
+            <div class="code_block">
+                <code>
+                    <hr>
+                    <t><gr>string</gr> a, b, c;</t><br>
+                    <t><bl>int</bl> d, e, f;</t><br>
+                    <hr>
+                </code>
+            </div>
+            Также нельзя давать переменным имена совпадающие с названиями типов данных, или каких либо функций, которые вы подключили.<br>
+            То есть запрещено писать так. <b>int cout; int int;</b>
         </p>
+        <p>
+            Существует логический тип <b>bool</b>, который может хранить только значения 0 или 1 (правда или ложь). Это очень нужный тип и скоро
+            вы сами убедитесь в этом.
+        </p>
+        <p>
+            <div class="h">Строковые типы данных</div>
+            Чтобы использовать строки в C++ нужно подключить библиотеку <b>string</b>.
+            <div class="code_block">
+                <code>
+                    <hr>
+                    <gr>#include &lt;string&gt;</gr>
+                    <hr>
+                </code>
+            </div>
+            Теперь вы можете использовать тип <b>string</b>. Например
+            <div class="code_block">
+                <code>
+                    <hr>
+                    <t><gr>string</gr> a = <gr>"Hello world!"</gr>;</t>
+                    <hr>
+                </code>
+            </div>
+            Или
+            <div class="code_block">
+                <code>
+                    <hr>
+                    <gr>#include &lt;iostream&gt;</gr><br>
+                    <gr>#include &lt;string&gt;</gr><br>
+                    <br>
+                    <bl> using namespace </bl><gr>std;</gr><br>
+                    <br>
+                    <bl>int</bl> main<re>()</re><br>
+                    <re>{</re><br>
+                    <t><gr>string</gr> a;<br></t>
+                    <t><gr>cout</gr> <re><<</re> <gr>"What is your name?"</gr> <re><<</re> <gr>endl</gr>;<br></t>
+                    <t><gr>cin</gr> <re>>></re> a;<br></t>
+                    <t><gr>cout</gr> <re><<</re> <gr>"Hi, "</gr> <re><<</re> a <re><<</re> <gr>"!"</gr>;<br></t>
+                    <re>}</re><br><br>
+                    <hr class="last_code_hr">
+                </code>
+            </div>
+            Также вы можете использовать тип <b>char</b>, хранящий один символ. Для использования этого типа не нужно подключать библиотеки.
+            <div class="code_block">
+                <code>
+                    <hr>
+                    <t><bl>char</bl> a = <gr>'T'</gr>;</t>
+                    <hr>
+                </code>
+            </div>
+            Обратите внимание, что строки хранятся в двойных кавычках, а символы в одинарных.<br>
+            Давайте повторим весь пройденный материал написав программу-анкету.
+            <div class="code_block">
+                <code>
+                    <hr>
+                    <gr>#include &lt;iostream&gt;</gr><br>
+                    <gr>#include &lt;string&gt;</gr><br>
+                    <br>
+                    <bl> using namespace </bl><gr>std;</gr><br>
+                    <br>
+                    <bl>int</bl> main<re>()</re><br>
+                    <re>{</re><br>
+                    <t><gr>cout.precision(<pu>1</pu>)</gr>;<br></t>
+                    <t><gr>cout <re><<</re> fixed</gr>;<br></t>
+                    <t><gr>string</gr> name, country;<br></t>
+                    <t><bl>int</bl> age, favorite, countFriends;</t><br>
+                    <t><gr>cout</gr> <re><<</re> <gr>"What is your name?"</gr> <re><<</re> <gr>endl</gr>;<br></t>
+                    <t><gr>cin</gr> <re>>></re> name;<br></t>
+                    <t><gr>cout</gr> <re><<</re> <gr>"Where are you live?"</gr> <re><<</re> <gr>endl</gr>;<br></t>
+                    <t><gr>cin</gr> <re>>></re> country;<br></t>
+                    <t><gr>cout</gr> <re><<</re> <gr>"How old are you?"</gr> <re><<</re> <gr>endl</gr>;<br></t>
+                    <t><gr>cin</gr> <re>>></re> age;<br></t>
+                    <t><gr>cout</gr> <re><<</re> <gr>"What is your favorite number?"</gr> <re><<</re> <gr>endl</gr>;<br></t>
+                    <t><gr>cin</gr> <re>>></re> favorite;<br></t>
+                    <t><gr>cout</gr> <re><<</re> <gr>"How many friends do you invite to your party?"</gr> <re><<</re> <gr>endl</gr>;<br></t>
+                    <t><gr>cin</gr> <re>>></re> countFriends;<br></t>
+                    <t><gr>cout</gr> <re><<</re> <gr>"Hi, "</gr> <re><<</re> name <re><<</re> <gr>" from "</gr> <re><<</re> country <re><<</re> <gr>"!"</gr> <re><<</re> <gr>endl</gr>;<br></t>
+                    <t><gr>cout</gr> <re><<</re> <gr>"Sum of your age and favorite number is "</gr> <re><<</re> age + favorite <re><<</re> <gr>endl</gr>;<br></t>
+                    <t><gr>cout</gr> <re><<</re> <gr>"If you have one cake at the party, everyone will get "</gr> <re><<</re> <pu>1.0</pu> / (countFriends + <pu>1</pu>) * <pu>100</pu> <re><<</re> <gr>"% from it"</gr> <re><<</re> <gr>endl</gr>;<br></t>
+                    <re>}</re><br><br>
+                    <hr class="last_code_hr">
+                </code>
+            </div>
+            Чтобы закрепить пройденный материал, решите задачи на использование переменных.
+            <div class="taskLink" onclick="goToTask()">Перейти к задачам</div>
+        </p>
+        <div class="test">
+            <div class="testTitle">Тест</div>
+            <hr>
+            <form onsubmit="checkForm(3); return false" name="testForm">
+                <div class="test_stm">1. Какой из этих типов данных занимает больше всего памяти?</div><br>
+                <div class="question" id="question0">
+                    <span class="que0" onclick="c(0, 0)"><input type="radio" name="0" value="0"> int<br></span>
+                    <span class="que0" onclick="c(0, 1)"><input type="radio" name="0" value="1"> long long<br></span>
+                    <span class="que0" onclick="c(0, 2)"><input type="radio" name="0" value="0"> short<br></span>
+                    <span class="que0" onclick="c(0, 3)"><input type="radio" name="0" value="0"> float<br></span>
+                </div>
+                <br>
+                <div class="test_stm">2. Что выведет программа ниже?</div><br>
+                <div class="question" id="question1">
+                    <div class="code_block">
+                        <code>
+                            <hr>
+                            <gr>#include &lt;iostream&gt;</gr><br>
+                            <br>
+                            <bl> using namespace </bl><gr>std;</gr><br>
+                            <br>
+                            <bl>int</bl> main<re>()</re><br>
+                            <re>{</re><br>
+                            <t><gr>cout.precision(<pu>3</pu>)</gr>;<br></t>
+                            <t><gr>cout <re><<</re> fixed</gr>;<br></t>
+                            <t><bl>int</bl> a = <pu>5</pu>, b = <pu>2</pu>;<br></t>
+                            <t><gr>cout</gr> <re><<</re> a * <pu>1.0</pu> / b </t><br>
+                            <re>}</re><br><br>
+                            <hr class="last_code_hr">
+                        </code>
+                    </div>
+                    <span class="que1" onclick="c(1, 0)"><input type="radio" name="1" value="0"> 2<br></span>
+                    <span class="que1" onclick="c(1, 1)"><input type="radio" name="1" value="0"> 2.5<br></span>
+                    <span class="que1" onclick="c(1, 2)"><input type="radio" name="1" value="1"> 2.500<br></span>
+                </div>
+                <br>
+                <div class="test_stm">3. Почему плохо использовать дробные типы данных?</div><br>
+                <div class="question" id="question2">
+                    <span class="que2" onclick="c(2, 0)"><input type="radio" name="2" value="1"> Они имеют погрешность <br></span>
+                    <span class="que2" onclick="c(2, 1)"><input type="radio" name="2" value="0"> Они занимают много памяти <br></span>
+                    <span class="que2" onclick="c(2, 2)"><input type="radio" name="2" value="0"> Операции с ними выполняются долго <br></span>
+                </div>
+                <br>
+                <div style="width: 100%; text-align: center">
+                    <div class="testError hide" id="testError">Ответьте на все вопросы<br></div>
+                    <div class="testResult hide" id="testResult"></div>
+                    <input type="submit" value="Проверить" class="submit">
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 </body>
