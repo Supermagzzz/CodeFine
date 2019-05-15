@@ -57,6 +57,12 @@ public class beginning_course extends AppCompatActivity {
                 intent.putExtra("id", 5);
                 startActivity(intent);
                 break;
+            case R.id.article6:
+                intent = new Intent(beginning_course.this, Article.class);
+                intent.putExtra("site", "6-Conditionals.html");
+                intent.putExtra("id", 6);
+                startActivity(intent);
+                break;
             case R.id.tasks2:
                 intent = new Intent(beginning_course.this, TaskActivity.class);
                 intent.putExtra("id", 2);

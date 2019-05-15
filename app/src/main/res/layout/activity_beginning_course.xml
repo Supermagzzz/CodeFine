@@ -151,7 +151,7 @@
                                 android:fontFamily="@font/vsl"
                                 android:gravity="center_vertical"
                                 android:onClick="onClick"
-                                android:paddingLeft="70dp"
+                                android:paddingLeft="60dp"
                                 android:text="@string/introduction"
                                 android:textColor="@android:color/background_light"
                                 android:textSize="24sp" />
@@ -207,7 +207,7 @@
                                 android:fontFamily="@font/vsl"
                                 android:gravity="center_vertical"
                                 android:onClick="onClick"
-                                android:paddingLeft="70dp"
+                                android:paddingLeft="60dp"
                                 android:text="@string/installing"
                                 android:textColor="@android:color/background_light"
                                 android:textSize="24sp" />
@@ -264,7 +264,7 @@
                                 android:fontFamily="@font/vsl"
                                 android:gravity="center_vertical"
                                 android:onClick="onClick"
-                                android:paddingLeft="70dp"
+                                android:paddingLeft="60dp"
                                 android:text="@string/first_program"
                                 android:textColor="@android:color/background_light"
                                 android:textSize="24sp" />
@@ -321,7 +321,7 @@
                                 android:fontFamily="@font/vsl"
                                 android:gravity="center_vertical"
                                 android:onClick="onClick"
-                                android:paddingLeft="70dp"
+                                android:paddingLeft="60dp"
                                 android:text="@string/variables"
                                 android:textColor="@android:color/background_light"
                                 android:textSize="24sp" />
@@ -378,13 +378,70 @@
                                 android:fontFamily="@font/vsl"
                                 android:gravity="center_vertical"
                                 android:onClick="onClick"
-                                android:paddingLeft="70dp"
+                                android:paddingLeft="60dp"
                                 android:text="@string/data_types"
                                 android:textColor="@android:color/background_light"
                                 android:textSize="24sp" />
 
                             <Button
                                 android:id="@+id/tasks5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:background="@color/nil"
+                                android:onClick="onClick" />
+
+                            <Button
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3"
+                                android:background="@color/nil" />
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="3dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="10"
+                            android:adjustViewBounds="true"
+                            android:cropToPadding="false"
+                            android:onClick="onClick"
+                            android:paddingLeft="30dp"
+                            app:srcCompat="@drawable/blue_name_art" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp">
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="3" />
+
+                            <TextView
+                                android:id="@+id/article6"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/vsl"
+                                android:gravity="center_vertical"
+                                android:onClick="onClick"
+                                android:paddingLeft="60dp"
+                                android:text="@string/if_else"
+                                android:textColor="@android:color/background_light"
+                                android:textSize="24sp" />
+
+                            <Button
+                                android:id="@+id/tasks6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="3"
