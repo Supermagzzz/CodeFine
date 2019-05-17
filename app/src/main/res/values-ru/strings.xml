@@ -25,4 +25,5 @@
     <string name="variables">Переменные</string>
     <string name="data_types">Типы данных</string>
     <string name="if_else">Условия</string>
+    <string name="loops">Циклы</string>
 </resources>
