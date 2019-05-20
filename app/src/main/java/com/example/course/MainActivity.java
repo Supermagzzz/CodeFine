@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView prbAdvanced;
     TextView BegRateText;
     SharedPreferences sPref;
-    int maxBegRate = 58;
+    int maxBegRate = 93;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

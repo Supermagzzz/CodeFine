@@ -371,6 +371,56 @@
             Еще раз внимательно изучите все примеры кода. Для закрепления полученной информации решите следующие задачи.
             <div class="taskLink" onclick="goToTask()">Перейти к задачам</div>
         </p>
+        <div class="test">
+            <div class="testTitle">Тест</div>
+            <hr>
+            <form onsubmit="checkForm(2); return false" name="testForm">
+                <div class="test_stm">1. Сколько итераций сделает этот цикл?</div><br>
+                <div class="question" id="question0">
+                    <div class="code_block">
+                        <code>
+                            <hr>
+                                <bl>for</bl>(<bl>int</bl> i <re>=</re> <pu>0</pu>; i <re><</re> <pu>5</pu>; i <re>+=</re> <pu>3</pu>)<br>
+                            <hr>
+                        </code>
+                    </div>
+                    <span class="que0" onclick="c(0, 0)"><input type="radio" name="0" value="0"> 0<br></span>
+                    <span class="que0" onclick="c(0, 1)"><input type="radio" name="0" value="0"> 1<br></span>
+                    <span class="que0" onclick="c(0, 2)"><input type="radio" name="0" value="1"> 2<br></span>
+                    <span class="que0" onclick="c(0, 3)"><input type="radio" name="0" value="0"> 3<br></span>
+                    <span class="que0" onclick="c(0, 4)"><input type="radio" name="0" value="0"> 4<br></span>
+                    <span class="que0" onclick="c(0, 5)"><input type="radio" name="0" value="0"> 5<br></span>
+                </div>
+                <br>
+                <div class="test_stm">2. Что выведет программа ниже?</div><br>
+                <div class="question" id="question1">
+                    <div class="code_block">
+                        <code>
+                            <hr>
+                            <bl>int</bl> x <re>=</re> <pu>0</pu>;<br>
+                            <bl>while</bl>(x <re>*</re> x <re>+</re> x <re>!= </re> <pu>6</pu>)<br>
+                            {<br>
+                            <t>x++;</t><br>
+                            }<br>
+                            <gr>cin </gr> <re><<</re> x;
+                            <hr>
+                        </code>
+                    </div>
+                    <span class="que1" onclick="c(1, 0)"><input type="radio" name="1" value="0"> 0<br></span>
+                    <span class="que1" onclick="c(1, 1)"><input type="radio" name="1" value="0"> 1<br></span>
+                    <span class="que1" onclick="c(1, 2)"><input type="radio" name="1" value="1"> 2<br></span>
+                    <span class="que1" onclick="c(1, 3)"><input type="radio" name="1" value="0"> 3<br></span>
+                    <span class="que1" onclick="c(1, 4)"><input type="radio" name="1" value="0"> 4<br></span>
+                    <span class="que1" onclick="c(1, 5)"><input type="radio" name="1" value="0"> 5<br></span>
+                </div>
+                <br>
+                <div style="width: 100%; text-align: center">
+                    <div class="testError hide" id="testError">Ответьте на все вопросы<br></div>
+                    <div class="testResult hide" id="testResult"></div>
+                    <input type="submit" value="Проверить" class="submit">
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 </body>
