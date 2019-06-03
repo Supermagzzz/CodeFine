@@ -30,9 +30,8 @@ public class Article extends AppCompatActivity {
     @SuppressLint("JavascriptInterface")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_article);
+        Lib.initActivity(this, R.layout.activity_article);
+
         myBrowser = findViewById(R.id.my_browser);
         WebSettings webSettings = myBrowser.getSettings();
         webSettings.setJavaScriptEnabled(true);

@@ -1,6 +1,7 @@
 package com.example.course;
 
 import android.app.FragmentManager;
+import android.bluetooth.BluetoothClass;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -14,6 +15,12 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,15 +29,22 @@ public class MainActivity extends AppCompatActivity {
     ImageView prbAdvanced;
     TextView BegRateText;
     SharedPreferences sPref;
-    int maxBegRate = 93;
+    int maxBegRate = 0;
+    Lib lib = new Lib();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        for(int i = 0; i < lib.rate1.length; i++)
+        {
+            for(int j = 0; j < lib.rate1[i].length; j++)
+            {
+                maxBegRate += lib.rate1[i][j];
+            }
+        }
+
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_main);
+        Lib.initActivity(this, R.layout.activity_main);
+
         prbBeginning = findViewById(R.id.prb_beginning);
         prbAlgorithms = findViewById(R.id.prb_algorithms);
         prbAdvanced = findViewById(R.id.prb_advanced);

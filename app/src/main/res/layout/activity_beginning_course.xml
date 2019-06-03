@@ -7,20 +7,17 @@
     android:theme="@style/AppTheme"
     tools:context=".beginning_course">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingLeft="-1dp"
-        android:paddingRight="-1dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/background"
             android:orientation="vertical"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="214dp">
+            android:paddingLeft="-1dp"
+            android:paddingRight="-1dp"
+            android:background="@drawable/background">
 
             <FrameLayout
                 android:id="@+id/Header"
@@ -88,435 +85,565 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="214dp">
 
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:id="@+id/imageView7"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:adjustViewBounds="true"
-                            android:cropToPadding="false"
-                            android:paddingTop="10dp"
-                            app:srcCompat="@drawable/blue_name_glav" />
-
-                        <TextView
-                            android:id="@+id/textView7"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:fontFamily="@font/vsl"
-                            android:gravity="center_vertical"
-                            android:paddingLeft="20dp"
-                            android:text="@string/Beginning"
-                            android:textColor="@android:color/background_light"
-                            android:textSize="30sp" />
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="3dp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="10"
-                            android:adjustViewBounds="true"
-                            android:cropToPadding="false"
-                            android:onClick="onClick"
-                            android:paddingLeft="30dp"
-                            app:srcCompat="@drawable/blue_name_art" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            android:paddingLeft="5dp"
-                            android:paddingRight="5dp">
-
-                            <Space
+                            <FrameLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3" />
+                                android:layout_height="match_parent">
 
-                            <TextView
-                                android:id="@+id/article1"
+                                <ImageView
+                                    android:id="@+id/imageView7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:adjustViewBounds="true"
+                                    android:cropToPadding="false"
+                                    android:paddingTop="10dp"
+                                    app:srcCompat="@drawable/blue_name_glav" />
+
+                                <TextView
+                                    android:id="@+id/textView7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:fontFamily="@font/vsl"
+                                    android:gravity="center_vertical"
+                                    android:paddingLeft="20dp"
+                                    android:text="@string/Beginning"
+                                    android:textColor="@android:color/background_light"
+                                    android:textSize="30sp" />
+                            </FrameLayout>
+
+                            <FrameLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/vsl"
-                                android:gravity="center_vertical"
-                                android:onClick="onClick"
-                                android:paddingLeft="60dp"
-                                android:text="@string/introduction"
-                                android:textColor="@android:color/background_light"
-                                android:textSize="24sp" />
+                                android:layout_marginTop="3dp">
 
-                            <Button
-                                android:id="@+id/tasks1"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3"
-                                android:background="@color/nil"
-                                android:onClick="onClick" />
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="10"
+                                    android:adjustViewBounds="true"
+                                    android:cropToPadding="false"
+                                    android:onClick="onClick"
+                                    android:paddingLeft="30dp"
+                                    app:srcCompat="@drawable/blue_name_art" />
 
-                            <Button
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3"
-                                android:background="@color/nil" />
-                        </LinearLayout>
-                    </FrameLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp">
 
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="3dp">
+                                    <Space
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3" />
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="10"
-                            android:adjustViewBounds="true"
-                            android:cropToPadding="false"
-                            android:onClick="onClick"
-                            android:paddingLeft="30dp"
-                            app:srcCompat="@drawable/blue_name_art" />
+                                    <TextView
+                                        android:id="@+id/article1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/vsl"
+                                        android:gravity="center_vertical"
+                                        android:onClick="onClick"
+                                        android:paddingLeft="60dp"
+                                        android:text="@string/introduction"
+                                        android:textColor="@android:color/background_light"
+                                        android:textSize="24sp" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            android:paddingLeft="5dp"
-                            android:paddingRight="5dp">
+                                    <Button
+                                        android:id="@+id/tasks1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:background="@color/nil"
+                                        android:onClick="onClick" />
 
-                            <Space
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3" />
+                                    <Button
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:background="@color/nil" />
+                                </LinearLayout>
+                            </FrameLayout>
 
-                            <TextView
-                                android:id="@+id/article2"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/vsl"
-                                android:gravity="center_vertical"
-                                android:onClick="onClick"
-                                android:paddingLeft="60dp"
-                                android:text="@string/installing"
-                                android:textColor="@android:color/background_light"
-                                android:textSize="24sp" />
-
-                            <Button
-                                android:id="@+id/tasks2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3"
-                                android:background="@color/nil"
-                                android:onClick="onClick" />
-
-                            <Button
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3"
-                                android:background="@color/nil" />
-                        </LinearLayout>
-
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="3dp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="10"
-                            android:adjustViewBounds="true"
-                            android:cropToPadding="false"
-                            android:onClick="onClick"
-                            android:paddingLeft="30dp"
-                            app:srcCompat="@drawable/blue_name_art" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            android:paddingLeft="5dp"
-                            android:paddingRight="5dp">
-
-                            <Space
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3" />
-
-                            <TextView
-                                android:id="@+id/article3"
+                            <FrameLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/vsl"
-                                android:gravity="center_vertical"
-                                android:onClick="onClick"
-                                android:paddingLeft="60dp"
-                                android:text="@string/first_program"
-                                android:textColor="@android:color/background_light"
-                                android:textSize="24sp" />
+                                android:layout_marginTop="3dp">
 
-                            <Button
-                                android:id="@+id/tasks3"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3"
-                                android:background="@color/nil"
-                                android:onClick="onClick" />
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="10"
+                                    android:adjustViewBounds="true"
+                                    android:cropToPadding="false"
+                                    android:onClick="onClick"
+                                    android:paddingLeft="30dp"
+                                    app:srcCompat="@drawable/blue_name_art" />
 
-                            <Button
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3"
-                                android:background="@color/nil" />
-                        </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp">
 
-                    </FrameLayout>
+                                    <Space
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3" />
 
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="3dp">
+                                    <TextView
+                                        android:id="@+id/article2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/vsl"
+                                        android:gravity="center_vertical"
+                                        android:onClick="onClick"
+                                        android:paddingLeft="60dp"
+                                        android:text="@string/installing"
+                                        android:textColor="@android:color/background_light"
+                                        android:textSize="24sp" />
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="10"
-                            android:adjustViewBounds="true"
-                            android:cropToPadding="false"
-                            android:onClick="onClick"
-                            android:paddingLeft="30dp"
-                            app:srcCompat="@drawable/blue_name_art" />
+                                    <Button
+                                        android:id="@+id/tasks2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:background="@color/nil"
+                                        android:onClick="onClick" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            android:paddingLeft="5dp"
-                            android:paddingRight="5dp">
+                                    <Button
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:background="@color/nil" />
+                                </LinearLayout>
 
-                            <Space
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3" />
+                            </FrameLayout>
 
-                            <TextView
-                                android:id="@+id/article4"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/vsl"
-                                android:gravity="center_vertical"
-                                android:onClick="onClick"
-                                android:paddingLeft="60dp"
-                                android:text="@string/variables"
-                                android:textColor="@android:color/background_light"
-                                android:textSize="24sp" />
-
-                            <Button
-                                android:id="@+id/tasks4"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3"
-                                android:background="@color/nil"
-                                android:onClick="onClick" />
-
-                            <Button
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3"
-                                android:background="@color/nil" />
-                        </LinearLayout>
-
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="3dp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="10"
-                            android:adjustViewBounds="true"
-                            android:cropToPadding="false"
-                            android:onClick="onClick"
-                            android:paddingLeft="30dp"
-                            app:srcCompat="@drawable/blue_name_art" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            android:paddingLeft="5dp"
-                            android:paddingRight="5dp">
-
-                            <Space
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3" />
-
-                            <TextView
-                                android:id="@+id/article5"
+                            <FrameLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/vsl"
-                                android:gravity="center_vertical"
-                                android:onClick="onClick"
-                                android:paddingLeft="60dp"
-                                android:text="@string/data_types"
-                                android:textColor="@android:color/background_light"
-                                android:textSize="24sp" />
+                                android:layout_marginTop="3dp">
 
-                            <Button
-                                android:id="@+id/tasks5"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3"
-                                android:background="@color/nil"
-                                android:onClick="onClick" />
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="10"
+                                    android:adjustViewBounds="true"
+                                    android:cropToPadding="false"
+                                    android:onClick="onClick"
+                                    android:paddingLeft="30dp"
+                                    app:srcCompat="@drawable/blue_name_art" />
 
-                            <Button
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3"
-                                android:background="@color/nil" />
-                        </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp">
 
-                    </FrameLayout>
+                                    <Space
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3" />
 
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="3dp">
+                                    <TextView
+                                        android:id="@+id/article3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/vsl"
+                                        android:gravity="center_vertical"
+                                        android:onClick="onClick"
+                                        android:paddingLeft="60dp"
+                                        android:text="@string/first_program"
+                                        android:textColor="@android:color/background_light"
+                                        android:textSize="24sp" />
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="10"
-                            android:adjustViewBounds="true"
-                            android:cropToPadding="false"
-                            android:onClick="onClick"
-                            android:paddingLeft="30dp"
-                            app:srcCompat="@drawable/blue_name_art" />
+                                    <Button
+                                        android:id="@+id/tasks3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:background="@color/nil"
+                                        android:onClick="onClick" />
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            android:paddingLeft="5dp"
-                            android:paddingRight="5dp">
+                                    <Button
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:background="@color/nil" />
+                                </LinearLayout>
 
-                            <Space
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3" />
+                            </FrameLayout>
 
-                            <TextView
-                                android:id="@+id/article6"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/vsl"
-                                android:gravity="center_vertical"
-                                android:onClick="onClick"
-                                android:paddingLeft="60dp"
-                                android:text="@string/if_else"
-                                android:textColor="@android:color/background_light"
-                                android:textSize="24sp" />
-
-                            <Button
-                                android:id="@+id/tasks6"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3"
-                                android:background="@color/nil"
-                                android:onClick="onClick" />
-
-                            <Button
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3"
-                                android:background="@color/nil" />
-                        </LinearLayout>
-
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="3dp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="10"
-                            android:adjustViewBounds="true"
-                            android:cropToPadding="false"
-                            android:onClick="onClick"
-                            android:paddingLeft="30dp"
-                            app:srcCompat="@drawable/blue_name_art" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal"
-                            android:paddingLeft="5dp"
-                            android:paddingRight="5dp">
-
-                            <Space
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3" />
-
-                            <TextView
-                                android:id="@+id/article7"
+                            <FrameLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/vsl"
-                                android:gravity="center_vertical"
-                                android:onClick="onClick"
-                                android:paddingLeft="60dp"
-                                android:text="@string/loops"
-                                android:textColor="@android:color/background_light"
-                                android:textSize="24sp" />
+                                android:layout_marginTop="3dp">
 
-                            <Button
-                                android:id="@+id/tasks7"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3"
-                                android:background="@color/nil"
-                                android:onClick="onClick" />
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="10"
+                                    android:adjustViewBounds="true"
+                                    android:cropToPadding="false"
+                                    android:onClick="onClick"
+                                    android:paddingLeft="30dp"
+                                    app:srcCompat="@drawable/blue_name_art" />
 
-                            <Button
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp">
+
+                                    <Space
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3" />
+
+                                    <TextView
+                                        android:id="@+id/article4"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/vsl"
+                                        android:gravity="center_vertical"
+                                        android:onClick="onClick"
+                                        android:paddingLeft="60dp"
+                                        android:text="@string/variables"
+                                        android:textColor="@android:color/background_light"
+                                        android:textSize="24sp" />
+
+                                    <Button
+                                        android:id="@+id/tasks4"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:background="@color/nil"
+                                        android:onClick="onClick" />
+
+                                    <Button
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:background="@color/nil" />
+                                </LinearLayout>
+
+                            </FrameLayout>
+
+                            <FrameLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="3"
-                                android:background="@color/nil" />
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="3dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="10"
+                                    android:adjustViewBounds="true"
+                                    android:cropToPadding="false"
+                                    android:onClick="onClick"
+                                    android:paddingLeft="30dp"
+                                    app:srcCompat="@drawable/blue_name_art" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp">
+
+                                    <Space
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3" />
+
+                                    <TextView
+                                        android:id="@+id/article5"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/vsl"
+                                        android:gravity="center_vertical"
+                                        android:onClick="onClick"
+                                        android:paddingLeft="60dp"
+                                        android:text="@string/data_types"
+                                        android:textColor="@android:color/background_light"
+                                        android:textSize="24sp" />
+
+                                    <Button
+                                        android:id="@+id/tasks5"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:background="@color/nil"
+                                        android:onClick="onClick" />
+
+                                    <Button
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:background="@color/nil" />
+                                </LinearLayout>
+
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="3dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="10"
+                                    android:adjustViewBounds="true"
+                                    android:cropToPadding="false"
+                                    android:onClick="onClick"
+                                    android:paddingLeft="30dp"
+                                    app:srcCompat="@drawable/blue_name_art" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp">
+
+                                    <Space
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3" />
+
+                                    <TextView
+                                        android:id="@+id/article6"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/vsl"
+                                        android:gravity="center_vertical"
+                                        android:onClick="onClick"
+                                        android:paddingLeft="60dp"
+                                        android:text="@string/if_else"
+                                        android:textColor="@android:color/background_light"
+                                        android:textSize="24sp" />
+
+                                    <Button
+                                        android:id="@+id/tasks6"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:background="@color/nil"
+                                        android:onClick="onClick" />
+
+                                    <Button
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:background="@color/nil" />
+                                </LinearLayout>
+
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="3dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="10"
+                                    android:adjustViewBounds="true"
+                                    android:cropToPadding="false"
+                                    android:onClick="onClick"
+                                    android:paddingLeft="30dp"
+                                    app:srcCompat="@drawable/blue_name_art" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp">
+
+                                    <Space
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3" />
+
+                                    <TextView
+                                        android:id="@+id/article7"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/vsl"
+                                        android:gravity="center_vertical"
+                                        android:onClick="onClick"
+                                        android:paddingLeft="60dp"
+                                        android:text="@string/loops"
+                                        android:textColor="@android:color/background_light"
+                                        android:textSize="24sp" />
+
+                                    <Button
+                                        android:id="@+id/tasks7"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:background="@color/nil"
+                                        android:onClick="onClick" />
+
+                                    <Button
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:background="@color/nil" />
+                                </LinearLayout>
+
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="3dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="10"
+                                    android:adjustViewBounds="true"
+                                    android:cropToPadding="false"
+                                    android:onClick="onClick"
+                                    android:paddingLeft="30dp"
+                                    app:srcCompat="@drawable/blue_name_art" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp">
+
+                                    <Space
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3" />
+
+                                    <TextView
+                                        android:id="@+id/article8"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/vsl"
+                                        android:gravity="center_vertical"
+                                        android:onClick="onClick"
+                                        android:paddingLeft="60dp"
+                                        android:text="@string/arrays"
+                                        android:textColor="@android:color/background_light"
+                                        android:textSize="24sp" />
+
+                                    <Button
+                                        android:id="@+id/tasks8"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:background="@color/nil"
+                                        android:onClick="onClick" />
+
+                                    <Button
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:background="@color/nil" />
+                                </LinearLayout>
+
+                            </FrameLayout>
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="3dp">
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="10"
+                                    android:adjustViewBounds="true"
+                                    android:cropToPadding="false"
+                                    android:onClick="onClick"
+                                    android:paddingLeft="30dp"
+                                    app:srcCompat="@drawable/blue_name_art" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp">
+
+                                    <Space
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3" />
+
+                                    <TextView
+                                        android:id="@+id/article9"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/vsl"
+                                        android:gravity="center_vertical"
+                                        android:onClick="onClick"
+                                        android:paddingLeft="60dp"
+                                        android:text="@string/arrays"
+                                        android:textColor="@android:color/background_light"
+                                        android:textSize="24sp" />
+
+                                    <Button
+                                        android:id="@+id/tasks9"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:background="@color/nil"
+                                        android:onClick="onClick" />
+
+                                    <Button
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:background="@color/nil" />
+                                </LinearLayout>
+
+                            </FrameLayout>
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp" />
+
                         </LinearLayout>
-
-                    </FrameLayout>
+                    </ScrollView>
 
                 </LinearLayout>
-            </ScrollView>
 
-        </LinearLayout>
-    </LinearLayout>
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom|center"
+            android:background="@color/colorAccent"
+            app:adSize="SMART_BANNER"
+            app:adUnitId="@string/banner_ad_id" />
+
+    </FrameLayout>
+
 </android.support.constraint.ConstraintLayout>

@@ -6,6 +6,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Handler;
 import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.support.v4.app.FragmentTransaction;
@@ -20,35 +21,21 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.reward.RewardItem;
+import com.google.android.gms.ads.reward.RewardedVideoAd;
+import com.google.android.gms.ads.reward.RewardedVideoAdListener;
+
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
-public class TaskActivity extends AppCompatActivity {
-
-    int[][] ids = {
-            {},
-            {},
-            {1},
-            {2, 3, 4},
-            {5, 6, 7, 8, 9},
-            {10, 11, 12},
-            {13, 14, 15, 16},
-            {17, 18, 19, 20}
-    };
-
-    int[][] rate = {
-            {},
-            {},
-            {1},
-            {1, 1, 2},
-            {1, 3, 1, 10, 7},
-            {2, 2, 6},
-            {3, 2, 10, 6},
-            {2, 6, 10, 17}
-    };
+public class TaskActivity extends AppCompatActivity implements RewardedVideoAdListener {
 
     int myId;
 
@@ -62,13 +49,19 @@ public class TaskActivity extends AppCompatActivity {
     Intent intent;
     WebSettings webSettings;
     ClipboardManager clipboardManager;
+    Lib lib = new Lib();
+    private RewardedVideoAd mRewardedVideoAd;
+    FrameLayout onLoading;
+    boolean stopLoad = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_task);
+        Lib.initActivity(this, R.layout.activity_task);
+        mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
+        mRewardedVideoAd.setRewardedVideoAdListener(this);
+        loadRewardedVideoAd();
+
         myBrowser = findViewById(R.id.my_browser);
         intent = getIntent();
         myId = intent.getIntExtra("id", 0);
@@ -81,6 +74,7 @@ public class TaskActivity extends AppCompatActivity {
         sPref.edit().putInt("A", 100).apply();
         textPointer = findViewById(R.id.pointer);
         textSolve = findViewById(R.id.textSolve);
+        onLoading = findViewById(R.id.onLoad);
 
         webSettings = myBrowser.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -91,14 +85,14 @@ public class TaskActivity extends AppCompatActivity {
         last.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pointer = (pointer - 1 + ids[myId].length) % ids[myId].length;
+                pointer = (pointer - 1 + lib.ids1[myId].length) % lib.ids1[myId].length;
                 updateWebView();
             }
         });
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pointer = (pointer + 1 + ids[myId].length) % ids[myId].length;
+                pointer = (pointer + 1 + lib.ids1[myId].length) % lib.ids1[myId].length;
                 updateWebView();
             }
         });
@@ -113,15 +107,15 @@ public class TaskActivity extends AppCompatActivity {
         solve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(sPref.getBoolean("Beginning_task" + ids[myId][pointer], false))
+                if(sPref.getBoolean("Beginning_task" + lib.ids1[myId][pointer], false))
                 {
-                    sPref.edit().putBoolean("Beginning_task" + ids[myId][pointer], false).apply();
-                    rating -= rate[myId][pointer];
+                    sPref.edit().putBoolean("Beginning_task" + lib.ids1[myId][pointer], false).apply();
+                    rating -= lib.rate1[myId][pointer];
                 }
                 else
                 {
-                    sPref.edit().putBoolean("Beginning_task" + ids[myId][pointer], true).apply();
-                    rating += rate[myId][pointer];
+                    sPref.edit().putBoolean("Beginning_task" + lib.ids1[myId][pointer], true).apply();
+                    rating += lib.rate1[myId][pointer];
                 }
                 updateSolve();
                 sPref.edit().putInt("Beginning_rating", rating).apply();
@@ -157,18 +151,81 @@ public class TaskActivity extends AppCompatActivity {
             case R.id.settings:
                 startActivity(new Intent(this, SettingsActivity.class));
                 break;
+            case R.id.tip:
+                stopLoad = false;
+                onLoading.setVisibility(View.VISIBLE);
+                waitLoading();
+                break;
+            case R.id.backLoad:
+                stopLoad = true;
+                onLoading.setVisibility(View.INVISIBLE);
+                break;
         }
+    }
+
+    public void waitLoading()
+    {
+        if(stopLoad)
+        {
+            stopLoad = false;
+            return;
+        }
+        if(!mRewardedVideoAd.isLoaded()) {
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    waitLoading();
+                }
+            }, 1000);
+        }
+        else
+        {
+            mRewardedVideoAd.show();
+        }
+    }
+
+    @Override
+    public void onRewarded(RewardItem reward)
+    {
+
+    }
+
+    private void loadRewardedVideoAd()
+    {
+        mRewardedVideoAd.loadAd(getResources().getString(R.string.banner_ad_id_tip), new AdRequest.Builder().build());
     }
 
     private void updateSolve()
     {
-        solve.setChecked(sPref.getBoolean("Beginning_task" + ids[myId][pointer], false));
+        solve.setChecked(sPref.getBoolean("Beginning_task" + lib.ids1[myId][pointer], false));
     }
 
     private void updateWebView()
     {
-        myBrowser.loadUrl("file:///android_asset/Beginning/Tasks/" + intent.getIntExtra("id", 0) + "/" + ids[myId][pointer] + ".html");
-        textPointer.setText((pointer + 1) + "/" + ids[myId].length);
+        myBrowser.loadUrl("file:///android_asset/Beginning/Tasks/" + intent.getIntExtra("id", 0) + "/" + lib.ids1[myId][pointer] + ".html");
+        textPointer.setText((pointer + 1) + "/" + lib.ids1[myId].length);
         updateSolve();
     }
+
+    @Override
+    public void onRewardedVideoAdLeftApplication() { }
+    @Override
+    public void onRewardedVideoAdClosed() {
+        onLoading.setVisibility(View.INVISIBLE);
+        loadRewardedVideoAd();
+    }
+    @Override
+    public void onRewardedVideoAdFailedToLoad(int errorCode) { }
+    @Override
+    public void onRewardedVideoAdLoaded() { }
+    @Override
+    public void onRewardedVideoAdOpened() { }
+    @Override
+    public void onRewardedVideoStarted() { }
+    @Override
+    public void onRewardedVideoCompleted() {
+
+    }
+
 }

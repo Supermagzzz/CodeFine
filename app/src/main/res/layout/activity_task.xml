@@ -6,163 +6,206 @@
     android:layout_height="match_parent"
     tools:context=".TaskActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        android:paddingLeft="-1dp"
-        android:paddingRight="-1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <FrameLayout
-            android:id="@+id/Header"
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="-1dp"
+            android:paddingRight="-1dp">
 
-            <ImageView
-                android:id="@+id/imageView4"
+            <FrameLayout
+                android:id="@+id/Header"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:cropToPadding="false"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/header"
-                tools:layout_editor_absoluteX="0dp" />
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/vsl"
-                android:gravity="center"
-                android:text="@string/app_name"
-                android:textColor="@android:color/background_light"
-                android:textSize="36sp" />
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="false"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/header"
+                    tools:layout_editor_absoluteX="0dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/vsl"
+                    android:gravity="center"
+                    android:text="@string/app_name"
+                    android:textColor="@android:color/background_light"
+                    android:textSize="36sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingRight="20dp">
+
+                    <ImageView
+                        android:id="@+id/settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:adjustViewBounds="true"
+                        android:onClick="onClick"
+                        android:scaleType="fitStart"
+                        app:srcCompat="@drawable/settings" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/imageView20"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitStart"
+                        app:srcCompat="@drawable/donates" />
+
+                </LinearLayout>
+
+            </FrameLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:paddingLeft="20dp"
-                android:paddingTop="20dp"
-                android:paddingRight="20dp">
+                android:layout_height="50dp"
+                android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/settings"
+                <Button
+                    android:id="@+id/last"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:adjustViewBounds="true"
-                    android:onClick="onClick"
-                    android:scaleType="fitStart"
-                    app:srcCompat="@drawable/settings" />
+                    android:layout_weight="2"
+                    android:background="@drawable/left_arrow" />
+
+                <TextView
+                    android:id="@+id/pointer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="1/1"
+                    android:textColor="@android:color/background_dark"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/next"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@drawable/right_arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/tip"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textSolve"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/vsl"
+                        android:gravity="right|center_vertical"
+                        android:paddingLeft="5dp"
+                        android:text="@string/solved_task"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+
+                    <CheckBox
+                        android:id="@+id/solve"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:fontFamily="@font/vsl"
+                        android:textSize="1sp" />
+                </LinearLayout>
 
                 <Space
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/nil" />
+
+                <Button
+                    android:id="@+id/tip"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-                <ImageView
-                    android:id="@+id/imageView20"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="3"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitStart"
-                    app:srcCompat="@drawable/donates" />
-
+                    android:layout_weight="1"
+                    android:background="@color/tip"
+                    android:fontFamily="@font/vsl"
+                    android:onClick="onClick"
+                    android:text="@string/tip"
+                    android:textAllCaps="false"
+                    android:textSize="20sp" />
             </LinearLayout>
+
+            <WebView
+                android:id="@+id/my_browser"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom|center"
+            android:background="@color/colorAccent"
+            app:adSize="SMART_BANNER"
+            app:adUnitId="@string/banner_ad_id" />
+
+        <FrameLayout
+            android:id="@+id/onLoad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/onLoading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"
+                android:fontFamily="@font/vsl"
+                android:gravity="center"
+                android:text="LOADING..."
+                android:textColor="@color/browser_actions_bg_grey"
+                android:textSize="45sp"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/backLoad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="70dp"
+                android:onClick="onClick"
+                android:text="BACK"
+                android:textSize="36sp" />
 
         </FrameLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal">
+    </FrameLayout>
 
-            <Button
-                android:id="@+id/last"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:background="@drawable/left_arrow" />
-
-            <TextView
-                android:id="@+id/pointer"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:gravity="center"
-                android:text="1/1"
-                android:textColor="@android:color/background_dark"
-                android:textSize="24sp" />
-
-            <Button
-                android:id="@+id/next"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:background="@drawable/right_arrow" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/tip"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textSolve"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/vsl"
-                    android:gravity="right|center_vertical"
-                    android:paddingLeft="5dp"
-                    android:text="@string/solved_task"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp" />
-
-                <CheckBox
-                    android:id="@+id/solve"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:checked="false"
-                    android:fontFamily="@font/vsl"
-                    android:textSize="1sp" />
-            </LinearLayout>
-
-            <Space
-                android:layout_width="10dp"
-                android:layout_height="match_parent"
-                android:background="@color/nil" />
-
-            <Button
-                android:id="@+id/tip"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/tip"
-                android:fontFamily="@font/vsl"
-                android:text="@string/tip"
-                android:textAllCaps="false"
-                android:textSize="20sp" />
-        </LinearLayout>
-
-        <WebView
-            android:id="@+id/my_browser"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
