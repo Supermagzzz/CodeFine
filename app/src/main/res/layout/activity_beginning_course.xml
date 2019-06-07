@@ -605,7 +605,7 @@
                                         android:gravity="center_vertical"
                                         android:onClick="onClick"
                                         android:paddingLeft="60dp"
-                                        android:text="@string/arrays"
+                                        android:text="@string/std_functions"
                                         android:textColor="@android:color/background_light"
                                         android:textSize="24sp" />
 

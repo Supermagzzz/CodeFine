@@ -27,4 +27,5 @@
     <string name="if_else">Условия</string>
     <string name="loops">Циклы</string>
     <string name="arrays">Массивы</string>
+    <string name="std_functions">Алгоритмы</string>
 </resources>

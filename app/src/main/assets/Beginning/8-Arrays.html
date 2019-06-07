@@ -322,6 +322,31 @@
         Для закрепления материала решите следующие задачи.
         <div class="taskLink" onclick="goToTask()">Перейти к задачам</div>
         </p>
+        <div class="test">
+            <div class="testTitle">Тест</div>
+            <hr>
+            <form onsubmit="checkForm(2); return false" name="testForm">
+                <div class="test_stm">1. Для чего нужны массивы?</div><br>
+                <div class="question" id="question0">
+                    <span class="que0" onclick="c(0, 0)"><input type="radio" name="0" value="1"> Для уменьшения количества кода при использовании большого количества переменных<br></span>
+                    <span class="que0" onclick="c(0, 1)"><input type="radio" name="0" value="0"> Для уменьшения используемой памяти при использовании большого количества переменных <br></span>
+                    <span class="que0" onclick="c(0, 2)"><input type="radio" name="0" value="0"> Для уменьшения используемого времени при использовании большого количества переменных<br></span>
+                </div>
+                <br>
+                <div class="test_stm">2. С помощью каких скобок обращаются к переменным в массиве?</div><br>
+                <div class="question" id="question1">
+                    <span class="que1" onclick="c(1, 0)"><input type="radio" name="1" value="0"> {}<br></span>
+                    <span class="que1" onclick="c(1, 1)"><input type="radio" name="1" value="0"> ()<br></span>
+                    <span class="que1" onclick="c(1, 2)"><input type="radio" name="1" value="1"> []<br></span>
+                </div>
+                <br>
+                <div style="width: 100%; text-align: center">
+                    <div class="testError hide" id="testError">Ответьте на все вопросы<br></div>
+                    <div class="testResult hide" id="testResult"></div>
+                    <input type="submit" value="Проверить" class="submit">
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 </body>
