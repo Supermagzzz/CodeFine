@@ -28,4 +28,5 @@
     <string name="loops">Циклы</string>
     <string name="arrays">Массивы</string>
     <string name="std_functions">Алгоритмы</string>
+    <string name="functions">Функции</string>
 </resources>

@@ -63,9 +63,11 @@ public class Article extends AppCompatActivity {
         @JavascriptInterface
         public void copyLink(String link)
         {
-            ClipData data = ClipData.newPlainText("text", link);
-            clipboardManager.setPrimaryClip(data);
-            Toast.makeText(getApplicationContext(), getResources().getString(R.string.link_copy), Toast.LENGTH_SHORT).show();
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, link);
+            sendIntent.setType("text/plain");
+            startActivity(Intent.createChooser(sendIntent,"Поделиться"));
         }
     }
 
