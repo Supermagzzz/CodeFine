@@ -33,4 +33,5 @@
     <string name="title_activity_article">activity_article</string>
     <string name="title_activity_articles">Articles</string>
     <string name="title_activity_task">TaskActivity</string>
+    <string name="vectors">Vector</string>
 </resources>

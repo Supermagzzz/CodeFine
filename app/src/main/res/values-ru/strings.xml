@@ -29,4 +29,5 @@
     <string name="arrays">Массивы</string>
     <string name="std_functions">Алгоритмы</string>
     <string name="functions">Функции</string>
+    <string name="vectors">Vector</string>
 </resources>
