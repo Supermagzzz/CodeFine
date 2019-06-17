@@ -90,7 +90,12 @@ public class beginning_course extends AppCompatActivity {
                 intent.putExtra("id", 11);
                 startActivity(intent);
                 break;
-
+            case R.id.article12:
+                intent = new Intent(beginning_course.this, Article.class);
+                intent.putExtra("site", "12-Structures.html");
+                intent.putExtra("id", 12);
+                startActivity(intent);
+                break;
 
             case R.id.tasks2:
                 intent = new Intent(beginning_course.this, TaskActivity.class);
@@ -142,7 +147,11 @@ public class beginning_course extends AppCompatActivity {
                 intent.putExtra("id", 11);
                 startActivity(intent);
                 break;
-
+            case R.id.tasks12:
+                intent = new Intent(beginning_course.this, TaskActivity.class);
+                intent.putExtra("id", 12);
+                startActivity(intent);
+                break;
 
             case R.id.settings:
                 startActivity(new Intent(this, SettingsActivity.class));
