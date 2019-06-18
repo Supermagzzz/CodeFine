@@ -261,6 +261,74 @@
             Зная весь этот материал, вам не составит труда в любой момент перейти на другой язык программирования.<br><br>
             Удачи в изучении алгоритмов!</b>
         </p>
+        <div class="taskLink" onclick="goToTask()">Перейти к задачам</div>
+        <br>
+        <div class="test">
+            <div class="testTitle">Тест</div>
+            <hr>
+            <form onsubmit="checkForm(3); return false" name="testForm">
+                <div class="test_stm">1. Зачем нужны структуры?</div><br>
+                <div class="question" id="question0">
+                    <span class="que0" onclick="c(0, 0)"><input type="radio" name="0" value="0"> Для возможности сортировать массивы<br></span>
+                    <span class="que0" onclick="c(0, 1)"><input type="radio" name="0" value="0"> Чтобы ускорить работу программы<br></span>
+                    <span class="que0" onclick="c(0, 2)"><input type="radio" name="0" value="1"> Для создания новых типов данных<br></span>
+                </div>
+                <br>
+                <div class="test_stm">2. Какое максимальное число струтур можно создать в коде?</div><br>
+                <div class="question" id="question1">
+                    <span class="que1" onclick="c(1, 0)"><input type="radio" name="1" value="0"> 1<br></span>
+                    <span class="que1" onclick="c(1, 1)"><input type="radio" name="1" value="0"> 5<br></span>
+                    <span class="que1" onclick="c(1, 2)"><input type="radio" name="1" value="1"> Это число не ограничено<br></span>
+                </div>
+                <br>
+                <div class="test_stm">3. Пусть персонаж из последнего примера ударит сам себя. Заменим строку <b>a.attack(b)</b> на <b>b.attack(b)</b>. Что выведет этот код?</div><br>
+                <div class="code_block_b">
+                    <code>
+                        <re>struct</re> Player<br>
+                        {<br>
+                        <t><gr>string</gr> nickname;</t><br>
+                        <t><bl>int</bl> level;</t><br>
+                        <t><bl>int</bl> health;</t><br>
+                        <t><bl>int</bl> attack;</t><br>
+                        <t></t>Player(<gr>string</gr> _nickname, <bl>int</bl> _attack)<br>
+                        <t></t>{<br>
+                        <t></t><t></t>nickname = _nickname;<br>
+                        <t></t><t></t>level = <pu>0</pu>;<br>
+                        <t></t><t></t>health = <pu>100</pu>;<br>
+                        <t></t><t></t>attack = _attack;<br>
+                        <t></t>}<br>
+                        <t></t><bl>void</bl> nextLevel()<br>
+                        <t></t>{<br>
+                        <t></t><t></t>level++;<br>
+                        <t></t>}<br>
+                        <t></t><bl>void</bl> attack(<gr>Person</gr> enemy)<br>
+                        <t></t>{<br>
+                        <t></t><t></t>enemy.health -= attack;<br>
+                        <t></t>}<br>
+                        };<br>
+                        <br>
+                        <bl>int</bl> main()<br>
+                        {<br>
+                        <t><gr>Player</gr> a(<gr>"Jon123"</gr>, <pu>3</pu>), b(<gr>"Mike321"</gr>, <pu>7</pu>);</t><br>
+                        <t></t>b.attack(b);<br>
+                        <t></t><gr>cout</gr> <re><<</re> b.health;<br>
+                        }<br>
+                    </code>
+                </div>
+                <div class="question" id="question2">
+                    <span class="que1" onclick="c(2, 0)"><input type="radio" name="2" value="0"> 100<br></span>
+                    <span class="que1" onclick="c(2, 1)"><input type="radio" name="2" value="0"> 97<br></span>
+                    <span class="que1" onclick="c(2, 2)"><input type="radio" name="2" value="1"> 93<br></span>
+                    <span class="que1" onclick="c(2, 3)"><input type="radio" name="2" value="0"> 90<br></span>
+                </div>
+                <br>
+                <div style="width: 100%; text-align: center">
+                    <div class="testError hide" id="testError">Ответьте на все вопросы<br></div>
+                    <div class="testResult hide" id="testResult"></div>
+                    <input type="submit" value="Проверить" class="submit">
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 </body>
