@@ -30,4 +30,5 @@
     <string name="std_functions">Алгоритмы</string>
     <string name="functions">Функции</string>
     <string name="vectors">Vector</string>
+    <string name="structures">Структуры</string>
 </resources>
