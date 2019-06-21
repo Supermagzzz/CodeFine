@@ -11,93 +11,94 @@
 		<div class="block">
 			<div class="h">Код из Codeblocks: </div>
 			<hr>
-			<p>
-				<div class="code_block">
-					<code>
-						<hr>
-						<span class="green">#include &lt;iostream&gt;</span><br>
-						<br>
-						<span class="blue"> using namespace </span><span class="green">std;</span><br>
-						<br>
-						<span class="blue">int</span> main<span class="red">()</span><br>
-						<span class="red">{</span><br>
-							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"Hello world!"</span> <span class="red"><<</span><span class="green"> endl</span><span class="red">;</span><br>
-							&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">return</span> <span class="purple">0</span><span class="red">;</span><br>
-						<span class="red">}</span><br>
-						<hr class="last_code_hr">
-					</code>
-				</div>
-			</p>
+			<div class="code_block_b">
+				<code>
+					<span class="green">#include &lt;iostream&gt;</span><br>
+					<br>
+					<span class="blue"> using namespace </span><span class="green">std;</span><br>
+					<br>
+					<span class="blue">int</span> main<span class="red">()</span><br>
+					<span class="red">{</span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"Hello world!"</span> <span class="red"><<</span><span class="green"> endl</span><span class="red">;</span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">return</span> <span class="purple">0</span><span class="red">;</span><br>
+					<span class="red">}</span><br>
+				</code>
+			</div>
 			<p>
 				Разберем программу, которую вы увидели при открытии Codeblocks.
 			</p>
 			<p>
-				Пока вы можете считать, что весь код программы будет находиться внутри фигурных скобок после <b>main()</b><br>
-				(Скоро вы узнаете, что это немного не так).
-				<div class="code_block">
+				Сейчас вы можете думать, что весь код программы будет находиться внутри фигурных скобок после строки <b>int main()</b><br>
+				(Скоро вы узнаете, что это не совсем так).
+			</p>
+				<div class="code_block_b">
 					<code>
-						<hr>
 						<span class="blue">int</span> main<span class="red">()</span><br>
 						<span class="red">{</span><br>
 							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">Ваш код будет находиться тут.</span><br>
 						<span class="red">}</span><br>
-						<hr class="last_code_hr">
 					</code>
 				</div>
+			<p>	
 				Значит, за работу программы отвечают следующие две строчки.
-				<div class="code_block">
+			</p>
+				<div class="code_block_b">
 					<code>
-						<hr>
-							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"Hello world!"</span> <span class="red"><<</span><span class="green"> endl</span><span class="red">;</span><br>
-							&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">return</span> <span class="purple">0</span><span class="red">;</span><br>
-						<hr class="last_code_hr">
+							<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"Hello world!"</span> <span class="red"><<</span><span class="green"> endl</span><span class="red">;</span><br>
+							<span class="blue">return</span> <span class="purple">0</span><span class="red">;</span><br>
 					</code>
 				</div>
+			<p>
 				Первая из них выводит надпись "Hello world!" на экран. <br>
-				<b>cout</b> (Console Out) - Вывод в консоль. <br>
-				Стрелочками <b><<</b> вы отправляете "Hello world!" на вывод в консоль.<br>
-				<b>endl</b> - это символ переноса строки.<br>
-				Каждая строка программы должна заканчиваться символом <b>;</b> . Так компилятор понимает, где кончается строка.<br>
-				Давайте немного попрактикуемся. Напишите свое имя вместо "Hello world!". Учтите, что весь текст в языке <b>C++</b> должен находиться внутри двойных кавычек, также оветуем пока пользоваться только английским алфавитом, так как другие языки, возможно, не будут корректно отображаться (Позже мы покажем, как это исправить). <br>
-				Пример:
-				<div class="code_block">
-					<code>
-						<hr>
-						<span class="green">#include &lt;iostream&gt;</span><br>
-						<br>
-						<span class="blue"> using namespace </span><span class="green">std;</span><br>
-						<br>
-						<span class="blue">int</span> main<span class="red">()</span><br>
-						<span class="red">{</span><br>
-							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"Maxim"</span> <span class="red"><<</span><span class="green"> endl</span><span class="red">;</span><br>
-							&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">return</span> <span class="purple">0</span><span class="red">;</span><br>
-						<span class="red">}</span><br>
-						<hr class="last_code_hr">
-					</code>
-				</div>
+				Команда <b>cout</b> (Console Out) - это команда вывода в консоль. <br>
+				Стрелочками <b><<</b> вы отправляете "Hello world!" на вывод.<br>
+				<b>endl</b> - это символ переноса строки. Отправив его в <b>cout</b>, дальнейший вывод в консоль продолжается с новой строки.
 			</p>
 			<p>
-				Данные выводятся на экран в том порядке, в котором вы передали их с помощью символа <b><<</b>.<br>
-				Например, прошлую программу можно было написать так:
-				<div class="code_block">
+				Каждая строка программы должна заканчиваться символом <b>;</b> , так компилятор понимает где она заканчивается.<br>
+			</p>
+			<p>
+				Давайте попрактикуемся. Напишите свое имя вместо "Hello world!". Учтите, что все текстовые данные в языке <b>C++</b> должны находиться внутри двойных кавычек.
+                Также советуем пока пользоваться только английским алфавитом, так как другие языки, возможно, не будут корректно отображаться (Позже мы покажем, как это исправить). <br>
+				Пример:
+			</p>
+				<div class="code_block_b">
 					<code>
-						<hr>
 						<span class="green">#include &lt;iostream&gt;</span><br>
 						<br>
 						<span class="blue"> using namespace </span><span class="green">std;</span><br>
 						<br>
 						<span class="blue">int</span> main<span class="red">()</span><br>
 						<span class="red">{</span><br>
-							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"M" </span><span class="red"><<</span> <span class="blue">"a" </span><span class="red"><<</span> <span class="blue">"x" </span><span class="red"><<</span> <span class="blue">"i" </span> <span class="red"><<</span><span class="blue">"m" </span> <span class="red"><<</span><span class="green"> endl</span><span class="red">;</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"Max"</span> <span class="red"><<</span><span class="green"> endl</span><span class="red">;</span><br>
 							&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">return</span> <span class="purple">0</span><span class="red">;</span><br>
 						<span class="red">}</span><br>
-						<hr class="last_code_hr">
 					</code>
 				</div>
-				Теперь попробуем использовать <b>endl</b> (символ переноса строки). Все, что вы будете выводить после него, будет отображаться на следующей строке. Чтобы понять лучше, запустите следующий код.
-				<div class="code_block">
+			<p>
+                Запустив код вы должны увидеть свое имя на экране.<br><br>
+				Данные выводятся на экран в том порядке, в котором вы передали их с помощью символа <b><<</b>.<br>
+				Например, прошлую программу можно было написать так:
+			</p>
+				<div class="code_block_b">
 					<code>
-						<hr>
+						<span class="green">#include &lt;iostream&gt;</span><br>
+						<br>
+						<span class="blue"> using namespace </span><span class="green">std;</span><br>
+						<br>
+						<span class="blue">int</span> main<span class="red">()</span><br>
+						<span class="red">{</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"M" </span><span class="red"><<</span> <span class="blue">"a" </span><span class="red"><<</span> <span class="blue">"x"</span> <span class="red"><<</span><span class="green"> endl</span><span class="red">;</span><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">return</span> <span class="purple">0</span><span class="red">;</span><br>
+						<span class="red">}</span><br>
+					</code>
+				</div>
+			<p>
+                Этот код выводит строку <b>"Max"</b> на экран по одному символу. Но результат работы программы не изменится.<br>
+				Теперь попробуем использовать <b>endl</b> (символ переноса строки). Все, что вы будете выводить после него, будет отображаться на следующей строке. Чтобы понять лучше, запустите следующий код.<br>
+			</p>
+				<div class="code_block_b">
+					<code>
 						<span class="green">#include &lt;iostream&gt;</span><br>
 						<br>
 						<span class="blue"> using namespace </span><span class="green">std;</span><br>
@@ -105,17 +106,18 @@
 						<span class="blue">int</span> main<span class="red">()</span><br>
 						<span class="red">{</span><br>
 						&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"Line 1"</span> <span class="red"><<</span><span class="green"> endl</span><span class="red">;</span><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"Line 2"</span> <span class="red"><<</span><span class="green"> endl</span><span class="red">;</span><br>
-							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"Line 3"</span><span class="red">;</span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"Line 2"</span> <span class="red"><<</span><span class="green"> endl</span> <span class="red"><<</span> <span class="blue">"Line 3"</span><span class="red">;</span><br>
 							&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">return</span> <span class="purple">0</span><span class="red">;</span><br>
 						<span class="red">}</span><br>
-						<hr class="last_code_hr">
 					</code>
 				</div>
-				Да, необязательно выводить всю информацию за один раз. Можно использовать <b>cout</b> в любом месте, сколько угодно раз. Например, можно вывести имя ещё и таким способом.
-				<div class="code_block">
+				<p>
+				Как можно увидеть из этого примера, необязательно выводить всю информацию на экран в одной команде. Можно использовать <b>cout</b> в любом месте, сколько угодно раз.
+                A текст будет выводиться в том порядке, в котором вы передали его с помощью стрелочек.<br>
+                Например, можно вывести свое имя ещё и таким способом.
+            	</p>
+				<div class="code_block_b">
 					<code>
-						<hr>
 						<span class="green">#include &lt;iostream&gt;</span><br>
 						<br>
 						<span class="blue"> using namespace </span><span class="green">std;</span><br>
@@ -125,18 +127,15 @@
 							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"M"</span><span class="red">;</span><br>
 							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"a"</span><span class="red">;</span><br>
 							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"x"</span><span class="red">;</span><br>
-							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"i"</span><span class="red">;</span><br>
-							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"m"</span><span class="red">;</span><br>
 							&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">return</span> <span class="purple">0</span><span class="red">;</span><br>
 						<span class="red">}</span><br>
-						<hr class="last_code_hr">
 					</code>
 				</div>
-				А что же значит <b>return 0;</b> ? Это означает конец вашей программы. Весь код после него не выполняться.
-
-				<div class="code_block">
+				<p>
+				А что значит команда <b>return 0;</b> ? Это конец вашей программы. Весь код после этой строки будет игнорироваться.
+				</p>
+				<div class="code_block_b">
 					<code>
-						<hr>
 						<span class="green">#include &lt;iostream&gt;</span><br>
 						<br>
 						<span class="blue"> using namespace </span><span class="green">std;</span><br>
@@ -147,14 +146,14 @@
 							&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">return</span> <span class="purple">0</span><span class="red">;</span><br>
 							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"Line 2"</span><span class="red">;</span><br>
 						<span class="red">}</span><br>
-						<hr class="last_code_hr">
 					</code>
 				</div>
+				<p>
 				На экране будет выведено только "<b>Line 1</b> ".<br>
-				Но если вы хотите, чтобы весь код, вашей программы, выполнился, то необязательно писать <b>return 0;</b> . Такой код, также является правильным.
-				<div class="code_block">
+				Но если вы хотите, чтобы весь код вашей программы выполнился, то необязательно писать <b>return 0;</b> . Этот код также является правильным.
+				</p>
+				<div class="code_block_b">
 					<code>
-						<hr>
 						<span class="green">#include &lt;iostream&gt;</span><br>
 						<br>
 						<span class="blue"> using namespace </span><span class="green">std;</span><br>
@@ -163,36 +162,38 @@
 						<span class="red">{</span><br>
 							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">cout </span> <span class="red"><<</span> <span class="blue">"Hello world!"</span> <span class="red"><<</span><span class="green"> endl</span><span class="red">;</span><br>
 						<span class="red">}</span><br>
-						<hr class="last_code_hr">
 					</code>
 				</div>
-				Мы разобрались, как работает программа из Codeblocks, которая выводила "<b>Hello world!</b>" на экран. Теперь разберем, что делают остальные строчки.
-				<div class="code_block">
+				<p>
+				Мы разобрались, как работает программа из Codeblocks, которая выводила "<b>Hello world!</b> " на экран.
+                Теперь разберем, что делают строчки, которые находятся раньше <b>int main()</b>.
+            	</p>
+				<div class="code_block_b">
 					<code>
-						<hr>
 						<span class="green">#include &lt;iostream&gt;</span><br>
 						<br>
 						<span class="blue"> using namespace </span><span class="green">std;</span><br>
-						<hr class="last_code_hr">
 					</code>
 				</div>
-				Изначально в языке <b>C++</b> очень мало возможностей. Это сделано для того, чтобы ваши программы были быстрыми и занимали мало места. Если вам нужна какая-то дополнительная функциональность, ее можно подключить с помощью библиотек.<br>
+				<p>
+				Изначально в языке <b>C++</b> очень мало возможностей. Это сделано для того, чтобы ваши программы были быстрыми и занимали мало места.
+                Если вам нужна какая-то дополнительная функциональность, то ее можно подключить с помощью библиотек.<br>
 				Библиотека <b>iostream</b> нужна для возможности использования ввода и вывода данных в консоль.<br>
 				<b>iostream</b> - Input Output STREAM (Поток ввода и вывода).<br>
 				Без подключения этой библиотеки <b>C++</b> не будет знать, что такое <b>cout</b> и <b>endl</b>.<br>
 				Для подключения библиотеки, используется команда:
-				<div class="code_block">
+                </p>
+				<div class="code_block_b">
 					<code>
-						<hr>
 						<span class="green">#include &lt;Название вашей библиотеки&gt;</span><br>
-						<hr class="last_code_hr">
 					</code>
 				</div>
-				<b>using namespace std;</b> - это пространство имен. Позже мы расскажем, что это такое, но сейчас можно понимать эту команду так.<br>
-				Все функции, которые вы дополнительно подключаете, имеют приставку <b>std::</b> , а команда <b>using namespace std;</b> убирает эту приставку. Вам никто не запрещает писать и так:
-				<div class="code_block">
+                <p>
+				<b>using namespace std;</b> - это пространство имен. Позже мы расскажем, что это такое, но сейчас можно понимать эту команду так:<br>
+				Все функции, которые вы дополнительно подключаете с помощью библиотек, имеют приставку <b>std::</b> , а команда <b>using namespace std;</b> убирает эту приставку. Вам никто не запрещает писать и так:
+				</p>
+				<div class="code_block_b">
 					<code>
-						<hr>
 						<span class="green">#include &lt;iostream&gt;</span><br>
 						<br>
 						<span class="blue">int</span> main<span class="red">()</span><br>
@@ -200,9 +201,9 @@
 							&nbsp;&nbsp;&nbsp;&nbsp;<span class="green">std::cout </span> <span class="red"><<</span> <span class="blue">"Hello world!"</span> <span class="red"><<</span><span class="green"> std::endl</span><span class="red">;</span><br>
 							&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">return</span> <span class="purple">0</span><span class="red">;</span><br>
 						<span class="red">}</span><br>
-						<hr class="last_code_hr">
 					</code>
 				</div>
+				<p>
 				У этих двух подходов есть свои плюсы и минусы на практике. Но, для обучения, убрать приставку <b>std::</b> будет удобнее. Мы советуем делать так при решении наших задач.
 			</p>
 			<p>
@@ -231,7 +232,7 @@
 			</div>
 			<br>
 			<div class="question" id="question2">
-				<div class="test_stm">3. Что делает "<b>endl</b>"?</div><br>
+				<div class="test_stm">3. Что такое <b>endl</b>?</div><br>
 				<span class="que2" onclick="c(2, 0)"><input type="radio" name="2" value="1"> Это символ переноса строки<br></span>
 				<span class="que2" onclick="c(2, 1)"><input type="radio" name="2" value="0"> Это символ запятой<br></span>
 				<span class="que2" onclick="c(2, 2)"><input type="radio" name="2" value="0"> Означает за конец передачи информации в <b>cout</b><br></span>
