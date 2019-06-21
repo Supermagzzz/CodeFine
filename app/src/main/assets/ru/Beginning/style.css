@@ -1,0 +1,288 @@
+body
+{
+    padding-bottom: 60px;
+}
+.block b
+{
+    font-weight: 400 !important;
+    font-style: italic;
+}
+@font-face
+{
+    font-family: "Vin Slab Pro";
+    src: url("../vsl.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face
+{
+    font-family: "Fira Sans";
+    src: url("../fira.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+.phone
+{
+	margin: 0; 
+	padding: 0; 
+	width: 500px; 
+	background-size: 600px; 
+	margin: 0 auto; 
+	position: absolute; 
+	margin-left: 374px; 
+	z-index: 1; 
+	border: 1px solid black;
+}
+.name
+{
+	font-family: 'Vin Slab Pro'; 
+	text-align: center; 
+	padding-top: 5px; 
+	font-size: 35px;
+	font-weight: bold; 
+	background: #e4e4e7
+}
+.h
+{
+	padding-top: 7px; 
+	font-weight: bold; 
+	font-size: 22px;
+}
+.block
+{
+	padding-left: 10px; 
+	padding-right: 10px; 
+	font-size: 17px; 
+	margin-top: -10px; 
+	color: #000000; 
+	font-family: 'Fira Sans', sans-serif;
+}
+hr
+{
+	margin-top: 2px;
+}
+code
+{
+	font-size: 15px;
+}
+.code_block
+{
+    white-space: nowrap;
+	padding: 5px;
+	overflow: auto;
+	margin-bottom: 5px;
+}
+.code_block_b
+{
+    white-space: nowrap;
+	padding: 5px;
+	overflow: auto;
+	margin-bottom: 5px;
+	border-bottom: solid gray 1px;
+	border-top: solid gray 1px;
+}
+.red
+{
+	color: #ff5555;
+}
+.green
+{
+	color: green;
+}
+.blue
+{
+	color: blue;
+}
+.purple
+{
+	color: #a300d8;
+	font-weight: bold;
+}
+.last_code_hr
+{
+    margin-bottom: -5px;
+}
+.task_name
+{
+    font-family: 'Fira Sans', sans-serif;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 22px;
+    font-weight: bold;
+}
+t
+{
+    padding-left: 30px;
+}
+td
+{
+    border: 1px solid black;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px;
+}
+.table
+{
+   overflow: auto;
+   white-space: nowrap;
+}
+table
+{
+   border-spacing: 0px;
+}
+.statements
+{
+    padding: 5px;
+    font-size: 18px;
+    font-family: 'Fira Sans', sans-serif;
+}
+.input
+{
+    font-size: 16px;
+    margin: 5px;
+    padding: 5px;
+    width: 90%;
+    background: #e4e4e7;
+    font-family: 'Courier New';
+}
+
+.output
+{
+    font-size: 16px;
+    margin: 5px;
+    padding: 5px;
+    width: 90%;
+    background: #e4e4e7;
+    font-family: 'Courier New';
+}
+
+.tests
+{
+    font-family: 'Fira Sans';
+    margin-left: 5px;
+    font-size: 16px;
+}
+re
+{
+	color: #ff5555;
+}
+gr
+{
+    color: green;
+}
+pu
+{
+	color: #9d03d1;
+}
+bl
+{
+    color: blue;
+}
+.taskLink
+{
+    width: 100%;
+    text-align: center;
+    background: #0b0063;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 24px;
+    color: white;
+}
+.link
+{
+    white-space: nowrap;
+    width: 95%;
+    background: #bee2fc;
+    position: absolute;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 30px;
+    line-height: 30px;
+}
+.question
+{
+    padding-bottom: 7px;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    overflow: auto;
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    -webkit-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(44,10,149,0.8);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(44,10,149,0.8);
+}
+.testTitle
+{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+}
+.test
+{
+    font-family: 'Fira Sans';
+}
+.testError
+{
+    font-size: 25px;
+    color: red;
+}
+.testResult
+{
+    color:green;
+    font-size: 25px;
+}
+.submit
+{
+    font-size:20px;
+}
+.hide
+{
+    display:none;
+}
+.task_link
+{
+   width: 90%;
+   padding: 5px;
+}
+.task_link .link
+{
+    width: 90%;
+    padding-left: 5px;
+}
+.statements_io
+{
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.dop_name
+{
+    font-size: 22px;
+}
+.dop_info
+{
+    font-size: 16px;
+    display: none;
+    background: #f3f3f3;
+}
+.error_code
+{
+    background: #ff000036;
+}

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="test.js"></script>
+</head>
+<body>
+<div style="margin: -7px">
+    <div class="name">Циклы</div>
+    <hr>
+    <div class="block">
+        <p>
+            До сих пор каждая команда выполняла одно действие. А что если вам нужно выполнить какую-то операцию миллион раз?
+            Неужели придется писать миллион строчек кода? К счастью нет, для этого есть циклы.
+            <div class="code_block">
+                <hr>
+                <code>
+                    <t><bl>for</bl>(<re>инициализация цикла</re>; <gr>условие продолжения</gr>; <pu>операция, которая выполняется после каждой итерации</pu>)</t><br>
+                    <t>{</t><br>
+                    <t><t><bl>Код который будет повторяться</bl><br></t></t>
+                    <t>}</t><br>
+                </code>
+                <hr>
+            </div>
+            Чаще всего этот цикл используют в следующей форме.
+            <div class="code_block">
+                <hr>
+                <code>
+                    <t><bl>for</bl>(<bl>int</bl> i <re>=</re> <pu>0</pu>; i <re><</re> <pu>1000</pu>; i++)</t><br>
+                    <t>{</t><br>
+                    <t><t><bl>Код который будет повторяться</bl><br></t></t>
+                    <t>}</t><br>
+                </code>
+                <hr>
+            </div>
+            Блок иницализации выполняется перед запуском цикла. В нем мы создаем переменную-счетчик <b>i</b> (такое название
+            для переменной-счетчика обычно используется, если название переменной не должно нести дополнительной информации).<br>
+            Дальше проверяется условие <b>i < 1000</b>. <b>i</b> равно нулю, так что код внутри выполнится.<br>
+            После выполнения кода выполнится операция <b>i++</b> - операция увеличения переменной <b>i</b> на единицу.<br>
+            Теперь условие <b>i < 1000</b> проверяется снова. Так как оно истинно, то код выполнится еще раз и <b>i</b> опять увеличится на единицу.
+            Так будет до тех пор, пока переменная <b>i</b> не станет равна 1000, и условие не окажется ложным.
+        </p>
+        <p>
+            Если подвести краткий итог, то это цикл который выполнит код тысячу раз. А вот цикл который выполнит код миллион раз.
+            <div class="code_block">
+                <hr>
+                <code>
+                    <t><bl>for</bl>(<bl>int</bl> i <re>=</re> <pu>0</pu>; i <re><</re> <pu>1000000</pu>; i++)</t><br>
+                    <t>{</t><br>
+                    <t><t><bl>Код который будет повторяться</bl><br></t></t>
+                    <t>}</t><br>
+                </code>
+                <hr>
+            </div>
+            Давайте напишем код, который выведет текст "Hello" 20 раз.
+            <div class="code_block">
+                <hr>
+                <code>
+                    <t><bl>for</bl>(<bl>int</bl> i <re>=</re> <pu>0</pu>; i <re><</re> <pu>20</pu>; i++)</t><br>
+                    <t>{</t><br>
+                    <t><t><gr>cout</gr> <re><<</re> <gr>"Hello"</gr> <re><<</re> <gr>endl</gr>;<br></t></t>
+                    <t>}</t><br>
+                </code>
+                <hr>
+            </div>
+            Вы также можете использовать переменную-счетчик внутри цикла. Давайте выведем все натуральные четные числа до <b>N</b> включительно.
+            <div class="code_block">
+                <hr>
+                <code>
+                    <t><bl>int</bl> N = <pu>1000</pu>;</t><br>
+                    <t><bl>for</bl>(<bl>int</bl> i <re>=</re> <pu>2</pu>; i <re><=</re> N; i <re>+=</re> <pu>2</pu>)</t><br>
+                    <t>{</t><br>
+                    <t><t><gr>cout</gr> <re><<</re> i <re><<</re> <gr>" "</gr>;<br></t></t>
+                    <t>}</t><br>
+                </code>
+                <hr>
+            </div>
+            Что делает этот код? Инициализация начинается с <b>2</b>, так как это первое четное натуральное число. Следующее число будет на два больше,
+            поэтому после итерации будет выпольняться код <b>i += 2</b>. Так как все числа должны быть меньше либо равны <b>N</b>, то
+            условие продолжения <b>i <= N</b>.<br>
+            Посмотрим на еще один пример применения циклов. Пусть у вас есть результаты выборов в какой-нибудь стране и вы хотите узнать кто победил.
+            На вход программе подается число <b>N</b> - количество голосующих. В следующих <b>N</b> строках будет находится число <b>1</b> или <b>2</b>,
+            которое означает за какого кандидата был отдан голос.<br>
+            Давайте найдем результаты выборов.
+            <div class="code_block">
+                <hr>
+                <code>
+                    <gr>#include &lt;iostream&gt;</gr><br>
+                    <br>
+                    <bl>using namespace std</bl>;<br>
+                    <br>
+                    <bl>int</bl> main()<br>
+                    {<br>
+                    <t><gr>cout.precision(<pu>2</pu>)</gr></t>;<br>
+                    <t><gr>cout <re><<</re> fixed</gr></t>;<br>
+                    <t><bl>int</bl> N;</t><br>
+                    <t><gr>cin</gr> <re>>></re> N;</t><br>
+                    <t><bl>int</bl> countFirst = <pu>0</pu>, countSecond = <pu>0</pu>;</t><br>
+                    <t><bl>for</bl>(<bl>int</bl> i <re>=</re> <pu>0</pu>; i <re><</re> N; i++)</t><br>
+                    <t>{</t><br>
+                    <t><t><bl>int</bl> x;</t></t><br>
+                    <t><t><gr>cin</gr> <re>>></re> x;</t></t><br>
+                    <t><t><bl>if</bl> (x <re>==</re> <pu>1</pu>)</t></t><br>
+                    <t><t>{</t></t><br>
+                    <t><t><t>countFirst++;</t></t></t><br>
+                    <t><t>}</t></t><br>
+                    <t><t><bl>else</bl></t></t><br>
+                    <t><t>{</t></t><br>
+                    <t><t><t>countSecond++;</t></t></t><br>
+                    <t><t>}</t></t><br>
+                    <t>}</t><br>
+                    <t><gr>cout</gr> <re><<</re> <gr>"1: "</gr> <re><<</re> countFirst <re>*</re> <pu>1.0</pu> <re>/</re> N <re>*</re> <pu>100</pu> <re><<</re> <gr>"%"</gr> <re><<</re> <gr>endl</gr></t>;<br>
+                    <t><gr>cout</gr> <re><<</re> <gr>"2: "</gr> <re><<</re> countSecond <re>*</re> <pu>1.0</pu> <re>/</re> N <re>*</re> <pu>100</pu> <re><<</re> <gr>"%"</gr> <re><<</re> <gr>endl</gr></t>;<br>
+                    }
+                </code>
+                <hr>
+            </div>
+            В этом коде мы считываем каждый голос и проверяем за кого он был отдан. Когда все голоса были посчитаны, мы находим их долю от общего числа голосов
+            <b>(countFirst * 1.0 / N)</b>. Не забывайте, что целые числа делятся с округлением вниз, поэтому чтобы разделить их без округления нужно превратить их в double.
+            Если умножить целое число на вещественное, то результат будет вещественный. При умножении числа на единицу значение этого числа не меняется.
+            Значит <b>x * 1.0</b> превратит целый x в вещественное число.<br>
+            Теперь умножим полученное значение на 100, чтобы перевести его в проценты. Так мы получим процент людей проголосовавших за каждого кандидата.<br>
+            Запустите эту программу и введите следующие данные.<br>
+            <b>
+            3<br>
+            1<br>
+            2<br>
+            2<br>
+            </b>
+            Они означают, что у вас есть три голоса и первый человек проголосовал за первого кандидата, а остальные за второго. Программа выведет
+            следующий результат.<br>
+            <b>
+            1: 33.33%<br>
+            2: 66.67%
+            </b>
+            <br><br>
+            Теперь давайте решим более сложную задачу. У вас есть число <b>x</b>. Давайте проверим простое ли оно. Простое число это то, которое делится
+            только на себя и на единицу.
+            <div class="code_block">
+                <hr>
+                <code>
+                    <gr>#include &lt;iostream&gt;</gr><br>
+                    <br>
+                    <bl>using namespace std</bl>;<br>
+                    <br>
+                    <bl>int</bl> main()<br>
+                    {<br>
+                    <t><bl>int</bl> x;</t><br>
+                    <t><gr>cin</gr> <re>>></re> x;</t><br>
+                    <t><bl>bool</bl> isPrime = <pu>true</pu>;</t><br>
+                    <t><bl>for</bl>(<bl>int</bl> i <re>=</re> <pu>2</pu>; i <re><</re> x; i++)</t><br>
+                    <t>{</t><br>
+                    <t><t><bl>if</bl> (x <re>%</re> i <re>==</re> <pu>0</pu>)</t></t><br>
+                    <t><t>{</t></t><br>
+                    <t><t><t>isPrime = <pu>false</pu>;</t></t></t><br>
+                    <t><t><t><re>break</re></t></t></t>;<br>
+                    <t><t>}</t></t><br>
+                    <t>}</t><br>
+                    <t><bl>if</bl>(isPrime)</t><br>
+                    <t>{</t><br>
+                    <t><t><gr>cout</gr> <re><<</re> <gr>"Yes"</gr>;</t></t><br>
+                    <t>}</t><br>
+                    <t><bl>else</bl></t><br>
+                    <t>{</t><br>
+                    <t><t><gr>cout</gr> <re><<</re> <gr>"No"</gr>;</t></t><br>
+                    <t>}</t><br>
+                    }<br>
+                </code>
+                <hr>
+            </div>
+        </p>
+        <p>
+            Давайте разберем этот код. Сначала решим задачу с точки зрения математики. Число никогда не может делиться на большее число. Значит нам
+            нужно перебрать все числа от двух до <b>x - 1</b> и проверить делится ли <b>x</b> на это число.<br>
+            Если мы найдем число, на которое делится <b>x</b>, значит <b>x</b> не простое. Как проверить делится ли одно число на другое? Если число
+            делится, то остаток от деления будет равен нулю.<br>
+            Приступим к коду. Переменная <b>isPrime</b> будет содержать информацию о простоте числа. Давайте сначала предположим что число простое,
+            а потом попытаемя доказать обратное. Пройдемся циклом по числам от <b>2</b> до <b>x</b> не включительно и проверим условие
+            <b>x % i == 0</b>. Если вдруг это условие истинно то мы говорим, что число не простое <b>isPrime = false;</b>.<br>
+            А в следующей строчке вы можете увидеть новую команду <b>break</b>. Эта команда заканчивает выполнение текущего цикла. Так как мы уже
+            нашли один делитель, то нам не имеет смысла проверять все остальные числа. С помощью этой команды можно ускорить среднее время
+            работы вашего кода. Также существует команда <b>continue</b>, которая сразу начинает выполнение следующей итерации, сразу прерывая эту.<br>
+            Когда цикл завершится в переменной <b>isPrime</b> будет находиться ответ на вопрос - "простое ли число <b>x</b>?".
+        </p>
+        <div class="h">Вложенные циклы</div>
+        <hr>
+        <p>
+            Давайте улучшим прошлое решение решив следующую задачу. Выведите все простые числа до <b>N</b>. Для этого можно создать цикл,
+            который перебирает значения <b>x</b> и скопировать код прошлого решения туда, как блок кода.
+            <div class="code_block">
+                <hr>
+                <code>
+                    <gr>#include &lt;iostream&gt;</gr><br>
+                    <br>
+                    <bl>using namespace std</bl>;<br>
+                    <br>
+                    <bl>int</bl> main()<br>
+                    {<br>
+                    <t><bl>int</bl> N;</t><br>
+                    <t><gr>cin</gr> <re>>></re> N;</t><br>
+                    <t><bl>for</bl>(<bl>int</bl> x <re>=</re> <pu>2</pu>; x <re><=</re> N; x++)</t><br>
+                    <t>{</t><br>
+                    <t><t><bl>bool</bl> isPrime = <pu>true</pu>;</t></t><br>
+                    <t><t><bl>for</bl>(<bl>int</bl> i <re>=</re> <pu>2</pu>; i <re><</re> x; i++)</t></t><br>
+                    <t><t>{</t></t><br>
+                    <t><t><t><bl>if</bl> (x <re>%</re> i <re>==</re> <pu>0</pu>)</t></t></t><br>
+                    <t><t><t>{</t></t></t><br>
+                    <t><t><t><t>isPrime = <pu>false</pu>;</t></t></t></t><br>
+                    <t><t><t><t><re>break</re></t></t></t></t>;<br>
+                    <t><t><t>}</t></t></t><br>
+                    <t><t>}</t></t><br>
+                    <t><t><bl>if</bl>(isPrime)</t></t><br>
+                    <t><t>{</t></t><br>
+                    <t><t><t><gr>cout</gr> <re><<</re> x <re><<</re> <gr>" "</gr>;</t></t></t><br>
+                    <t><t>}</t></t><br>
+                    <t>}</t><br>
+                    }<br>
+                </code>
+                <hr>
+            </div>
+            Как вы можете видеть из этого примера циклы можно вкладывать друг в друга. Только не используйте одинаковые имена для переменных-счетчиков, ваша программа может начать работать неккоректно.<br>
+            Вложенные циклы могут показаться очень сложными для новичков, но стоит разобраться с ними. Это очень важный инструмент в программировании.<br>
+            Давайте напишем программу, которая выведет на экран таблицу умножения. Будем выводить строки по очереди, так что давайте сначала научимся
+            выводить строку с номером <b>numRow</b> на экран. В строке с номером <b>x</b> находятся числа <b>1 * x, 2 * x, 3 * x</b> и т.д<br>
+            <div class="code_block">
+                <hr>
+                <code>
+                    <t><bl>for</bl>(<bl>int</bl> numCol <re>=</re> <pu>1</pu>; numCol <re><=</re> <pu>10</pu>; numCol++)</t><br>
+                    <t>{</t><br>
+                    <t><t><gr>cout</gr> <re><<</re> numRow <re>*</re> numCol <re><<</re> <gr>" "</gr>;</t></t><br>
+                    <t>}</t><br>
+                </code>
+                <hr>
+            </div>
+            numRow - переменная с номером строки, а numCol - переменная с номером столбца.<br>
+            Теперь мы можем вывести одну строку. Давайте поместим этот цикл в другой, который будет перебирать номер строки.
+            <div class="code_block">
+                <hr>
+                <code>
+                    <gr>#include &lt;iostream&gt;</gr><br>
+                    <br>
+                    <bl>using namespace std</bl>;<br>
+                    <br>
+                    <bl>int</bl> main()<br>
+                    {<br>
+                    <t><bl>for</bl>(<bl>int</bl> numRow <re>=</re> <pu>1</pu>; numRow <re><=</re> <pu>10</pu>; numRow++)</t><br>
+                    <t>{</t><br>
+                    <t><t><bl>for</bl>(<bl>int</bl> numCol <re>=</re> <pu>1</pu>; numCol <re><=</re> <pu>10</pu>; numCol++)</t></t><br>
+                    <t><t>{</t></t><br>
+                    <t><t><t><gr>cout</gr> <re><<</re> numRow <re>*</re> numCol <re><<</re> <gr>" "</gr>;</t></t></t><br>
+                    <t><t>}</t></t><br>
+                    <t><t><gr>cout</gr> <re><<</re> <gr>endl</gr>;</t></t><br>
+                    <t>}</t><br>
+                    }
+                </code>
+                <hr>
+            </div>
+            Этот код выведет на экран таблицу умножения. Не забывайте, что как только вы вевели одну строку, то нужно сразу сделать перенос.<br>
+        </p>
+        <div class="h">Другие типы циклов</div>
+        <hr>
+        <p>
+            Помимо цикла <b>for</b> существует еще два типа циклов. Первый из них это <b>while</b>. Этот цикл выглядит как <b>if</b>,
+            но выполняет блок кода внутри не один раз, а пока условие истинно.
+            <div class="code_block">
+                <hr>
+                <code>
+                    <gr>#include &lt;iostream&gt;</gr><br>
+                    <br>
+                    <bl>using namespace std</bl>;<br>
+                    <br>
+                    <bl>int</bl> main()<br>
+                    {<br>
+                    <t><bl>int</bl> a <re>=</re> <pu>0</pu>;</t><br>
+                    <t><bl>while</bl>(a <re><</re> <pu>3</pu>)</t><br>
+                    <t>{</t><br>
+                    <t><t><gr>cout</gr> <re><<</re> a <re><<</re> <gr>endl</gr>;</t></t><br>
+                    <t><t>a++;</t></t><br>
+                    <t>}</t><br>
+                    }
+                </code>
+                <hr>
+            </div>
+            Этот код выведет на экран числа 0, 1 и 2. Сейчас цикл <b>while</b> не сильно отличается от цикла <b>for</b>. Но его удобно использовать
+            именно для проверки выполнения условий. Например вот код, который находит сумму цифр числа.
+            <div class="code_block">
+                <hr>
+                <code>
+                    <gr>#include &lt;iostream&gt;</gr><br>
+                    <br>
+                    <bl>using namespace std</bl>;<br>
+                    <br>
+                    <bl>int</bl> main()<br>
+                    {<br>
+                    <t><bl>int</bl> x, sum <re>=</re> <pu>0</pu>;</t><br>
+                    <t><gr>cin</gr> <re>>></re> x;</t><br>
+                    <t><bl>while</bl>(x <re>></re> <pu>0</pu>)</t><br>
+                    <t>{</t><br>
+                    <t><t>sum <re>+=</re> x <re>%</re> <pu>10</pu>;</t></t><br>
+                    <t><t>x <re>/=</re> <pu>10</pu>;</t></t><br>
+                    <t>}</t><br>
+                    <t><gr>cout</gr> <re><<</re> sum;</t><br>
+                    }
+                </code>
+                <hr>
+            </div>
+            Остаток от деления числа на 10 это последняя цифра числа, а деление числа на десять нацело это удаление последней цифры числа. Вот пример.<br>
+            <b>
+            512 % 10 = 2<br>
+            512 / 10 = 51<br>
+            </b>
+            Как только число стало равно нулю, значит мы удалили у него все цифры. Значит код выше находит сумму всех цифр числа.<br>
+            Используя свойства цикла <b>while</b> можно легко получить бесконечный цикл - <b>while(true)</b>. Главное не забудьте добавить условие выхода <b>break</b>
+            внутри блока кода этого цикла. Зачем это нужно? Вот пример программы, которая проверяет пароль пользователя.
+            <div class="code_block">
+                <hr>
+                <code>
+                    <gr>#include &lt;iostream&gt;</gr><br>
+                    <gr>#include &lt;string&gt;</gr><br>
+                    <br>
+                    <bl>using namespace std</bl>;<br>
+                    <br>
+                    <bl>int</bl> main()<br>
+                    {<br>
+                    <t><gr>string</gr> password <re>=</re> <gr>"1234"</gr>;</t><br>
+                    <t><bl>while</bl>(<pu>true</pu>)</t><br>
+                    <t>{</t><br>
+                    <t><t><gr>string </gr> input;</t></t><br>
+                    <t><t><gr>cin</gr> <re><<</re> input;<br></t></t>
+                    <t><t><bl>if</bl>(input <re>==</re> password)</t></t><br>
+                    <t><t>{</t></t><br>
+                    <t><t><t><gr>cout</gr> <re><<</re> <gr>"Welcome"</gr> <re><<</re> <gr>endl</gr></t></t></t>;<br>
+                    <t><t><t><re>break</re></t></t></t>;<br>
+                    <t><t>}</t></t><br>
+                    <t><t><bl>else</bl></t></t><br>
+                    <t><t>{</t></t><br>
+                    <t><t><t><gr>cout</gr> <re><<</re> <gr>"Wrong password"</gr> <re><<</re> <gr>endl</gr></t></t></t>;<br>
+                    <t><t>}</t></t><br>
+                    <t>}</t><br>
+                    }
+                </code>
+                <hr>
+            </div>
+            Этот код будет выполняться до тех пор, пока пользователь не введет верный пароль. Как только верный пароль будет введен цикл завершится
+            командой <b>break</b>.<br>
+            Еще один тип цикла это <b>do{блок кода} while(условие);</b>. Он почти никогда никем не используется, так что мы просто расскажем вам о нем без примеров.<br>
+            Этот цикл сначала выполняет блок кода, а потом только проверяет условие внутри <b>while</b>. Если условие истинно, то код выполнится еще раз.
+            <div class="code_block">
+                <hr>
+                <code>
+                    <gr>#include &lt;iostream&gt;</gr><br>
+                    <br>
+                    <bl>using namespace std</bl>;<br>
+                    <br>
+                    <bl>int</bl> main()<br>
+                    {<br>
+                    <t><bl>int</bl> a <re>=</re> <pu>0</pu>;</t><br>
+                    <t><bl>do</bl></t><br>
+                    <t>{</t><br>
+                    <t><t>a++;</t></t><br>
+                    <t><t><gr>cout</gr> <re><<</re> a <re><<</re> <gr>endl</gr>;</t></t><br>
+                    <t>}</t><br>
+                    <t><bl>while</bl>(a <re><</re> <pu>3</pu>)</t>;<br>
+                    }
+                </code>
+                <hr>
+            </div>
+            Этот код выведет на экран числа <b>1, 2 и 3</b>.
+        </p>
+        <p>
+            Еще раз внимательно изучите все примеры кода. Для закрепления полученной информации решите следующие задачи.
+            <div class="taskLink" onclick="goToTask()">Перейти к задачам</div>
+        </p>
+        <div class="test">
+            <div class="testTitle">Тест</div>
+            <hr>
+            <form onsubmit="checkForm(2); return false" name="testForm">
+                <div class="test_stm">1. Сколько итераций сделает этот цикл?</div><br>
+                <div class="question" id="question0">
+                    <div class="code_block">
+                        <code>
+                            <hr>
+                                <bl>for</bl>(<bl>int</bl> i <re>=</re> <pu>0</pu>; i <re><</re> <pu>5</pu>; i <re>+=</re> <pu>3</pu>)<br>
+                            <hr>
+                        </code>
+                    </div>
+                    <span class="que0" onclick="c(0, 0)"><input type="radio" name="0" value="0"> 0<br></span>
+                    <span class="que0" onclick="c(0, 1)"><input type="radio" name="0" value="0"> 1<br></span>
+                    <span class="que0" onclick="c(0, 2)"><input type="radio" name="0" value="1"> 2<br></span>
+                    <span class="que0" onclick="c(0, 3)"><input type="radio" name="0" value="0"> 3<br></span>
+                    <span class="que0" onclick="c(0, 4)"><input type="radio" name="0" value="0"> 4<br></span>
+                    <span class="que0" onclick="c(0, 5)"><input type="radio" name="0" value="0"> 5<br></span>
+                </div>
+                <br>
+                <div class="test_stm">2. Что выведет программа ниже?</div><br>
+                <div class="question" id="question1">
+                    <div class="code_block">
+                        <code>
+                            <hr>
+                            <bl>int</bl> x <re>=</re> <pu>0</pu>;<br>
+                            <bl>while</bl>(x <re>*</re> x <re>+</re> x <re>!= </re> <pu>6</pu>)<br>
+                            {<br>
+                            <t>x++;</t><br>
+                            }<br>
+                            <gr>cin </gr> <re><<</re> x;
+                            <hr>
+                        </code>
+                    </div>
+                    <span class="que1" onclick="c(1, 0)"><input type="radio" name="1" value="0"> 0<br></span>
+                    <span class="que1" onclick="c(1, 1)"><input type="radio" name="1" value="0"> 1<br></span>
+                    <span class="que1" onclick="c(1, 2)"><input type="radio" name="1" value="1"> 2<br></span>
+                    <span class="que1" onclick="c(1, 3)"><input type="radio" name="1" value="0"> 3<br></span>
+                    <span class="que1" onclick="c(1, 4)"><input type="radio" name="1" value="0"> 4<br></span>
+                    <span class="que1" onclick="c(1, 5)"><input type="radio" name="1" value="0"> 5<br></span>
+                </div>
+                <br>
+                <div style="width: 100%; text-align: center">
+                    <div class="testError hide" id="testError">Ответьте на все вопросы<br></div>
+                    <div class="testResult hide" id="testResult"></div>
+                    <input type="submit" value="Проверить" class="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

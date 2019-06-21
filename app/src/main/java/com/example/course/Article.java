@@ -7,6 +7,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -38,7 +39,7 @@ public class Article extends AppCompatActivity {
         webSettings.setDomStorageEnabled(true);
         myBrowser.addJavascriptInterface(new WebAppInterface(this), "Android");
         Intent intent = getIntent();
-        myBrowser.loadUrl("file:///android_asset/Beginning/" + intent.getStringExtra("site"));
+        myBrowser.loadUrl("file:///android_asset/" + getString(R.string.lang) + "/Beginning/" + intent.getStringExtra("site"));
         id = intent.getIntExtra("id", 0);
         clipboardManager = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
     }

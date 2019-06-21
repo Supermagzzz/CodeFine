@@ -205,7 +205,7 @@ public class TaskActivity extends AppCompatActivity implements RewardedVideoAdLi
 
     private void updateWebView()
     {
-        myBrowser.loadUrl("file:///android_asset/Beginning/Tasks/" + intent.getIntExtra("id", 0) + "/" + lib.ids1[myId][pointer] + ".html");
+        myBrowser.loadUrl("file:///android_asset/" + getString(R.string.lang) + "/Beginning/Tasks/" + intent.getIntExtra("id", 0) + "/" + lib.ids1[myId][pointer] + ".html");
         textPointer.setText((pointer + 1) + "/" + lib.ids1[myId].length);
         updateSolve();
     }

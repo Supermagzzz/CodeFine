@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <script src="../../test.js"></script>
+</head>
+<body>
+<div style="margin: -7px; margin-top: 10px;">
+    <div class="task_name">A. Операции над массивом (15 б.)</div>
+    <hr>
+    <div class="statements">
+        Задан массив a из n неотрицательных целых чисел. Необходимо реализовать следующие операции над ним:<br>
+        get(i) - извлечение элемента с номером i;<br>
+        update(l,r,x) - присвоение значения x всем элементам подмассива a[l..r];<br>
+        add(l,r,x) - увеличение всех элементов a[l..r] на x;<br>
+        rsq(l,r) - вычисление суммы всех элементов a[l..r], т.е. значения a[l] + a[l+1] + … + a[r];<br>
+        rmq(l,r) - вычисление минимального элемента среди всех значений a[l..r].<br>
+        <br>
+        <div class="statements_io">
+            <b>Описание входных данных:</b><br>
+            В первой строке находится число n - количество элементов в массиве.<br>
+            Во второй строке находится n чисел - сам массив a.<br>
+            В третьей строке находится число m - количество операций совершенных над массивом.<br>
+            В следующих m строках находится описание операций в формате, который был описан в условиях задачи. Все числа во входном файле натуральные и не превышают 1000.<br>
+            Элементы в массиве пронумерованы с единицы.
+            <br>
+            <b>Описание выходных данных:</b><br>
+            Для каждого запроса get, rsq, rmq выведите вычисленный результат в отдельной строке.
+            <br>
+        </div>
+    </div>
+    <hr>
+    <div class="tests">
+        Входные данные<br>
+        <div class="input">
+            10<br>
+            1 2 3 4 5 6 7 8 9 10<br>
+            5<br>
+            rsq 1 10<br>
+            update 5 6 2<br>
+            rmq 3 9<br>
+            add 2 8 3<br>
+            get 7
+        </div>
+        Выходные данные<br>
+        <div class="output">
+            55<br>
+            2<br>
+            10<br>
+        </div>
+        <hr>
+        Ссылка на регистрацию (если не зарегистрированы)<br>
+        <div class="task_link">
+            <div class="link" onclick="copyLink('https://codeforces.com/group/GHaUaQnhtd/')">https://codeforces.com/group/GHaUaQnhtd/</div><br><br>
+        </div>
+        Ссылка на задачу<br>
+        <div class="task_link">
+            <div class="link" onclick="copyLink('https://codeforces.com/group/GHaUaQnhtd/contest/246351/problem/A')">https://codeforces.com/group/GHaUaQnhtd/contest/246351/problem/A</div><br><br>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
