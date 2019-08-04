@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <script src="../../test.js"></script>
+</head>
+<body>
+<div style="margin: -7px; margin-top: 10px;">
+    <div class="task_name">B. Башни</div><hr>
+    <div class="block">
+        <hr>
+        <p>
+            Нужно найти количество разных чисел в массиве и число, которое встречается чаще всего. Давайте создадим массив, где индекс это число. Проходя по массиву из задачи будем прибавлять единицу в наш массив в нужный индекс.<br>
+            Так мы получим массив, где для каждого числа написано его количество. Осталось посчитать, сколько ненулевых ячеек в таком массиве и найти максимальное число в нем.
+        </p>
+        <p>
+            Решение задачи:<br>
+        </p>
+        <div class="code_block_b">
+            <code>
+                <gr>#include &lt;iostream&gt;</gr><br>
+                <gr>#include &lt;vector&gt;</gr><br>
+                <gr>#include &lt;algorithm&gt;</gr><br>
+                <br>
+                <bl>using namespace std;</bl><br>
+                <br>
+                <bl>int</bl> main()<br>
+                {<br>
+                <t></t><bl>int</bl> n;<br>
+                <t></t><gr>cin</gr> <re>>></re> n;<br>
+                <t></t><gr>vector</gr>&lt;<bl>int</bl>&gt; v(<pu>1001</pu>);<br>
+                <t></t><bl>for</bl>(<bl>int</bl> i = <pu>0</pu>; i < n; i++)<br>
+                <t></t>{<br>
+                <t></t><t></t><bl>int</bl> x;<br>
+                <t></t><t></t><gr>cin</gr> <re>>></re> x;<br>
+                <t></t><t></t>v[x]++;<br>
+                <t></t>}<br>
+                <t></t><bl>int</bl> cnt = <pu>0</pu>, maxV = <pu>0</pu>;<br>
+                <t></t><bl>for</bl>(<bl>int</bl> i : v)<br>
+                <t></t>{<br>
+                <t></t><t></t><bl>if</bl>(i != <pu>0</pu>)<br>
+                <t></t><t></t>{<br>
+                <t></t><t></t><t></t>cnt++;<br>
+                <t></t><t></t>}<br>
+                <t></t><t></t><bl>if</bl>(i > maxV)<br>
+                <t></t><t></t>{<br>
+                <t></t><t></t><t></t>maxV = i;<br>
+                <t></t><t></t>}<br>
+                <t></t>}<br>
+                <t></t><gr>cout</gr> <re><<</re> maxV <re><<</re> <gr>" "</gr> <re><<</re> cnt;<br>
+                }<br><br>
+            </code>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <script src="../../test.js"></script>
+</head>
+<body>
+<div style="margin: -7px; margin-top: 10px;">
+    <div class="task_name">B. Камни на столе</div><hr>
+    <div class="block">
+        <hr>
+        <p>
+            Разделим слово на блоки состоящие из одинаковых букв. Если превратить каждый такой блок в одну букву, то получится ответ. Значит, нужно посчитать количество лишних букв в этих блоках. Переменная last содержит символ, из которого состоит текущий блок.
+        </p>
+        <p>
+            Решение задачи:<br>
+        </p>
+        <div class="code_block_b">
+            <code>
+                <gr>#include &lt;iostream&gt;</gr><br>
+                <gr>#include &lt;string&gt;</gr><br>
+                <br>
+                <bl> using namespace std;</bl><br>
+                <bl>int</bl> main()<br>
+                {<br>
+                <t></t><gr>string</gr> s;<br>
+                <t></t><gr>cin</gr> <re>>></re> s;<br>
+                <t></t><bl>char</bl> last = s[<pu>0</pu>];<br>
+                <t></t><bl>int</bl> cnt = <pu>0</pu>;<br>
+                <t></t><bl>for</bl>(<bl>int</bl> i = <pu>1</pu>; i < s.size(); i++)<br>
+                <t></t>{<br>
+                <t></t><t></t><bl>if</bl>(s[i] == last)<br>
+                <t></t><t></t>{<br>
+                <t></t><t></t><t></t>cnt++;<br>
+                <t></t><t></t>}<br>
+                <t></t><t></t><bl>else</bl><br>
+                <t></t><t></t>{<br>
+                <t></t><t></t><t></t>last = s[i];<br>
+                <t></t><t></t>}<br>
+                <t></t>}<br>
+                <t></t><gr>cout</gr> <re><<</re> cnt;<br>
+                }<br><br>
+            </code>
+        </div>
+    </div>
+</div>
+</body>
+</html>

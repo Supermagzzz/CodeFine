@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <script src="../../test.js"></script>
+</head>
+<body>
+<div style="margin: -7px; margin-top: 10px;">
+    <div class="task_name">C. Перепись</div><hr>
+    <div class="block">
+        <hr>
+        <p>
+            В переменной num мы будем хранить текущий номер самого взрослого мужчины, а в переменной age его возраст.
+        </p>
+        <p>
+            Решение задачи:<br>
+        </p>
+        <div class="code_block_b">
+            <code>
+                <gr>#include &lt;iostream&gt;</gr><br>
+                <br>
+                <bl> using namespace std;</bl><br>
+                <br>
+                <bl>int</bl> main()<br>
+                {<br>
+                <t></t><bl>int</bl> n;<br>
+                <t></t><gr>cin</gr> <re>>></re> n;<br>
+                <t></t><bl>int</bl> num = <pu>-1</pu>, age = <pu>-1</pu>;<br>
+                <t></t><bl>for</bl>(<bl>int</bl> i = <pu>1</pu>; i <= n; i++)<br>
+                <t></t>{<br>
+                <t></t><t></t><bl>int</bl> a, s;<br>
+                <t></t><t></t><gr>cin</gr> <re>>></re> a <re>>></re> s;<br>
+                <t></t><t></t><bl>if</bl>(s == <pu>1</pu> <re>&&</re> a > age)<br>
+                <t></t><t></t>{<br>
+                <t></t><t></t><t></t>age = a;<br>
+                <t></t><t></t><t></t>num = i;<br>
+                <t></t><t></t>}<br>
+                <t></t>}<br>
+                <t></t><gr>cout</gr> <re><<</re> num;<br>
+                }<br>
+            </code>
+        </div>
+    </div>
+</div>
+</body>
+</html>

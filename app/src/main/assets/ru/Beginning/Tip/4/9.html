@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <script src="../../test.js"></script>
+</head>
+<body>
+<div style="margin: -7px; margin-top: 10px;">
+    <div class="task_name">E. Стрелки часов</div><hr>
+    <div class="block">
+        <p>
+            Каждые 12 часов стрелка возвращается на исходное место. Значит, так как нам не интересно сколько кругов прошла стрелка, мы можем заменить число часов на остаток числа часов от 12. Например, если прошло 15 часов, то так как 15 % 12 = 3, стрелка часов окажется на том же месте, на котором бы оказалась через 3 часа. Значит ответ на задачу это 1 + n % 12;
+            Решение задачи:<br>
+        </p>
+        <div class="code_block_b">
+            <code>
+                <gr>#include &lt;iostream&gt;</gr><br>
+                <br>
+                <bl> using namespace std;</bl><br>
+                <br>
+                <bl>int</bl> main<re>()</re><br>
+                <re>{</re><br>
+                <t></t><bl>int</bl> n;<br>
+                <t></t><gr>cin</gr> <re>>></re> n;<br>
+                <t></t><gr>cout</gr> <re><<</re> 1 + n % 12 <re><<</re> <gr>endl</gr><re>;</re><br>
+                <re>}</re><br>
+            </code>
+        </div>
+    </div>
+</div>
+</body>
+</html>

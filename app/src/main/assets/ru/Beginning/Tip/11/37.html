@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <script src="../../test.js"></script>
+</head>
+<body>
+<div style="margin: -7px; margin-top: 10px;">
+    <div class="task_name">F. IQ тест</div><hr>
+    <div class="block">
+        <hr>
+        <p>
+            Решение задачи:<br>
+        </p>
+        <div class="code_block_b">
+            <code>
+                <gr>#include &lt;iostream&gt;</gr><br>
+                <br>
+                <bl> using namespace std;</bl><br>
+                <bl>int</bl> main()<br>
+                {<br>
+                <t></t><bl>int</bl> n, cntC = <pu>0</pu>, cntN = <pu>0</pu>, valC, valN;<br>
+                <t></t><gr>cin</gr> <re>>></re> n;<br>
+                <t></t><bl>for</bl>(<bl>int</bl> i = <pu>0</pu>; i < n; i++)<br>
+                <t></t>{<br>
+                <t></t><t></t><bl>int</bl> x;<br>
+                <t></t><t></t><gr>cin</gr> <re>>></re> x;<br>
+                <t></t><t></t><bl>if</bl>(x % <pu>2</pu> == <pu>0</pu>)<br>
+                <t></t><t></t>{<br>
+                <t></t><t></t><t></t>cntC++;<br>
+                <t></t><t></t><t></t>valC = x;<br>
+                <t></t><t></t>}<br>
+                <t></t><t></t><bl>else</bl><br>
+                <t></t><t></t>{<br>
+                <t></t><t></t><t></t>cntN++;<br>
+                <t></t><t></t><t></t>valN = x;<br>
+                <t></t><t></t>}<br>
+                <t></t>}<br>
+                <t></t><bl>if</bl>(cntC == <pu>1</pu>)<br>
+                <t></t>{<br>
+                <t></t><t></t><gr>cout</gr> <re><<</re> valC;<br>
+                <t></t>}<br>
+                <t></t><bl>else</bl><br>
+                <t></t>{<br>
+                <t></t><t></t><gr>cout</gr> <re><<</re> valN;<br>
+                <t></t>}<br>
+                }<br><br><br>
+            </code>
+        </div>
+    </div>
+</div>
+</body>
+</html>

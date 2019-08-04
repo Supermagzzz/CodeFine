@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <script src="../../test.js"></script>
+</head>
+<body>
+<div style="margin: -7px; margin-top: 10px;">
+    <div class="task_name">D. Школьные годы </div><hr>
+    <div class="block">
+        <hr>
+        <p>
+            Решение задачи:<br>
+        </p>
+        <div class="code_block_b">
+            <code>
+                <gr>#include &lt;iostream&gt;</gr><br>
+                <gr>#include &lt;string&gt;</gr><br>
+                <br>
+                <bl> using namespace std;</bl><br>
+                <br>
+                <bl>int</bl> main()<br>
+                {<br>
+                <t></t><bl>int</bl> n;<br>
+                <t></t><gr>cin</gr> <re>>></re> n;<br>
+                <t></t><gr>string</gr> a[<pu>100</pu>];<br>
+                <t></t><bl>for</bl>(<bl>int</bl> i = <pu>0</pu>; i < n; i++)<br>
+                <t></t>{<br>
+                <t></t><t></t><gr>cin</gr> <re>>></re> a[i];<br>
+                <t></t>}<br>
+                <t></t><bl>int</bl> xE, yE, xS, yS;<br>
+                <t></t><bl>for</bl>(<bl>int</bl> i = <pu>0</pu>; i < n; i++)<br>
+                <t></t>{<br>
+                <t></t><t></t><bl>for</bl>(<bl>int</bl> j = <pu>0</pu>; j < n; j++)<br>
+                <t></t><t></t>{<br>
+                <t></t><t></t><t></t><bl>if</bl>(a[i][j] == <gr>'E'</gr>)<br>
+                <t></t><t></t><t></t>{<br>
+                <t></t><t></t><t></t><t></t>xE = j + <pu>1</pu>;<br>
+                <t></t><t></t><t></t><t></t>yE = n - i;<br>
+                <t></t><t></t><t></t>}<br>
+                <t></t><t></t><t></t><bl>if</bl>(a[i][j] == <gr>'S'</gr>)<br>
+                <t></t><t></t><t></t>{<br>
+                <t></t><t></t><t></t><t></t>xS = j + <pu>1</pu>;<br>
+                <t></t><t></t><t></t><t></t>yS = n - i;<br>
+                <t></t><t></t><t></t>}<br>
+                <t></t><t></t>}<br>
+                <t></t>}<br>
+                <t></t><gr>cout</gr> <re><<</re> xE <re><<</re> <gr>" "</gr> <re><<</re> yE <re><<</re> <gr>endl</gr>;<br>
+                <t></t><gr>cout</gr> <re><<</re> xS <re><<</re> <gr>" "</gr> <re><<</re> yS <re><<</re> <gr>endl</gr>;<br>
+                }<br>
+            </code>
+        </div>
+    </div>
+</div>
+</body>
+</html>

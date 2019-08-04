@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <script src="../../test.js"></script>
+</head>
+<body>
+<div style="margin: -7px; margin-top: 10px;">
+    <div class="task_name">D. Загадка </div><hr>
+    <div class="block">
+        <hr>
+        <p>
+            Переберем все возможные ответы и найдем подходящий. Для этого переберем X, а внутри этого цикла для каждого X, переберем все возможные Y. Когда правильный ответ найден, можно завершать программу. Так как второе число должно быть больше либо равно первому, то Y стоит перебирать не с единицы, а с X;
+        </p>
+        <p>
+            Решение задачи:<br>
+        </p>
+        <div class="code_block_b">
+            <code>
+                <gr>#include &lt;iostream&gt;</gr><br>
+                <br>
+                <bl> using namespace std;</bl><br>
+                <br>
+                <bl>int</bl> main()<br>
+                {<br>
+                <t></t><bl>int</bl> S, P;<br>
+                <t></t><gr>cin</gr> <re>>></re> S <re>>></re> P;<br>
+                <t></t><bl>for</bl>(<bl>int</bl> X = <pu>1</pu>; X <= <pu>100</pu>; X++)<br>
+                <t></t>{<br>
+                <t></t><t></t><bl>for</bl>(<bl>int</bl> Y = X; Y <= <pu>100</pu>; Y++)<br>
+                <t></t><t></t>{<br>
+                <t></t><t></t><t></t><bl>if</bl>(X + Y == S <re>&&</re> X * Y == P)<br>
+                <t></t><t></t><t></t>{<br>
+                <t></t><t></t><t></t><t></t><gr>cout</gr> <re><<</re> X <re><<</re> <gr>" "</gr> <re><<</re> Y;<br>
+                <t></t><t></t><t></t><t></t><re>return</re> <pu>0</pu>;<br>
+                <t></t><t></t><t></t>}<br>
+                <t></t><t></t>}<br>
+                <t></t>}<br>
+                }<br>
+            </code>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <script src="../../test.js"></script>
+</head>
+<body>
+<div style="margin: -7px; margin-top: 10px;">
+    <div class="task_name">E. Антон и Даник</div><hr>
+    <div class="block">
+        <hr>
+        <p>
+            Решение задачи:<br>
+        </p>
+        <div class="code_block_b">
+            <code>
+                <gr>#include &lt;iostream&gt;</gr><br>
+                <gr>#include &lt;string&gt;</gr><br>
+                <br>
+                <bl> using namespace std;</bl><br>
+                <bl>int</bl> main()<br>
+                {<br>
+                <t></t><bl>int</bl> n, cntA = <pu>0</pu>, cntD = <pu>0</pu>;<br>
+                <t></t><gr>cin</gr> <re>>></re> n;<br>
+                <t></t><gr>string</gr> s;<br>
+                <t></t><gr>cin</gr> <re>>></re> s;<br>
+                <t></t><bl>for</bl>(<bl>int</bl> i = <pu>0</pu>; i < s.size(); i++)<br>
+                <t></t>{<br>
+                <t></t><t></t><bl>if</bl>(s[i] == <gr>'A'</gr>)<br>
+                <t></t><t></t>{<br>
+                <t></t><t></t><t></t>cntA++;<br>
+                <t></t><t></t>}<br>
+                <t></t><t></t><bl>else</bl><br>
+                <t></t><t></t>{<br>
+                <t></t><t></t><t></t>cntD++;<br>
+                <t></t><t></t>}<br>
+                <t></t>}<br>
+                <t></t><bl>if</bl>(cntA == cntD)<br>
+                <t></t>{<br>
+                <t></t><t></t><gr>cout</gr> <re><<</re> <gr>"Friendship"</gr>;<br>
+                <t></t>}<br>
+                <t></t><bl>else if</bl>(cntA > cntD)<br>
+                <t></t>{<br>
+                <t></t><t></t><gr>cout</gr> <re><<</re> <gr>"Anton"</gr>;<br>
+                <t></t>}<br>
+                <t></t><bl>else</bl><br>
+                <t></t>{<br>
+                <t></t><t></t><gr>cout</gr> <re><<</re> <gr>"Danik"</gr>;<br>
+                <t></t>}<br>
+                }<br><br><br>
+            </code>
+        </div>
+    </div>
+</div>
+</body>
+</html>

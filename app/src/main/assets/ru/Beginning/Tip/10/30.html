@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <script src="../../test.js"></script>
+</head>
+<body>
+<div style="margin: -7px; margin-top: 10px;">
+    <div class="task_name">A. Операции над массивом</div><hr>
+    <div class="block">
+        <hr>
+        <p>
+            Решение задачи:<br>
+        </p>
+        <div class="code_block_b">
+            <code>
+                <gr>#include &lt;iostream&gt;</gr><br>
+                <gr>#include &lt;string&gt;</gr><br>
+                <br>
+                <bl> using namespace std;</bl><br>
+                <br>
+                <br>
+                <bl>int</bl> a[<pu>1000</pu>];<br>
+                <br>
+                <bl>int</bl> get(<bl>int</bl> i)<br>
+                {<br>
+                <t></t><re>return</re> a[i - <pu>1</pu>];<br>
+                }<br>
+                <br>
+                <bl>void</bl> update(<bl>int</bl> l, <bl>int</bl> r, <bl>int</bl> x)<br>
+                {<br>
+                <t></t><bl>for</bl>(<bl>int</bl> i = l - <pu>1</pu>; i <= r - <pu>1</pu>; i++)<br>
+                <t></t>{<br>
+                <t></t><t></t>a[i] = x;<br>
+                <t></t>}<br>
+                }<br>
+                <br>
+                <bl>void</bl> add(<bl>int</bl> l, <bl>int</bl> r, <bl>int</bl> x)<br>
+                {<br>
+                <t></t><bl>for</bl>(<bl>int</bl> i = l - <pu>1</pu>; i <= r - <pu>1</pu>; i++)<br>
+                <t></t>{<br>
+                <t></t><t></t>a[i] += x;<br>
+                <t></t>}<br>
+                }<br>
+                <br>
+                <bl>int</bl> rsq(<bl>int</bl> l, <bl>int</bl> r)<br>
+                {<br>
+                <t></t><bl>int</bl> sum = <pu>0</pu>;<br>
+                <t></t><bl>for</bl>(<bl>int</bl> i = l - <pu>1</pu>; i <= r - <pu>1</pu>; i++)<br>
+                <t></t>{<br>
+                <t></t><t></t>sum += a[i];<br>
+                <t></t>}<br>
+                <t></t><re>return</re> sum;<br>
+                }<br>
+                <br>
+                <bl>int</bl> rmq(<bl>int</bl> l, <bl>int</bl> r)<br>
+                {<br>
+                <t></t><bl>int</bl> minValue = <pu>2000000000</pu>;<br>
+                <t></t><bl>for</bl>(<bl>int</bl> i = l - <pu>1</pu>; i <= r - <pu>1</pu>; i++)<br>
+                <t></t>{<br>
+                <t></t><t></t><bl>if</bl>(a[i] < minValue)<br>
+                <t></t><t></t>{<br>
+                <t></t><t></t><t></t>minValue = a[i];<br>
+                <t></t><t></t>}<br>
+                <t></t>}<br>
+                <t></t><re>return</re> minValue;<br>
+                }<br>
+                <br>
+                <bl>int</bl> main()<br>
+                {<br>
+                
+                }<br><br>
+            </code>
+        </div>
+    </div>
+</div>
+</body>
+</html>

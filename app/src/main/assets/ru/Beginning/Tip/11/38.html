@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <script src="../../test.js"></script>
+</head>
+<body>
+<div style="margin: -7px; margin-top: 10px;">
+    <div class="task_name">G. Бал в БерлГУ</div><hr>
+    <div class="block">
+        <hr>
+        <p>
+            Отсортируем парней и девушек по возрастанию умения танцевать. Переберем парня начиная с худшего умения. Если мы нашли ему пару, тогда прибавим единицу к ответу и уберем девушку из выбора (присвоим ей значение 1000, так никто не сможет потанцевать с ней).
+        </p>
+        <p>
+            Решение задачи:<br>
+        </p>
+        <div class="code_block_b">
+            <code>
+                <gr>#include &lt;iostream&gt;</gr><br>
+                <gr>#include &lt;vector&gt;</gr><br>
+                <gr>#include &lt;cmath&gt;</gr><br>
+                <gr>#include &lt;algorithm&gt;</gr><br>
+                <br>
+                <bl> using namespace std;</bl><br>
+                <bl>int</bl> main()<br>
+                {<br>
+                <t></t><bl>int</bl> cntBoys, cntGirls;<br>
+                <t></t><gr>cin</gr> <re>>></re> cntBoys;<br>
+                <t></t><gr>vector</gr>&lt;<bl>int</bl>&gt; boys(cntBoys);<br>
+                <t></t><bl>for</bl>(<bl>int</bl> &e : boys)<br>
+                <t></t>{<br>
+                <t></t><t></t><gr>cin</gr> <re>>></re> e;<br>
+                <t></t>}<br>
+                <t></t><gr>cin</gr> <re>>></re> cntGirls;<br>
+                <t></t><gr>vector</gr>&lt;<bl>int</bl>&gt; girls(cntGirls);<br>
+                <t></t><bl>for</bl>(<bl>int</bl> &e : girls)<br>
+                <t></t>{<br>
+                <t></t><t></t><gr>cin</gr> <re>>></re> e;<br>
+                <t></t>}<br>
+                <t></t><gr>sort</gr>(boys.begin(), boys.end());<br>
+                <t></t><gr>sort</gr>(girls.begin(), girld.end());<br>
+                <t></t><bl>int</bl> result = <pu>0</pu>;<br>
+                <t></t><bl>for</bl>(<bl>int</bl> i = <pu>0</pu>; i < cntBoys; i++)<br>
+                <t></t>{<br>
+                <t></t><t></t><bl>for</bl>(<bl>int</bl> j = <pu>0</pu>; j < cntGirls; j++)<br>
+                <t></t><t></t>{<br>
+                <t></t><t></t><t></t><bl>if</bl>(<gr>abs</gr>(boys[i] - girls[j]) <= <pu>1</pu>)<br>
+                <t></t><t></t><t></t>{<br>
+                <t></t><t></t><t></t><t></t>result++;<br>
+                <t></t><t></t><t></t><t></t>girls[i] = <pu>1000</pu>;<br>
+                <t></t><t></t><t></t><t></t><re>break</re>;<br>
+                <t></t><t></t><t></t>}<br>
+                <t></t><t></t>}<br>
+                <t></t>}<br>
+                <t></t><gr>cout</gr> <re><<</re> result;<br>
+                }<br><br><br>
+            </code>
+        </div>
+    </div>
+</div>
+</body>
+</html>

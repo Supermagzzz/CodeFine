@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <script src="../../test.js"></script>
+</head>
+<body>
+<div style="margin: -7px; margin-top: 10px;">
+    <div class="task_name">D. Треугольник</div><hr>
+    <div class="block">
+        <hr>
+        <p>
+            Треугольник может существовать только если каждая из его сторон меньше суммы двух оставшихся. 
+        </p>
+        <hr>
+        <p>
+            Решение задачи:<br>
+        </p>
+        <div class="code_block_b">
+            <code>
+                <gr>#include &lt;iostream&gt;</gr><br>
+                <br>
+                <bl> using namespace std;</bl><br>
+                <br>
+                <bl>int</bl> main()<br>
+                {<br>
+                <t></t><bl>int</bl> a, b, c;<br>
+                <t></t><gr>cin</gr> <re>>></re> a <re>>></re> b <re>>></re> c;<br>
+                <t><bl>if</bl>(a < b + c <re>&&</re> b < a + c <re>&&</re> c < a + b)</t><br>
+                <t>{</t><br>
+                <t><t><gr>cout</gr> <re><<</re> <gr>"Yes"</gr>; </t></t><br>
+                <t>}</t><br>
+                <t><bl>else</bl></t><br>
+                <t>{</t><br>
+                <t><t><gr>cout</gr> <re><<</re> <gr>"No"</gr>;</t></t><br>
+                <t>}</t><br>
+                }<br>
+            </code>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -53,6 +53,7 @@ public class TaskActivity extends AppCompatActivity implements RewardedVideoAdLi
     private RewardedVideoAd mRewardedVideoAd;
     FrameLayout onLoading;
     boolean stopLoad = true;
+    boolean needShow = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -156,34 +157,21 @@ public class TaskActivity extends AppCompatActivity implements RewardedVideoAdLi
             case R.id.tip:
                 stopLoad = false;
                 onLoading.setVisibility(View.VISIBLE);
-                waitLoading();
+                loadRewardedVideoAd();
+                if(mRewardedVideoAd.isLoaded())
+                {
+                    needShow = false;
+                    mRewardedVideoAd.show();
+                }
+                else
+                {
+                    needShow = true;
+                }
                 break;
             case R.id.backLoad:
                 stopLoad = true;
                 onLoading.setVisibility(View.INVISIBLE);
                 break;
-        }
-    }
-
-    public void waitLoading()
-    {
-        if(stopLoad)
-        {
-            stopLoad = false;
-            return;
-        }
-        if(!mRewardedVideoAd.isLoaded()) {
-            final Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    waitLoading();
-                }
-            }, 1000);
-        }
-        else
-        {
-            mRewardedVideoAd.show();
         }
     }
 
@@ -220,14 +208,23 @@ public class TaskActivity extends AppCompatActivity implements RewardedVideoAdLi
     @Override
     public void onRewardedVideoAdFailedToLoad(int errorCode) { }
     @Override
-    public void onRewardedVideoAdLoaded() { }
+    public void onRewardedVideoAdLoaded()
+    {
+        if(needShow)
+        {
+            needShow = false;
+            mRewardedVideoAd.show();
+        }
+    }
     @Override
     public void onRewardedVideoAdOpened() { }
     @Override
     public void onRewardedVideoStarted() { }
     @Override
     public void onRewardedVideoCompleted() {
-
+        loadRewardedVideoAd();
+        Intent intent = new Intent(TaskActivity.this, TipActivity.class);
+        intent.putExtra("path", myId + "/" + lib.ids1[myId][pointer] + ".html");
+        startActivity(intent);
     }
-
 }

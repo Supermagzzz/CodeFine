@@ -12,25 +12,35 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".TipActivity"></activity>
+
         <meta-data
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"
-            android:value="true"/>
+            android:value="true" />
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-7252244556177655~2124355568"/>
-        <activity android:name=".SettingsActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".TaskActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Article"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".advanced_course"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".algorithm_course"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".beginning_course"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MainActivity"
+            android:value="ca-app-pub-7252244556177655~2124355568" />
+
+        <activity
+            android:name=".SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TaskActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Article"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".advanced_course"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".algorithm_course"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".beginning_course"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
