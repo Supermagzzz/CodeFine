@@ -23,6 +23,7 @@ public class CourseActivity extends AppCompatActivity {
     private RecyclerView menu;
     private MenuAdapter adapter;
     private int courseId;
+    private boolean doubleClick = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +37,11 @@ public class CourseActivity extends AppCompatActivity {
         findViewById(R.id.settings).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CourseActivity.this, SettingsActivity.class);
-                startActivity(intent);
+                if(!doubleClick) {
+                    doubleClick = true;
+                    Intent intent = new Intent(CourseActivity.this, SettingsActivity.class);
+                    startActivity(intent);
+                }
             }
         });
     }
@@ -101,10 +105,13 @@ public class CourseActivity extends AppCompatActivity {
                 menuHolder.tasks.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(CourseActivity.this, TaskActivity.class);
-                        intent.putExtra("courseId", courseId);
-                        intent.putExtra("id", pos + 1);
-                        startActivity(intent);
+                        if(!doubleClick) {
+                            doubleClick = true;
+                            Intent intent = new Intent(CourseActivity.this, TaskActivity.class);
+                            intent.putExtra("courseId", courseId);
+                            intent.putExtra("id", pos + 1);
+                            startActivity(intent);
+                        }
                     }
                 });
             }
@@ -113,18 +120,24 @@ public class CourseActivity extends AppCompatActivity {
                 menuHolder.tasks.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(CourseActivity.this, NoTaskActivity.class));
+                        if(!doubleClick) {
+                            doubleClick = true;
+                            startActivity(new Intent(CourseActivity.this, NoTaskActivity.class));
+                        }
                     }
                 });
             }
             menuHolder.name.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(CourseActivity.this, Article.class);
-                    intent.putExtra("id", pos+1);
-                    intent.putExtra("site", Lib.fileNames[courseId][pos]);
-                    intent.putExtra("courseId", courseId);
-                    startActivity(intent);
+                    if(!doubleClick) {
+                        doubleClick = true;
+                        Intent intent = new Intent(CourseActivity.this, Article.class);
+                        intent.putExtra("id", pos + 1);
+                        intent.putExtra("site", Lib.fileNames[courseId][pos]);
+                        intent.putExtra("courseId", courseId);
+                        startActivity(intent);
+                    }
                 }
             });
         }
@@ -133,5 +146,11 @@ public class CourseActivity extends AppCompatActivity {
         public int getItemCount() {
             return Lib.names[courseId].length + Lib.headers_pos[courseId].length;
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        doubleClick = false;
     }
 }

@@ -37,7 +37,7 @@ public class TipActivity extends AppCompatActivity {
         courseId = getIntent().getIntExtra("courseId", 0);
         myBrowser = findViewById(R.id.my_browser);
         Intent intent = getIntent();
-        myBrowser.loadUrl("file:///android_asset/" + getString(R.string.lang) + "/Beginning/Tip/" + intent.getStringExtra("path"));
+        myBrowser.loadUrl("file:///android_asset/" + getString(R.string.lang) + "/" + Lib.courseName[courseId] + "/Tip/" + intent.getStringExtra("path"));
         id = intent.getIntExtra("id", 0);
         clipboardManager = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
     }

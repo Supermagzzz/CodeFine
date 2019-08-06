@@ -38,6 +38,7 @@ public class Lib {
             //--------Второй курс
             {
                     {},
+                    {},
                     {}
             },
             //--------Третий курс
@@ -67,6 +68,7 @@ public class Lib {
             //--------Второй курс
             {
                     {},
+                    {},
                     {}
             },
             //--------Третий курс
@@ -85,7 +87,7 @@ public class Lib {
         },
         //--------Второй курс
         {
-            R.string.worktime
+            R.string.introduction, R.string.worktime
         },
         //--------Третий курс
         {}
@@ -95,12 +97,12 @@ public class Lib {
     {
             //------------Первый курс
             {
-                    "1-Introduction.html", "2-Installing_software.html", "3-Simple_programm.html", "4-Variables.html", "5-Data_types.html", "6-Conditionals.html",
-                    "7-Loops.html", "8-Arrays.html", "9-Standart_functions.html", "10-Functions.html", "11-Vectors.html", "12-Structures.html"
+                "1-Introduction.html", "2-Installing_software.html", "3-Simple_programm.html", "4-Variables.html", "5-Data_types.html", "6-Conditionals.html",
+                "7-Loops.html", "8-Arrays.html", "9-Standart_functions.html", "10-Functions.html", "11-Vectors.html", "12-Structures.html"
             },
             //--------Второй курс
             {
-                "1-Work_time.html"
+                "1-Introduction.html", "2-Work_time.html"
             },
             //--------Третий курс
             {}

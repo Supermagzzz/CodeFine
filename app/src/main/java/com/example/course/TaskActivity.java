@@ -54,6 +54,7 @@ public class TaskActivity extends AppCompatActivity implements RewardedVideoAdLi
     boolean stopLoad = true;
     boolean needShow = false;
     private int courseId;
+    private boolean doubleClick = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -153,7 +154,10 @@ public class TaskActivity extends AppCompatActivity implements RewardedVideoAdLi
         switch (view.getId())
         {
             case R.id.settings:
-                startActivity(new Intent(this, SettingsActivity.class));
+                if(!doubleClick) {
+                    doubleClick = true;
+                    startActivity(new Intent(this, SettingsActivity.class));
+                }
                 break;
             case R.id.tip:
                 stopLoad = false;
@@ -228,5 +232,11 @@ public class TaskActivity extends AppCompatActivity implements RewardedVideoAdLi
         intent.putExtra("path", myId + "/" + Lib.ids[courseId][myId][pointer] + ".html");
         intent.putExtra("courseId", courseId);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        doubleClick = false;
     }
 }

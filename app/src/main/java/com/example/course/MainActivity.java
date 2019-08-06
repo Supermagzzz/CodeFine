@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     String[] courseName = {"Beginning_rating", "Algorithm_rating", "Advanced_rating"};
     ArrayList<ImageView> prbCourses;
     ArrayList<TextView> textCourses;
+    private boolean doubleClick = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         updateRatings(0);
         updateRatings(1);
         updateRatings(2);
+        doubleClick = false;
     }
 
     private void updateRatings(int course)
@@ -154,23 +156,35 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId())
         {
             case R.id.beginning_course_btn:
-                intent = new Intent(MainActivity.this, CourseActivity.class);
-                intent.putExtra("courseId", 0);
-                startActivity(intent);
-                break;
+                if(!doubleClick) {
+                    doubleClick = true;
+                    intent = new Intent(MainActivity.this, CourseActivity.class);
+                    intent.putExtra("courseId", 0);
+                    startActivity(intent);
+                    break;
+                }
             case R.id.algo_course_btn:
-                intent = new Intent(MainActivity.this, CourseActivity.class);
-                intent.putExtra("courseId", 1);
-                startActivity(intent);
-                break;
+                if(!doubleClick) {
+                    doubleClick = true;
+                    intent = new Intent(MainActivity.this, CourseActivity.class);
+                    intent.putExtra("courseId", 1);
+                    startActivity(intent);
+                    break;
+                }
             case R.id.advanced_course_btn:
-                intent = new Intent(MainActivity.this, CourseActivity.class);
-                intent.putExtra("courseId", 2);
-                startActivity(intent);
-                break;
+                if(!doubleClick) {
+                    doubleClick = true;
+                    intent = new Intent(MainActivity.this, CourseActivity.class);
+                    intent.putExtra("courseId", 2);
+                    startActivity(intent);
+                    break;
+                }
             case R.id.settings:
-                startActivity(new Intent(this, SettingsActivity.class));
-                break;
+                if(!doubleClick) {
+                    doubleClick = true;
+                    startActivity(new Intent(this, SettingsActivity.class));
+                    break;
+                }
             default:
                 break;
         }

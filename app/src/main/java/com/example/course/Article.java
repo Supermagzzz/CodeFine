@@ -28,27 +28,24 @@ public class Article extends AppCompatActivity {
     ClipboardManager clipboardManager;
     int courseId;
 
+    private boolean doubleClick = false;
+
     @Override
     @SuppressLint("JavascriptInterface")
     protected void onCreate(Bundle savedInstanceState) {
-        try {
-            super.onCreate(savedInstanceState);
-            Lib.initActivity(this, R.layout.activity_article);
+        super.onCreate(savedInstanceState);
+        Lib.initActivity(this, R.layout.activity_article);
 
-            myBrowser = findViewById(R.id.my_browser);
-            WebSettings webSettings = myBrowser.getSettings();
-            webSettings.setJavaScriptEnabled(true);
-            webSettings.setDomStorageEnabled(true);
-            myBrowser.addJavascriptInterface(new WebAppInterface(this), "Android");
-            Intent intent = getIntent();
-            courseId = intent.getIntExtra("courseId", 0);
-            myBrowser.loadUrl("file:///android_asset/" + getString(R.string.lang) + "/" + Lib.courseName[courseId] + "/" + intent.getStringExtra("site"));
-            id = intent.getIntExtra("id", 0);
-            clipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
-        } catch (Exception e)
-        {
-            Log.d("MAX", e.getMessage());
-        }
+        myBrowser = findViewById(R.id.my_browser);
+        WebSettings webSettings = myBrowser.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setDomStorageEnabled(true);
+        myBrowser.addJavascriptInterface(new WebAppInterface(this), "Android");
+        Intent intent = getIntent();
+        courseId = intent.getIntExtra("courseId", 0);
+        myBrowser.loadUrl("file:///android_asset/" + getString(R.string.lang) + "/" + Lib.courseName[courseId] + "/" + intent.getStringExtra("site"));
+        id = intent.getIntExtra("id", 0);
+        clipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
     }
 
     public class WebAppInterface
@@ -63,10 +60,13 @@ public class Article extends AppCompatActivity {
         @JavascriptInterface
         public void goToTask()
         {
-            Intent nextIntent = new Intent(Article.this, TaskActivity.class);
-            nextIntent.putExtra("id", id);
-            nextIntent.putExtra("courseId", courseId);
-            startActivity(nextIntent);
+            if(!doubleClick) {
+                doubleClick = true;
+                Intent nextIntent = new Intent(Article.this, TaskActivity.class);
+                nextIntent.putExtra("id", id);
+                nextIntent.putExtra("courseId", courseId);
+                startActivity(nextIntent);
+            }
         }
 
         @JavascriptInterface
@@ -85,8 +85,17 @@ public class Article extends AppCompatActivity {
         switch (view.getId())
         {
             case R.id.settings:
-                startActivity(new Intent(this, SettingsActivity.class));
-                break;
+                if(!doubleClick) {
+                    doubleClick = true;
+                    startActivity(new Intent(this, SettingsActivity.class));
+                    break;
+                }
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        doubleClick = false;
     }
 }

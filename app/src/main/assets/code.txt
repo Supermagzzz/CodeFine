@@ -1,0 +1,37 @@
+		</p>
+			<div class='code_block_b'>
+  			<code>
+				<gr>#include &lt;vector&gt;</gr><br>
+				<gr>#include &lt;algorithm&gt;</gr><br>
+				<br>
+				<bl>using namespace std;</bl><br>
+				<br>
+				<re>struct</re> Person<br>
+				{<br>
+				<t></t><gr>string</gr> name;<br>
+				<t></t><bl>int</bl> score;<br>
+				};<br>
+				<br>
+				<bl>bool</bl> cmp(Person a, Person b)<br>
+				{<br>
+				<t></t><re>return</re> a.score &gt; b.score;<br>
+				}<br>
+				<br>
+				<bl>int</bl> main()<br>
+				{<br>
+				<t></t>	int n;<br>
+				<t></t>	cin <re>&gt;&gt;</re> n;<br>
+				<t></t>	vector&lt;Person&gt; v(n);<br>
+				<t></t>	for(<bl>int</bl> i = <pu>0</pu>; i &lt; n; i++)<br>
+				<t></t>	{<br>
+				<t></t><t></t>		cin <re>&gt;&gt;</re> v[i].name <re>&gt;&gt;</re> v[i].score;<br>
+				<t></t>	}<br>
+				<t></t>	sort(v.begin(), v.end(), cmp);<br>
+				<t></t>	for(<bl>int</bl> i = <pu>0</pu>; i &lt; n; i++)<br>
+				<t></t>	{<br>
+				<t></t><t></t>		cout <re>&lt;&lt;</re> v[i].name <re>&lt;&lt;</re> <gr>"</gr> <gr>"</gr> <re>&lt;&lt;</re> v[i].score; <re>&lt;&lt;</re> <gr>endl</gr>;<br>
+				<t></t>	}<br>
+				}<br>
+			  </code>
+			</div>
+		<p>
