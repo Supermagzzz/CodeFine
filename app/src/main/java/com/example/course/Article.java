@@ -26,22 +26,29 @@ public class Article extends AppCompatActivity {
     WebView myBrowser;
     int id;
     ClipboardManager clipboardManager;
+    int courseId;
 
     @Override
     @SuppressLint("JavascriptInterface")
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Lib.initActivity(this, R.layout.activity_article);
+        try {
+            super.onCreate(savedInstanceState);
+            Lib.initActivity(this, R.layout.activity_article);
 
-        myBrowser = findViewById(R.id.my_browser);
-        WebSettings webSettings = myBrowser.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webSettings.setDomStorageEnabled(true);
-        myBrowser.addJavascriptInterface(new WebAppInterface(this), "Android");
-        Intent intent = getIntent();
-        myBrowser.loadUrl("file:///android_asset/" + getString(R.string.lang) + "/Beginning/" + intent.getStringExtra("site"));
-        id = intent.getIntExtra("id", 0);
-        clipboardManager = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
+            myBrowser = findViewById(R.id.my_browser);
+            WebSettings webSettings = myBrowser.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            webSettings.setDomStorageEnabled(true);
+            myBrowser.addJavascriptInterface(new WebAppInterface(this), "Android");
+            Intent intent = getIntent();
+            courseId = intent.getIntExtra("courseId", 0);
+            myBrowser.loadUrl("file:///android_asset/" + getString(R.string.lang) + "/" + Lib.courseName[courseId] + "/" + intent.getStringExtra("site"));
+            id = intent.getIntExtra("id", 0);
+            clipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+        } catch (Exception e)
+        {
+            Log.d("MAX", e.getMessage());
+        }
     }
 
     public class WebAppInterface
@@ -58,6 +65,7 @@ public class Article extends AppCompatActivity {
         {
             Intent nextIntent = new Intent(Article.this, TaskActivity.class);
             nextIntent.putExtra("id", id);
+            nextIntent.putExtra("courseId", courseId);
             startActivity(nextIntent);
         }
 

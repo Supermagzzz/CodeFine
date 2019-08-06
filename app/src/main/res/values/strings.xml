@@ -24,6 +24,8 @@
     <string name="std_functions">Algorithms</string>
     <string name="functions">Functions</string>
     <string name="structures">Structures</string>
+    <string name="worktime">Program\'s speed</string>
+    <string name="asymptotic">Asymptotic</string>
     <string name="banner_ad_id" translatable="false">ca-app-pub-7252244556177655/5561037692</string>
     <string name="banner_ad_id_tip" translatable="false">ca-app-pub-3940256099942544/5224354917</string>
     <string name="banner_ad_id_lambda" translatable="false">ca-app-pub-7252244556177655~2124355568</string>
@@ -35,4 +37,5 @@
     <string name="title_activity_articles">Articles</string>
     <string name="title_activity_task">TaskActivity</string>
     <string name="vectors">Vector</string>
+    <string name="no_task">There are no task in this chapter</string>
 </resources>

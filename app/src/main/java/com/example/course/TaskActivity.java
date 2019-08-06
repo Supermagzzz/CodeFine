@@ -49,11 +49,11 @@ public class TaskActivity extends AppCompatActivity implements RewardedVideoAdLi
     Intent intent;
     WebSettings webSettings;
     ClipboardManager clipboardManager;
-    Lib lib = new Lib();
     private RewardedVideoAd mRewardedVideoAd;
     FrameLayout onLoading;
     boolean stopLoad = true;
     boolean needShow = false;
+    private int courseId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,9 +65,10 @@ public class TaskActivity extends AppCompatActivity implements RewardedVideoAdLi
 
         myBrowser = findViewById(R.id.my_browser);
         intent = getIntent();
+        courseId = intent.getIntExtra("courseId", 0);
         myId = intent.getIntExtra("id", 0);
         sPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        rating = sPref.getInt("Beginning_rating", 0);
+        rating = sPref.getInt(Lib.courseName[courseId] + "_rating", 0);
         last = findViewById(R.id.last);
         next = findViewById(R.id.next);
         solve = findViewById(R.id.solve);
@@ -86,14 +87,14 @@ public class TaskActivity extends AppCompatActivity implements RewardedVideoAdLi
         last.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pointer = (pointer - 1 + lib.ids1[myId].length) % lib.ids1[myId].length;
+                pointer = (pointer - 1 + Lib.ids[courseId][myId].length) % Lib.ids[courseId][myId].length;
                 updateWebView();
             }
         });
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pointer = (pointer + 1 + lib.ids1[myId].length) % lib.ids1[myId].length;
+                pointer = (pointer + 1 + Lib.ids[courseId][myId].length) % Lib.ids[courseId][myId].length;
                 updateWebView();
             }
         });
@@ -108,18 +109,18 @@ public class TaskActivity extends AppCompatActivity implements RewardedVideoAdLi
         solve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(sPref.getBoolean("Beginning_task" + lib.ids1[myId][pointer], false))
+                if(sPref.getBoolean(Lib.courseName[courseId] + "_task" + Lib.ids[courseId][myId][pointer], false))
                 {
-                    sPref.edit().putBoolean("Beginning_task" + lib.ids1[myId][pointer], false).apply();
-                    rating -= lib.rate1[myId][pointer];
+                    sPref.edit().putBoolean(Lib.courseName[courseId] + "_task" + Lib.ids[courseId][myId][pointer], false).apply();
+                    rating -= Lib.rate[courseId][myId][pointer];
                 }
                 else
                 {
-                    sPref.edit().putBoolean("Beginning_task" + lib.ids1[myId][pointer], true).apply();
-                    rating += lib.rate1[myId][pointer];
+                    sPref.edit().putBoolean(Lib.courseName[courseId] + "_task" + Lib.ids[courseId][myId][pointer], true).apply();
+                    rating += Lib.rate[courseId][myId][pointer];
                 }
                 updateSolve();
-                sPref.edit().putInt("Beginning_rating", rating).apply();
+                sPref.edit().putInt(Lib.courseName[courseId] + "_rating", rating).apply();
             }
         });
 
@@ -188,13 +189,13 @@ public class TaskActivity extends AppCompatActivity implements RewardedVideoAdLi
 
     private void updateSolve()
     {
-        solve.setChecked(sPref.getBoolean("Beginning_task" + lib.ids1[myId][pointer], false));
+        solve.setChecked(sPref.getBoolean(Lib.courseName[courseId] + "_task" + Lib.ids[courseId][myId][pointer], false));
     }
 
     private void updateWebView()
     {
-        myBrowser.loadUrl("file:///android_asset/" + getString(R.string.lang) + "/Beginning/Tasks/" + intent.getIntExtra("id", 0) + "/" + lib.ids1[myId][pointer] + ".html");
-        textPointer.setText((pointer + 1) + "/" + lib.ids1[myId].length);
+        myBrowser.loadUrl("file:///android_asset/" + getString(R.string.lang) + "/" + Lib.courseName[courseId] + "/Tasks/" + intent.getIntExtra("id", 0) + "/" + Lib.ids[courseId][myId][pointer] + ".html");
+        textPointer.setText((pointer + 1) + "/" + Lib.ids[courseId][myId].length);
         updateSolve();
     }
 
@@ -224,7 +225,8 @@ public class TaskActivity extends AppCompatActivity implements RewardedVideoAdLi
     public void onRewardedVideoCompleted() {
         loadRewardedVideoAd();
         Intent intent = new Intent(TaskActivity.this, TipActivity.class);
-        intent.putExtra("path", myId + "/" + lib.ids1[myId][pointer] + ".html");
+        intent.putExtra("path", myId + "/" + Lib.ids[courseId][myId][pointer] + ".html");
+        intent.putExtra("courseId", courseId);
         startActivity(intent);
     }
 }

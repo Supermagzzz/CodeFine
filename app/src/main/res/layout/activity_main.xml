@@ -287,6 +287,7 @@
                                     </FrameLayout>
 
                                     <TextView
+                                        android:id="@+id/AlgoRateText"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/vsl"
@@ -370,6 +371,7 @@
                                     </FrameLayout>
 
                                     <TextView
+                                        android:id="@+id/AdvRateText"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/vsl"

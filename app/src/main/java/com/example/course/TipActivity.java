@@ -26,6 +26,7 @@ public class TipActivity extends AppCompatActivity {
     WebView myBrowser;
     int id;
     ClipboardManager clipboardManager;
+    int courseId;
 
     @Override
     @SuppressLint("JavascriptInterface")
@@ -33,6 +34,7 @@ public class TipActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Lib.initActivity(this, R.layout.activity_tip);
 
+        courseId = getIntent().getIntExtra("courseId", 0);
         myBrowser = findViewById(R.id.my_browser);
         Intent intent = getIntent();
         myBrowser.loadUrl("file:///android_asset/" + getString(R.string.lang) + "/Beginning/Tip/" + intent.getStringExtra("path"));

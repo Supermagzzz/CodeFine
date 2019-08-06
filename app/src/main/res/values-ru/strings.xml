@@ -13,6 +13,7 @@
     <string name="tip">Узнать решение</string>
     <string name="link_copy">Ссылка скопирована</string>
     <string name="choose_lang">Выберите ваш язык</string>
+    <string name="no_task">В этой главе задач нет</string>
     <string name="lang">ru</string>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -31,4 +32,6 @@
     <string name="functions">Функции</string>
     <string name="vectors">Vector</string>
     <string name="structures">Структуры</string>
+    <string name="worktime">Скорость работы</string>
+    <string name="asymptotic">Асимптотика</string>
 </resources>

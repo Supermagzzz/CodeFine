@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TipActivity"></activity>
+        <activity android:name=".NoTaskActivity"></activity>
+        <activity android:name=".TipActivity" />
 
         <meta-data
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"
@@ -31,13 +32,7 @@
             android:name=".Article"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".advanced_course"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".algorithm_course"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".beginning_course"
+            android:name=".CourseActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
