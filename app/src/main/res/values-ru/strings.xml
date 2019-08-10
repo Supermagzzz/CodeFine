@@ -15,6 +15,7 @@
     <string name="choose_lang">Выберите ваш язык</string>
     <string name="no_task">В этой главе задач нет</string>
     <string name="lang">ru</string>
+    <string name="sort">Сортировки</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

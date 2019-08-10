@@ -5,8 +5,9 @@ body
 }
 .block b
 {
-    font-weight: 400 !important;
-    font-style: italic;
+    font-family: "Courier New";
+    font-weight: normal;
+    font-size: 18px;
 }
 @font-face
 {

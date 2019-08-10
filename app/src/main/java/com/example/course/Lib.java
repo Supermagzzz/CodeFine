@@ -39,7 +39,8 @@ public class Lib {
             {
                     {},
                     {},
-                    {}
+                    {},
+                    {41, 42, 43, 44, 45}
             },
             //--------Третий курс
             {
@@ -69,7 +70,8 @@ public class Lib {
             {
                     {},
                     {},
-                    {}
+                    {},
+                    {10, 15, 20, 30, 47}
             },
             //--------Третий курс
             {
@@ -87,7 +89,7 @@ public class Lib {
         },
         //--------Второй курс
         {
-            R.string.introduction, R.string.worktime
+            R.string.introduction, R.string.worktime, R.string.sort
         },
         //--------Третий курс
         {}
@@ -102,7 +104,7 @@ public class Lib {
             },
             //--------Второй курс
             {
-                "1-Introduction.html", "2-Work_time.html"
+                "1-Introduction.html", "2-Work_time.html", "3-Sort.html"
             },
             //--------Третий курс
             {}

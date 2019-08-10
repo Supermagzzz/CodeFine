@@ -5,8 +5,9 @@ body
 }
 .block b
 {
-    font-weight: 400 !important;
-    font-style: italic;
+    font-family: "Courier New";
+    font-weight: normal;
+    font-size: 18px;
 }
 @font-face
 {
@@ -24,47 +25,47 @@ body
 }
 .phone
 {
-	margin: 0; 
-	padding: 0; 
-	width: 500px; 
-	background-size: 600px; 
-	margin: 0 auto; 
-	position: absolute; 
-	margin-left: 374px; 
-	z-index: 1; 
-	border: 1px solid black;
+    margin: 0; 
+    padding: 0; 
+    width: 500px; 
+    background-size: 600px; 
+    margin: 0 auto; 
+    position: absolute; 
+    margin-left: 374px; 
+    z-index: 1; 
+    border: 1px solid black;
 }
 .name
 {
-	font-family: 'Vin Slab Pro'; 
-	text-align: center; 
-	padding-top: 5px; 
-	font-size: 35px;
-	font-weight: bold; 
-	background: #e4e4e7
+    font-family: 'Vin Slab Pro'; 
+    text-align: center; 
+    padding-top: 5px; 
+    font-size: 35px;
+    font-weight: bold; 
+    background: #e4e4e7
 }
 .h
 {
-	padding-top: 7px; 
-	font-weight: bold; 
-	font-size: 22px;
+    padding-top: 7px; 
+    font-weight: bold; 
+    font-size: 22px;
 }
 .block
 {
-	padding-left: 10px; 
-	padding-right: 10px; 
-	font-size: 17px; 
-	margin-top: -10px; 
-	color: #000000; 
-	font-family: 'Fira Sans', sans-serif;
+    padding-left: 10px; 
+    padding-right: 10px; 
+    font-size: 17px; 
+    margin-top: -10px; 
+    color: #000000; 
+    font-family: 'Fira Sans', sans-serif;
 }
 hr
 {
-	margin-top: 2px;
+    margin-top: 2px;
 }
 code
 {
-	font-size: 15px;
+    font-size: 15px;
     margin-top: 5px;
     margin-bottom: 5px;
     line-height: 1 !important;
@@ -72,35 +73,35 @@ code
 .code_block
 {
     white-space: nowrap;
-	padding: 5px;
-	overflow: auto;
-	margin-bottom: 5px;
+    padding: 5px;
+    overflow: auto;
+    margin-bottom: 5px;
 }
 .code_block_b
 {
     white-space: nowrap;
-	padding: 5px;
-	overflow: auto;
-	margin-bottom: 5px;
-	border-bottom: solid gray 1px;
-	border-top: solid gray 1px;
+    padding: 5px;
+    overflow: auto;
+    margin-bottom: 5px;
+    border-bottom: solid gray 1px;
+    border-top: solid gray 1px;
 }
 .red
 {
-	color: #ff5555;
+    color: #ff5555;
 }
 .green
 {
-	color: green;
+    color: green;
 }
 .blue
 {
-	color: blue;
+    color: blue;
 }
 .purple
 {
-	color: #a300d8;
-	font-weight: bold;
+    color: #a300d8;
+    font-weight: bold;
 }
 .last_code_hr
 {
@@ -169,7 +170,7 @@ table
 }
 re
 {
-	color: #ff5555;
+    color: #ff5555;
 }
 gr
 {
@@ -177,7 +178,7 @@ gr
 }
 pu
 {
-	color: #9d03d1;
+    color: #9d03d1;
 }
 bl
 {

@@ -1,31 +1,18 @@
-#include <vector>
-#include <algorithm>
+You can choose to save prefix std:: or not, but for studying it will be easier to delete it.We recommend doing this when you solving our tasks. 
+Now, review the material from the lesson by solving questions. 
+Moving to tasks 
+Test 
 
-using namespace std;
+1. What does cout do? 
 
-struct Person
-{
-string name;
-int score;
-};
+Finish a program 
+Adding numbers 
+Printed data on a screen 
 
-bool cmp(Person a, Person b)
-{
-return a.score > b.score;
-}
+2. What does endl do? 
 
-int main()
-{
-	int n;
-	cin >> n;
-	vector<Person> v(n);
-	for(int i = 0; i < n; i++)
-	{
-		cin >> v[i].name >> v[i].score;
-	}
-	sort(v.begin(), v.end(), cmp);
-	for(int i = 0; i < n; i++)
-	{
-		cout << v[i].name << " " << v[i].score; << endl;
-	}
-}
+Symble for breaking lines 
+Symble for comma 
+Means end of information translation in cout 
+
+Please, answer to all these questions

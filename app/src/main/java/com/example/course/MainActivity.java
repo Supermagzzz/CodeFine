@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
         prbCourses = new ArrayList<>();
         textCourses = new ArrayList<>();
         prbCourses.add(prbBeginning);
-        prbCourses.add(prbAdvanced);
         prbCourses.add(prbAlgorithms);
+        prbCourses.add(prbAdvanced);
         textCourses.add(BegRateText);
         textCourses.add(AlgoRateText);
         textCourses.add(AdvRateText);

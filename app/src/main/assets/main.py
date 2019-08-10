@@ -1,7 +1,7 @@
-sep = ["(", ")", "+", "-", "*", "\\", "%", "[", "]", " ", ";", ",", "<", ">"]
-blue = ["int", "long", "byte", "bool", "if", "for", "else", "char"]
-red = ["return", "struct"]
-green = ["vector", "cout", "cin", "endl", "reverse", "sort", "max", "min", "max_element", "min_element", "cout.precision", "fixed", "string"]
+sep = ["(", ")", "+", "-", "*", "\\", "%", "[", "]", " ", ";", ",", "<", ">", "."]
+blue = ["int", "long", "byte", "bool", "if", "for", "else", "char", "while", "&&", "||"]
+red = ["return", "struct", "!"]
+green = ["vector", "cout", "cin", "endl", "reverse", "sort", "max", "min", "max_element", "min_element", "cout.precision", "fixed", "string", "swap", "push_back", "size", "begin", "end", "unique", "resize"]
 
 
 output = open('code.txt', 'w')
@@ -12,7 +12,7 @@ output.write("			<div class='code_block_b'>\n")
 output.write("  			<code>\n")
 count = 0
 for code in codeAll:
-
+	code = code.strip()
 	curCount = code.count('{') - code.count('}')
 	if curCount < 0:
 		count += curCount
