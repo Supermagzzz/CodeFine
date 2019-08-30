@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="35dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/beginning_course_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        app:srcCompat="@drawable/first_btn" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top|left"
+                            android:layout_weight="35">
+
+                            <Button
+                                android:id="@+id/beginning_course_btn"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="304dp"
+                                android:layout_height="match_parent" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textView2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/vsl"
+                                    android:paddingLeft="10dp"
+                                    android:paddingTop="10dp"
+                                    android:text="@string/Beginning"
+                                    android:textColor="@android:color/background_light"
+                                    android:textSize="30sp"
+                                    tools:text="@string/Beginning" />
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:paddingLeft="10dp"
+                                    android:paddingTop="5dp">
+
+                                    <ImageView
+                                        android:id="@+id/prb_beginning"
+                                        app:srcCompat="@drawable/prb50"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:adjustViewBounds="true"
+                                        android:cropToPadding="false" />
+
+                                </FrameLayout>
+
+                                <TextView
+                                    android:id="@+id/BegRateText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/vsl"
+                                    android:gravity="center"
+                                    android:paddingTop="2dp"
+                                    android:text="Rating: 0/270"
+                                    android:textColor="@android:color/background_light"
+                                    android:textSize="18sp" />
+
+                            </LinearLayout>
+
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="70">
+
+                            <Button
+                                android:id="@+id/our_site_btn"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="65" />
+
+                            <TextView
+                                android:id="@+id/textView4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/vsl"
+                                android:gravity="center|center_horizontal"
+                                android:text="@string/our_site"
+                                android:textColor="@android:color/background_light"
+                                android:textSize="20sp" />
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/algo_course_img"
+                        app:srcCompat="@drawable/second_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="70">
+
+                            <Button
+                                android:id="@+id/chat_btn"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="65" />
+
+                            <TextView
+                                android:id="@+id/textView5"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/vsl"
+                                android:gravity="center|center_horizontal"
+                                android:text="@string/chat"
+                                android:textColor="@android:color/background_light"
+                                android:textSize="22sp" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top|left"
+                            android:layout_weight="35">
+
+                            <Button
+                                android:id="@+id/algo_course_btn"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/vsl"
+                                    android:paddingTop="10dp"
+                                    android:paddingRight="10dp"
+                                    android:text="@string/Algorithms"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@android:color/background_light"
+                                    android:textSize="30sp" />
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:paddingTop="5dp"
+                                    android:paddingRight="10dp">
+
+                                    <ImageView
+                                        android:id="@+id/prb_algorithms"
+                                        app:srcCompat="@drawable/prb50"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:adjustViewBounds="true"
+                                        android:cropToPadding="false" />
+
+                                </FrameLayout>
+
+                                <TextView
+                                    android:id="@+id/AlgoRateText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/vsl"
+                                    android:gravity="center"
+                                    android:paddingTop="2dp"
+                                    android:text="Rating: 0/270"
+                                    android:textColor="@android:color/background_light"
+                                    android:textSize="18sp" />
+
+                            </LinearLayout>
+
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/advanced_course_img"
+                        app:srcCompat="@drawable/third_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top|left"
+                            android:layout_weight="35">
+
+                            <Button
+                                android:id="@+id/advanced_course_btn"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="304dp"
+                                android:layout_height="match_parent" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/vsl"
+                                    android:paddingLeft="10dp"
+                                    android:paddingTop="10dp"
+                                    android:text="@string/Advanced"
+                                    android:textColor="@android:color/background_light"
+                                    android:textSize="30sp" />
+
+                                <FrameLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:paddingLeft="10dp"
+                                    android:paddingTop="5dp">
+
+                                    <ImageView
+                                        android:id="@+id/prb_advanced"
+                                        app:srcCompat="@drawable/prb50"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:adjustViewBounds="true"
+                                        android:cropToPadding="false" />
+
+                                </FrameLayout>
+
+                                <TextView
+                                    android:id="@+id/AdvRateText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/vsl"
+                                    android:gravity="center"
+                                    android:paddingTop="2dp"
+                                    android:text="Rating: 0/270"
+                                    android:textColor="@android:color/background_light"
+                                    android:textSize="18sp" />
+                                *
+                            </LinearLayout>
+
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="70">
+
+                            <Button
+                                android:id="@+id/editor_btn"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="65" />
+
+                            <TextView
+                                android:id="@+id/textView6"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/vsl"
+                                android:gravity="center|center_horizontal"
+                                android:text="@string/editor"
+                                android:textColor="@android:color/background_light"
+                                android:textSize="22sp" />
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp" />
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</FrameLayout>

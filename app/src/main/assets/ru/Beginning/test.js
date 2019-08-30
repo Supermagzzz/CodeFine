@@ -3,6 +3,10 @@ function copyLink(_link)
     Android.copyLink(_link);
 }
 
+window.addEventListener('scroll', function() {
+    Android.scroll(pageYOffset);
+});
+
 function openDopInfo(id)
 {
     if(document.getElementById(id).style.display == 'block')

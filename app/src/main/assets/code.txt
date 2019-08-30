@@ -1,63 +1,7 @@
 		</p>
 			<div class='code_block_b'>
   			<code>
-				<gr>#include &lt;iostream&gt;</gr><br>
-				<gr>#include &lt;vector&gt;</gr><br>
-				<gr>#include &lt;algorithm&gt;</gr><br>
-				<br>
-				<bl>using namespace std;</bl><br>
-				<br>
-				<bl>int</bl> main()<br>
-				{<br>
-				<t></t><bl>int</bl> n;<br>
-				<t></t><gr>cin</gr> <re>&gt;&gt;</re> n;<br>
-				<t></t><gr>vector</gr>&lt;<bl>int</bl>&gt; v(n);<br>
-				<t></t><bl>for</bl>(<bl>int</bl> &e : v)<br>
-				<t></t>{<br>
-				<t></t><t></t><gr>cin</gr> <re>&gt;&gt;</re> e;<br>
-				<t></t>}<br>
-				<t></t><gr>vector</gr>&lt;<bl>int</bl>&gt; sorted = v;<br>
-				<t></t><gr>sort</gr>(sorted.<gr>begin</gr>(), sorted.<gr>end</gr>());<br>
-				<t></t><bl>if</bl>(v == sorted)<br>
-				<t></t>{<br>
-				<t></t><t></t><gr>cout</gr> <re>&lt;&lt;</re> <gr>"yes"</gr> <re>&lt;&lt;</re> <gr>endl</gr>;<br>
-				<t></t><t></t><gr>cout</gr> <re>&lt;&lt;</re> <gr>"1 1"</gr>;<br>
-				<t></t>}<br>
-				<t></t><bl>else</bl><br>
-				<t></t>{<br>
-				<t></t><t></t><bl>bool</bl> phase = <pu>1</pu>;<br>
-				<t></t><t></t><bl>int</bl> l = <pu>0</pu>, r = n;<br>
-				<t></t><t></t><bl>for</bl>(<bl>int</bl> i = <pu>1</pu>; i &lt; n; i++)<br>
-				<t></t><t></t>{<br>
-				<t></t><t></t><t></t><bl>if</bl>(phase)<br>
-				<t></t><t></t><t></t>{<br>
-				<t></t><t></t><t></t><t></t><bl>if</bl>(v[i - <pu>1</pu>] &gt; v[i])<br>
-				<t></t><t></t><t></t><t></t>{<br>
-				<t></t><t></t><t></t><t></t><t></t>l = i;<br>
-				<t></t><t></t><t></t><t></t><t></t>phase = <pu>0</pu>;<br>
-				<t></t><t></t><t></t><t></t>}<br>
-				<t></t><t></t><t></t>}<br>
-				<t></t><t></t><t></t><bl>else</bl><br>
-				<t></t><t></t><t></t>{<br>
-				<t></t><t></t><t></t><t></t><bl>if</bl>(v[i - <pu>1</pu>] &lt; v[i])<br>
-				<t></t><t></t><t></t><t></t>{<br>
-				<t></t><t></t><t></t><t></t><t></t>r = i;<br>
-				<t></t><t></t><t></t><t></t><t></t>break;<br>
-				<t></t><t></t><t></t><t></t>}<br>
-				<t></t><t></t><t></t>}<br>
-				<t></t><t></t>}<br>
-				<t></t><t></t><gr>reverse</gr>(v.<gr>begin</gr>() + l, v.<gr>begin</gr>() + r + <pu>1</pu>);<br>
-				<t></t><t></t><bl>if</bl>(v == sorted)<br>
-				<t></t><t></t>{<br>
-				<t></t><t></t><t></t><gr>cout</gr> <re>&lt;&lt;</re> <gr>"yes"</gr> <re>&lt;&lt;</re> <gr>endl</gr>;<br>
-				<t></t><t></t><t></t><gr>cout</gr> <re>&lt;&lt;</re> l <re>&lt;&lt;</re> <gr>"</gr> <gr>"</gr> <re>&lt;&lt;</re> r;<br>
-				<t></t><t></t>}<br>
-				<t></t><t></t><bl>else</bl><br>
-				<t></t><t></t>{<br>
-				<t></t><t></t><t></t><gr>cout</gr> <re>&lt;&lt;</re> <gr>"no"</gr> <re>&lt;&lt;</re> <gr>endl</gr>;<br>
-				<t></t><t></t>}<br>
-				<t></t>}<br>
-				}<br>
+				double eps = <pu>0</pu>.<pu>001</pu>;<br>
 			  </code>
 			</div>
 		<p>

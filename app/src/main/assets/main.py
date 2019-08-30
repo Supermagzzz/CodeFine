@@ -1,5 +1,5 @@
 sep = ["(", ")", "+", "-", "*", "\\", "%", "[", "]", " ", ";", ",", "<", ">", "."]
-blue = ["int", "long", "byte", "bool", "if", "for", "else", "char", "while", "&&", "||"]
+blue = ["int", "long", "byte", "bool", "if", "for", "else", "char", "while", "&&", "||", "double"]
 red = ["return", "struct", "!"]
 green = ["vector", "cout", "cin", "endl", "reverse", "sort", "max", "min", "max_element", "min_element", "cout.precision", "fixed", "string", "swap", "push_back", "size", "begin", "end", "unique", "resize"]
 
@@ -18,7 +18,7 @@ for code in codeAll:
 		count += curCount
 
 	output.write("				" + "<t></t>" * count)
-	
+
 	if code.startswith("#include"):
 		code = code.replace('<', "&lt;")
 		code = code.replace('>', "&gt;")
@@ -39,7 +39,14 @@ for code in codeAll:
 				code[-1] += j
 		res = ""
 		doGreen = False
+		comment = False
 		for word in code:
+			if word.startswith('//'):
+				comment = True
+				res += "<gr>"
+			if comment:
+				res += word
+				continue
 			if len(word) > 0 and word[0] == "\"":
 				doGreen = True
 				res += "<gr>"
@@ -69,6 +76,9 @@ for code in codeAll:
 			if len(word) > 0 and word[-1] == "\"":
 				doGreen = False
 				res += "</gr>"
+
+		if comment:
+			res += "</gr>"
 
 		res = res.replace(" &lt;&lt; ", " <re>&lt;&lt;</re> ").replace(" &gt;&gt; ", " <re>&gt;&gt;</re> ")
 

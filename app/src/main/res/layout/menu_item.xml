@@ -42,7 +42,10 @@
             android:paddingLeft="60dp"
             android:text="@string/introduction"
             android:textColor="@android:color/background_light"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:singleLine="true"/>
 
         <Button
             android:id="@+id/tasks"

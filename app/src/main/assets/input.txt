@@ -1,18 +1,1 @@
-You can choose to save prefix std:: or not, but for studying it will be easier to delete it.We recommend doing this when you solving our tasks. 
-Now, review the material from the lesson by solving questions. 
-Moving to tasks 
-Test 
-
-1. What does cout do? 
-
-Finish a program 
-Adding numbers 
-Printed data on a screen 
-
-2. What does endl do? 
-
-Symble for breaking lines 
-Symble for comma 
-Means end of information translation in cout 
-
-Please, answer to all these questions
+double eps = 0.001;

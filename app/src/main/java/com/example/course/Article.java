@@ -8,16 +8,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,15 +51,26 @@ public class Article extends AppCompatActivity {
         myBrowser.loadUrl("file:///android_asset/" + getString(R.string.lang) + "/" + Lib.courseName[courseId] + "/" + intent.getStringExtra("site"));
         id = intent.getIntExtra("id", 0);
         clipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+        myBrowser.post(new Runnable() {
+            @Override
+            public void run() {
+                int h = myBrowser.getHeight() + findViewById(R.id.Header).getHeight();
+                myBrowser.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, h));
+            }
+        });
     }
 
     public class WebAppInterface
     {
         Context myContext;
+        FrameLayout header;
+        float lastY;
 
         WebAppInterface(Context c)
         {
+            header = findViewById(R.id.Header);
             myContext = c;
+            lastY = 0;
         }
 
         @JavascriptInterface
@@ -77,6 +93,13 @@ public class Article extends AppCompatActivity {
             sendIntent.putExtra(Intent.EXTRA_TEXT, link);
             sendIntent.setType("text/plain");
             startActivity(Intent.createChooser(sendIntent,"Поделиться"));
+        }
+
+        @JavascriptInterface
+        public void scroll(float y)
+        {
+            header.setY(Math.max(-y, -header.getHeight()));
+            myBrowser.setY(header.getHeight() + Math.max(-y, -header.getHeight()));
         }
     }
 

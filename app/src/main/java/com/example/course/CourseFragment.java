@@ -1,14 +1,16 @@
 package com.example.course;
 
+import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -18,34 +20,38 @@ import android.widget.LinearLayout;
 import android.widget.Space;
 import android.widget.TextView;
 
-public class CourseActivity extends AppCompatActivity {
 
+public class CourseFragment extends Fragment {
+
+    int courseId;
     private RecyclerView menu;
     private MenuAdapter adapter;
-    private int courseId;
     private boolean doubleClick = false;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Lib.initActivity(this, R.layout.activity_course);
-        courseId = getIntent().getIntExtra("courseId", 0);
-        menu = findViewById(R.id.menu);
-        menu.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new MenuAdapter();
-        menu.setAdapter(adapter);
-        findViewById(R.id.settings).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(!doubleClick) {
-                    doubleClick = true;
-                    Intent intent = new Intent(CourseActivity.this, SettingsActivity.class);
-                    startActivity(intent);
-                }
-            }
-        });
+    public static CourseFragment newInstance(int course) {
+        Bundle args = new Bundle();
+        args.putInt("courseId", course);
+        CourseFragment fragment = new CourseFragment();
+        fragment.setArguments(args);
+        return fragment;
     }
 
+    @Override
+    public void setArguments(@Nullable Bundle args) {
+        super.setArguments(args);
+        courseId = args.getInt("courseId");
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_course, container, false);
+        menu = view.findViewById(R.id.menu);
+        menu.setLayoutManager(new LinearLayoutManager(getActivity()));
+        adapter = new MenuAdapter();
+        menu.setAdapter(adapter);
+        return view;
+    }
     private class MenuHolder extends RecyclerView.ViewHolder
     {
         private TextView name;
@@ -72,7 +78,7 @@ public class CourseActivity extends AppCompatActivity {
         @NonNull
         @Override
         public MenuHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-            LayoutInflater layoutInflater = LayoutInflater.from(CourseActivity.this);
+            LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
             return new MenuHolder(layoutInflater, viewGroup);
         }
 
@@ -107,7 +113,7 @@ public class CourseActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         if(!doubleClick) {
                             doubleClick = true;
-                            Intent intent = new Intent(CourseActivity.this, TaskActivity.class);
+                            Intent intent = new Intent(getActivity(), TaskActivity.class);
                             intent.putExtra("courseId", courseId);
                             intent.putExtra("id", pos + 1);
                             startActivity(intent);
@@ -122,7 +128,7 @@ public class CourseActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         if(!doubleClick) {
                             doubleClick = true;
-                            startActivity(new Intent(CourseActivity.this, NoTaskActivity.class));
+                            startActivity(new Intent(getActivity(), NoTaskActivity.class));
                         }
                     }
                 });
@@ -132,7 +138,7 @@ public class CourseActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     if(!doubleClick) {
                         doubleClick = true;
-                        Intent intent = new Intent(CourseActivity.this, Article.class);
+                        Intent intent = new Intent(getActivity(), Article.class);
                         intent.putExtra("id", pos + 1);
                         intent.putExtra("site", Lib.fileNames[courseId][pos]);
                         intent.putExtra("courseId", courseId);
@@ -147,10 +153,10 @@ public class CourseActivity extends AppCompatActivity {
             return Lib.names[courseId].length + Lib.headers_pos[courseId].length;
         }
     }
-
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
         doubleClick = false;
     }
 }
+
