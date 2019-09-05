@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <script src="../../test.js"></script>
+</head>
+<body>
+<div style="margin: -7px; margin-top: 10px;">
+    <div class="task_name">C. Флеш-карты</div><hr>
+    <div class="block">
+        <hr>
+        <p>
+            Лучше всего сначала записывать на карты большего размера.
+        </p>
+        <p>
+            Решение задачи:<br>
+        </p>
+            <div class='code_block_b'>
+            <code>
+                <gr>#include &lt;iostream&gt;</gr><br>
+                <gr>#include &lt;vector&gt;</gr><br>
+                <gr>#include &lt;algorithm&gt;</gr><br>
+                <br>
+                <bl>using namespace std;</bl><br>
+                <br>
+                <bl>int</bl> main()<br>
+                {<br>
+                <t></t><bl>int</bl> n, m;<br>
+                <t></t><gr>cin</gr> <re>&gt;&gt;</re> n <re>&gt;&gt;</re> m;<br>
+                <t></t><gr>vector</gr>&lt;<bl>int</bl>&gt; v(n);<br>
+                <t></t><bl>for</bl>(<bl>int</bl> &e : v)<br>
+                <t></t>{<br>
+                <t></t><t></t><gr>cin</gr> <re>&gt;&gt;</re> e;<br>
+                <t></t>}<br>
+                <t></t><gr>sort</gr>(v.begin(), v.end());<br>
+                <t></t><bl>int</bl> cnt = <pu>0</pu>;<br>
+                <t></t><bl>int</bl> cur = n - <pu>1</pu>;<br>
+                <t></t><bl>while</bl>(m &gt; <pu>0</pu>)<br>
+                <t></t>{<br>
+                <t></t><t></t>m -= v[cur];<br>
+                <t></t><t></t>cur--;<br>
+                <t></t><t></t>cnt++;<br>
+                <t></t>}<br>
+                <t></t><gr>cout</gr> <re>&lt;&lt;</re> cnt;<br>
+                }<br>
+              </code>
+            </div>
+        <p>
+        </p>
+    </div>
+</div>
+</body>
+</html>

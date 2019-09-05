@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <script src="../../test.js"></script>
+</head>
+<body>
+<div style="margin: -7px; margin-top: 10px;">
+    <div class="task_name">A. Игра</div><hr>
+    <div class="block">
+        <hr>
+        <p>
+            Первый игрок всегда будет удалять максимальное число (так как хочет минимизировать результат), а второй будет всегда удалять минимальное число. Значит, если мы отсортируем изначальный массив, то ответ на задачу будет находиться в середине.
+        </p>
+        <p>
+            Решение задачи:<br>
+        </p>
+            <div class='code_block_b'>
+            <code>
+                <gr>#include &lt;iostream&gt;</gr><br>
+                <gr>#include &lt;vector&gt;</gr><br>
+                <gr>#include &lt;algorithm&gt;</gr><br>
+                <br>
+                <bl>using namespace std;</bl><br>
+                <br>
+                <bl>int</bl> main()<br>
+                {<br>
+                <t></t><bl>int</bl> n;<br>
+                <t></t><gr>cin</gr> <re>&gt;&gt;</re> n;<br>
+                <t></t><gr>vector</gr>&lt;<bl>int</bl>&gt; v(n);<br>
+                <t></t><bl>for</bl>(<bl>int</bl> &i : v)<br>
+                <t></t>{<br>
+                <t></t><t></t><gr>cin</gr> <re>&gt;&gt;</re> i;<br>
+                <t></t>}<br>
+                <t></t><gr>sort</gr>(v.begin(), v.end());<br>
+                <t></t><bl>if</bl>(v.<gr>size</gr>() % <pu>2</pu> == <pu>1</pu>)<br>
+                <t></t>{<br>
+                <t></t><t></t><gr>cout</gr> <re>&lt;&lt;</re> v[v.<gr>size</gr>() / <pu>2</pu>];<br>
+                <t></t>}<br>
+                <t></t><bl>else</bl><br>
+                <t></t>{<br>
+                <t></t><t></t><gr>cout</gr> <re>&lt;&lt;</re> v[v.<gr>size</gr>() / <pu>2</pu> - <pu>1</pu>];<br>
+                <t></t>}<br>
+                }<br>
+              </code>
+            </div>
+        <p>
+        </p>
+    </div>
+</div>
+</body>
+</html>

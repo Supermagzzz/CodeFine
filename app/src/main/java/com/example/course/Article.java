@@ -65,12 +65,14 @@ public class Article extends AppCompatActivity {
         Context myContext;
         FrameLayout header;
         float lastY;
+        float curY;
 
         WebAppInterface(Context c)
         {
             header = findViewById(R.id.Header);
             myContext = c;
             lastY = 0;
+            curY = 0;
         }
 
         @JavascriptInterface
@@ -98,8 +100,12 @@ public class Article extends AppCompatActivity {
         @JavascriptInterface
         public void scroll(float y)
         {
-            header.setY(Math.max(-y, -header.getHeight()));
-            myBrowser.setY(header.getHeight() + Math.max(-y, -header.getHeight()));
+            curY -= y - lastY;
+            lastY = y;
+            curY = Math.min(curY, 0);
+            curY = Math.max(curY, -header.getHeight());
+            header.setY(curY);
+            myBrowser.setY(header.getHeight() + curY);
         }
     }
 

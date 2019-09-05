@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+
+    </title>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <script src="../../test.js"></script>
+</head>
+<body>
+<div style="margin: -7px; margin-top: 10px;">
+    <div class="task_name">B. Новый год: встреча друзей</div><hr>
+    <div class="block">
+        <hr>
+        <p>
+            Если отсортировать точки, то встреча должна произойти в центральной. Пусть точки называются <b>A, B, C</b> и <b>B</b> - центральная. <b>N</b> - расстояние между самыми дальними домами - <b>|A - C|</b><br> 
+            Если они встрется в точке B, то суммарное расстояние равно <b>|A - B| + |C - B| = N</b>.
+            А если в какой-то другой точке <b>D</b>, то <b>|A - D| + |C - D| + |B - D| = N + |B - D|</b>, что явно больше.
+        </p>
+        <p>
+            Решение задачи:<br>
+        </p>
+            <div class='code_block_b'>
+            <code>
+                <gr>#include &lt;iostream&gt;</gr><br>
+                <gr>#include &lt;vector&gt;</gr><br>
+                <gr>#include &lt;algorithm&gt;</gr><br>
+                <br>
+                <bl>using namespace std;</bl><br>
+                <br>
+                <bl>int</bl> main()<br>
+                {<br>
+                <t></t><gr>vector</gr>&lt;<bl>int</bl>&gt; v(<pu>3</pu>);<br>
+                <t></t><bl>for</bl>(<bl>int</bl> &e : v)<br>
+                <t></t>{<br>
+                <t></t><t></t><gr>cin</gr> <re>&gt;&gt;</re> e;<br>
+                <t></t>}<br>
+                <t></t><gr>sort</gr>(v.begin(), v.end());<br>
+                <t></t><gr>cout</gr> <re>&lt;&lt;</re> v[<pu>1</pu>];<br>
+                }<br>
+              </code>
+            </div>
+        <p>
+        </p>
+    </div>
+</div>
+</body>
+</html>
